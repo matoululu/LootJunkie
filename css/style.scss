@@ -1,0 +1,433 @@
+/*--------------------- IMPORTS ---------------------*/
+
+@import 'variables';
+@import 'snippets';
+@import 'grids';
+@import 'reset';
+
+/*--------------------- GLOBAL ---------------------*/
+
+body, html {
+  height: 100%;
+}
+
+body{
+  background: url(../images/lootbox.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: $font-stack;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+h1, h2{
+  font-family: $header-stack;
+  font-size: 2em;
+}
+h3{
+  font-family: $header-stack;
+  font-size: 1.5em;
+}
+
+.center{
+  text-align: center;
+}
+
+/*--------------------- CONTAINERS ---------------------*/
+
+.cwrapper{
+  width: 100%;
+  @media only screen and (min-width: 1200px) {
+  max-width: 980px;
+  margin: 0px auto;
+  }
+}
+.content{
+  background: white;
+  margin-top: 30px;
+}
+
+.item-section{
+  min-height: 350px;
+  margin-top: 50px;
+}
+
+.wrapper{
+  width: 100%;
+  @media only screen and (min-width: 1200px) {
+  max-width: 1400px;
+  margin: 0px auto;
+  }
+}
+
+/*--------------------- NAVIGATION ---------------------*/
+
+header{background: black ;padding: 15px 0px;}
+header a{text-decoration: none;}
+header h1{
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
+  margin: 0;
+  @media only screen and (min-width: 769px) {
+	text-align: left;
+  }
+}
+nav{
+  max-width: 1000px;
+  margin: 0px auto;
+  width: 100%;
+}
+
+.loot{font-weight: 400; text-decoration: none; color: white;}
+.junkie{font-weight: bold; text-decoration: none; color: #f99e1a; }
+
+.nav{
+  text-transform: uppercase;
+  ul{float: right; list-style: none;}
+  li{display: inline;}
+  li a{
+    color: white;
+    padding: 0px 12px;
+    text-decoration: none;
+    font-weight: 600;
+    float: left;
+    line-height: 8px;
+  }
+  a:hover{
+    color: darken(white, 50%);
+  }
+}
+
+/*--------------------- BUTTONS ---------------------*/
+
+.btn{
+  padding: 10px 0px;
+  width: 100%;
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+  margin: 0px;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  vertical-align: middle;
+  transition: 0.2s ease all;
+  text-transform: uppercase;
+  text-decoration: none;
+  @media only screen and (min-width: 481px) {
+    padding: 10px 50px;
+    width: auto;
+    margin: 0px 10px;
+    border-radius: 3px;
+  }
+}
+
+.fa{
+    font-size: 0.7em;
+    vertical-align: middle;
+}
+
+.blue{
+  background: $blue;
+}
+
+.blue:hover{
+  -webkit-box-shadow: 0px 0px 33px 0px rgba(0, 95, 255, 0.75);
+  -moz-box-shadow: 0px 0px 33px 0px rgba(0, 95, 255, 0.75);
+  box-shadow: 0px 0px 33px 0px rgba(0, 95, 255, 0.75);
+  transition: ease-in-out all infinite 1.5s;
+}
+
+.blue:active{
+  -webkit-box-shadow: 0px 0px 130px 20px rgba(0, 95, 255, 0.75);
+  -moz-box-shadow: 0px 0px 130px 20px rgba(0, 95, 255, 0.75);
+  box-shadow: 0px 0px 130px 20px rgba(0, 95, 255, 0.75);
+  transition: ease-in-out all infinite 1.5s;
+}
+
+.yellow{
+  background: $yellow;
+}
+
+.yellow:hover{
+  -webkit-box-shadow: 0px 0px 33px 0px rgba(249, 158, 26, 0.75);
+  -moz-box-shadow: 0px 0px 33px 0px rgba(249, 158, 26, 0.75);
+  box-shadow: 0px 0px 33px 0px rgba(255, 158, 26, 0.75);
+  transition: ease-in-out all infinite 1.5s;
+}
+.yellow:active{
+  background: lighten($yellow, 30%);
+  -webkit-box-shadow: 0px 0px 230px 20px rgba(249, 158, 26, 0.75);
+  -moz-box-shadow: 0px 0px 230px 20px rgba(249, 158, 26, 0.75);
+  box-shadow: 0px 0px 230px 20px rgba(255, 255, 55, 1);
+}
+
+
+/*--------------------- LOOT BOX ---------------------*/
+
+#box{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: 500px;
+  
+}
+
+.shakebox{
+  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+  
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+
+/*--------------------- LOOT CARDS ---------------------*/
+
+#crate{
+  list-style: none;
+  padding: 0px;
+  li{
+    float: left;
+    border-radius: 7px;
+    font-size: 12px;
+    width: 100%;
+    text-align: center;
+    padding: 20px 0px;
+    @media only screen and (min-width: 769px) {
+      padding: 190px 0px 20px 0px;
+      margin: 1%;
+      max-width: 23%;
+    }
+  }
+}
+
+#item0{
+  -webkit-animation-delay: 0.1s; /* Chrome, Safari, Opera */
+  animation-delay: 0.1s;
+}
+
+#item1{
+  -webkit-animation-delay: 0.2s; /* Chrome, Safari, Opera */
+  animation-delay: 0.2s;
+}
+
+#item2{
+  -webkit-animation-delay: 0.4s; /* Chrome, Safari, Opera */
+  animation-delay: 0.4s;
+}
+
+#item3{
+  -webkit-animation-delay: 0.6s; /* Chrome, Safari, Opera */
+  animation-delay: 0.6s;
+}
+
+.normal{
+  font-weight: bold;
+  color: #333;
+  border: 1px solid #bbb;
+  background-color: white;
+  -webkit-box-shadow: 0px 0px 33px 0px rgba(255,255,255,0.75);
+  -moz-box-shadow: 0px 0px 33px 0px rgba(255,255,255,0.75);
+  box-shadow: 0px 0px 33px 0px rgba(255,255,255,0.75);
+  box-sizing: border-box;
+}
+.rare{
+  font-weight: bold;
+  color: #0070ff;
+  border: 1px solid #0070ff;
+  background-color: lighten(#0070ff, 30%);
+  -webkit-box-shadow: 0px 0px 33px 0px rgba(0,112,255,0.75);
+  -moz-box-shadow: 0px 0px 33px 0px rgba(0,112,255,0.75);
+  box-shadow: 0px 0px 33px 0px rgba(0,112,255,0.75);
+  box-sizing: border-box;
+}
+.epic{
+  font-weight: bold;
+  color: #B048F8;
+  border: 1px solid #B048F8;
+  background-color: lighten(#B048F8, 30%);
+  -webkit-box-shadow: 0px 0px 33px 0px rgba(176,72,248,0.75);
+  -moz-box-shadow: 0px 0px 33px 0px rgba(176,72,248,0.75);
+  box-shadow: 0px 0px 33px 0px rgba(176,72,248,0.75);
+  box-sizing: border-box;
+}
+.legendary{
+  font-weight: bold;
+  color: #ff8000;
+  border: 1px solid #ff8000;
+  background-color: lighten(#ff8000, 30%);
+  -webkit-box-shadow: 0px 0px 33px 0px rgba(255,128,0,0.75);
+  -moz-box-shadow: 0px 0px 33px 0px rgba(255,128,0,0.75);
+  box-shadow: 0px 0px 33px 0px rgba(255,128,0,0.75);
+  box-sizing: border-box;
+}
+
+/*--------------------- HEROES ---------------------*/
+
+.generic{
+  background-image: url(../images/generic.png);
+  background-size: 100%;
+  background-position: 50%;
+  background-repeat: no-repeat;
+ }
+
+.bastion{
+  background-image: url(../images/bastion.png);
+  background-size: 64%;
+  background-position: 50%;
+  background-repeat: no-repeat;
+}
+.dva{
+  background-image: url(../images/dva.png);
+  background-size: 50%;
+  background-position: 50%;
+  background-repeat: no-repeat;
+}
+.genji{
+  background-image: url(../images/genji.png);
+  background-size: 50%;
+  background-position: 50%;
+  background-repeat: no-repeat;
+}
+.hanzo{
+  background-image: url(../images/hanzo.png);
+  background-size: 44%;
+  background-position: 50%;
+  background-repeat: no-repeat;
+}
+.junkrat{
+  background-image: url(../images/junkrat.png);
+  background-size: 40%;
+  background-position: 50%;
+  background-repeat: no-repeat;
+}
+.lucio{
+  background-image: url(../images/lucio.png);
+  background-size: 31%;
+  background-position: 50%;
+  background-repeat: no-repeat;
+}
+
+.mccree{
+  background-image: url(../images/mccree.png);
+  background-size: 50%;
+  background-position: 50%;
+  background-repeat: no-repeat;
+}
+
+.mei{
+  background-image: url(../images/mei.png);
+  background-size: 43%;
+  background-position: 50%;
+  background-repeat: no-repeat;
+}
+.mercy{
+  background-image: url(../images/mercy.png);
+  background-size: 90%;
+  background-position: 50%;
+  background-repeat: no-repeat;
+}
+.pharah{
+  background-image: url(../images/pharah.png);
+  background-size: 50%;
+  background-position: 50%;
+  background-repeat: no-repeat;
+}
+
+.reaper{
+  background-image: url(../images/reaper.png);
+  background-size: 50%;
+  background-position: 50%;
+  background-repeat: no-repeat;
+}
+
+.reinhardt{
+  background-image: url(../images/reinhardt.png);
+  background-size: 80%;
+  background-position: 50%;
+  background-repeat: no-repeat;
+}
+.roadhog{
+  background-image: url(../images/roadhog.png);
+  background-size: 68%;
+  background-position: 50%;
+  background-repeat: no-repeat;
+}
+.soldier{
+  background-image: url(../images/soldier.png);
+  background-size: 50%;
+  background-position: 50%;
+  background-repeat: no-repeat;
+}
+.soldier{
+  background-image: url(../images/soldier.png);
+  background-size: 50%;
+  background-position: 50%;
+  background-repeat: no-repeat;
+}
+.symmetra{
+  background-image: url(../images/symmetra.png);
+  background-size: 50%;
+  background-position: 50%;
+  background-repeat: no-repeat;
+}
+.torbjorn{
+  background-image: url(../images/torbjorn.png);
+  background-size: 65%;
+  background-position: 50%;
+  background-repeat: no-repeat;
+}
+.tracer{
+  background-image: url(../images/tracer.png);
+  background-size: 50%;
+  background-position: 50%;
+  background-repeat: no-repeat;
+}
+.widowmaker{
+  background-image: url(../images/widowmaker.png);
+  background-size: 50%;
+  background-position: 50%;
+  background-repeat: no-repeat;
+}
+.winston{
+  background-image: url(../images/winston.png);
+  background-size: 75%;
+  background-position: 50%;
+  background-repeat: no-repeat;
+}
+.zarya{
+  background-image: url(../images/zarya.png);
+  background-size: 50%;
+  background-position: 50%;
+  background-repeat: no-repeat;
+}
+.zenyatta{
+  background-image: url(../images/zenyatta.png);
+  background-size: 50%;
+  background-position: 50%;
+  background-repeat: no-repeat;
+}
+
+@media only screen and (max-width: 768px) {
+  .generic, .bastion, .dva, .genji, .hanzo, .junkrat, .lucio, .mccree, .mei, .mercy, .pharah, .reaper, .reinhardt, .roadhog, .soldier, .symmetra, .torbjorn, .tracer, .widowmaker, .winston, .zarya, .zenyatta{
+    background-image: none;
+  }
+}
