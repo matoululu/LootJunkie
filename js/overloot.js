@@ -611,7 +611,7 @@ var loot = [
 'Normal This Old Dog - Reinhardt Voice Line',
 'Rare Confident - Reinhardt Pose',
 'Rare Flex - Reinhardt Pose',
-'Rare Legendary - Reinhardt Pose',
+'Rare Legend - Reinhardt Pose',
 'Rare Brass - Reinhardt Skin',
 'Rare Cobalt - Reinhardt Skin',
 'Rare Copper - Reinhardt Skin',
