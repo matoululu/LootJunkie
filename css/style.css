@@ -775,6 +775,7 @@ body {
   background: url(../images/bg.jpg);
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
   font-family: "Open Sans", sans-serif;
   font-size: 14px;
   font-weight: 400; }
@@ -1053,7 +1054,7 @@ nav {
 
 .ana {
   background-image: url(../images/ana.png);
-  background-size: 64%;
+  background-size: 48%;
   background-position: 50%;
   background-repeat: no-repeat; }
 
@@ -1192,5 +1193,3 @@ nav {
 @media only screen and (max-width: 768px) {
   .generic, .bastion, .dva, .genji, .hanzo, .junkrat, .lucio, .mccree, .mei, .mercy, .pharah, .reaper, .reinhardt, .roadhog, .soldier, .symmetra, .torbjorn, .tracer, .widowmaker, .winston, .zarya, .zenyatta {
     background-image: none; } }
-
-/*# sourceMappingURL=style.css.map */
