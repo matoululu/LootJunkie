@@ -38,6 +38,7 @@ h3{
 
 .cwrapper{
   width: 100%;
+
   @media only screen and (min-width: 1200px) {
   max-width: 980px;
   margin: 0px auto;
@@ -51,12 +52,18 @@ h3{
 }
 
 .item-section{
-  min-height: 350px;
-  margin-top: 50px;
+  min-height: 300px;
+  margin-top: 20px;
+
+  @media only screen and (min-width: 769px) {
+    min-height: 350px;
+    margin-top: 50px;
+  }
 }
 
 .wrapper{
   width: 100%;
+
   @media only screen and (min-width: 1200px) {
   max-width: 1400px;
   margin: 0px auto;
@@ -86,10 +93,18 @@ h3{
   margin: 10px;
   font-size: 18px;
   padding: 8px 10px;
+
   i{
     padding-right: 15px;
     font-size: 20px;
     vertical-align: middle;
+  }
+
+  a{
+    color: white;
+    &:hover{
+      opacity: 0.7;
+    }
   }
 }
 
@@ -101,6 +116,7 @@ header h1{
   text-align: center;
   font-family: "Open Sans", sans-serif;
   margin: 0;
+
   @media only screen and (min-width: 769px) {
 	text-align: left;
   }
@@ -147,6 +163,7 @@ nav{
   transition: 0.2s ease all;
   text-transform: uppercase;
   text-decoration: none;
+
   @media only screen and (min-width: 481px) {
     padding: 10px 50px;
     width: auto;
@@ -237,6 +254,12 @@ nav{
 #crate{
   list-style: none;
   padding: 0px;
+  margin: 0px 5px;
+
+  @media only screen and (min-width: 769px) {
+    margin: 0px;
+  }
+
   li{
     float: left;
     border-radius: 7px;
@@ -244,6 +267,8 @@ nav{
     width: 100%;
     text-align: center;
     padding: 20px 0px;
+    margin: 3px 0px;
+
     @media only screen and (min-width: 769px) {
       padding: 190px 0px 20px 0px;
       margin: 1%;
@@ -321,6 +346,13 @@ nav{
   background-position: 50%;
   background-repeat: no-repeat;
  }
+
+ .sombra{
+  background-image: url(../images/sombra.png);
+  background-size: 48%;
+  background-position: 50%;
+  background-repeat: no-repeat;
+}
 
 .ana{
   background-image: url(../images/ana.png);
@@ -468,6 +500,7 @@ nav{
 
 @media only screen and (max-width: 768px) {
   .generic, .bastion, .dva, .genji, .hanzo, .junkrat, .lucio, .mccree, .mei, .mercy, .pharah, .reaper, .reinhardt, .roadhog, .soldier, .symmetra, .torbjorn, .tracer, .widowmaker, .winston, .zarya, .zenyatta{
-    background-image: none;
+    background-size: 30%;
+    background-position: 98% 35%;
   }
 }
