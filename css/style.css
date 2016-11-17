@@ -988,14 +988,16 @@ nav {
     border-radius: 7px;
     font-size: 12px;
     width: 100%;
-    text-align: center;
-    padding: 20px 0px;
+    text-align: left;
+    padding: 20px 20px;
     margin: 3px 0px; }
     @media only screen and (min-width: 769px) {
       #crate li {
         padding: 190px 0px 20px 0px;
         margin: 1%;
-        max-width: 23%; } }
+        max-width: 23%;
+        text-align: center;
+      } }
 
 #item0 {
   -webkit-animation-delay: 0.1s;
