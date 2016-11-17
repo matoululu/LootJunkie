@@ -805,8 +805,12 @@ h3 {
   border-radius: 3px; }
 
 .item-section {
-  min-height: 350px;
-  margin-top: 50px; }
+  min-height: 300px;
+  margin-top: 20px; }
+  @media only screen and (min-width: 769px) {
+    .item-section {
+      min-height: 350px;
+      margin-top: 50px; } }
 
 .wrapper {
   width: 100%; }
@@ -839,6 +843,10 @@ h3 {
     padding-right: 15px;
     font-size: 20px;
     vertical-align: middle; }
+  .note a {
+    color: white; }
+    .note a:hover {
+      opacity: 0.7; }
 
 /*--------------------- NAVIGATION ---------------------*/
 header {
@@ -970,14 +978,19 @@ nav {
 /*--------------------- LOOT CARDS ---------------------*/
 #crate {
   list-style: none;
-  padding: 0px; }
+  padding: 0px;
+  margin: 0px 5px; }
+  @media only screen and (min-width: 769px) {
+    #crate {
+      margin: 0px; } }
   #crate li {
     float: left;
     border-radius: 7px;
     font-size: 12px;
     width: 100%;
     text-align: center;
-    padding: 20px 0px; }
+    padding: 20px 0px;
+    margin: 3px 0px; }
     @media only screen and (min-width: 769px) {
       #crate li {
         padding: 190px 0px 20px 0px;
@@ -1048,6 +1061,12 @@ nav {
 .generic {
   background-image: url(../images/generic.png);
   background-size: 100%;
+  background-position: 50%;
+  background-repeat: no-repeat; }
+
+.sombra {
+  background-image: url(../images/sombra.png);
+  background-size: 48%;
   background-position: 50%;
   background-repeat: no-repeat; }
 
@@ -1191,4 +1210,5 @@ nav {
 
 @media only screen and (max-width: 768px) {
   .generic, .bastion, .dva, .genji, .hanzo, .junkrat, .lucio, .mccree, .mei, .mercy, .pharah, .reaper, .reinhardt, .roadhog, .soldier, .symmetra, .torbjorn, .tracer, .widowmaker, .winston, .zarya, .zenyatta {
-    background-image: none; } }
+    background-size: 30%;
+    background-position: 98% 35%; } }
