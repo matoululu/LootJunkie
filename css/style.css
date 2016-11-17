@@ -772,12 +772,19 @@ body, html {
   height: 100%; }
 
 body {
-  background: url(../images/bg.jpg);
+  background-color: #29354d;
   background-size: cover;
   background-repeat: no-repeat;
   font-family: "Open Sans", sans-serif;
   font-size: 14px;
-  font-weight: 400; }
+  font-weight: 400; 
+}
+  @media only screen and (min-width: 769px) {
+    body{
+      background: url(../images/bg.jpg);
+    }
+  }
+
 
 h1, h2 {
   font-family: "Raleway", sans-serif;
