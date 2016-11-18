@@ -773,8 +773,6 @@ body, html {
 
 body {
   background-color: #29354d;
-  background-size: cover;
-  background-repeat: no-repeat;
   font-family: "Open Sans", sans-serif;
   font-size: 14px;
   font-weight: 400; 
@@ -782,6 +780,8 @@ body {
   @media only screen and (min-width: 769px) {
     body{
       background: url(../images/bg.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
     }
   }
 
