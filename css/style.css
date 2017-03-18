@@ -919,21 +919,18 @@ body, html {
   height: 100%;
 }
 
-a {
-  color: #4099ff;
-}
-a:hover {
-  color: #a6cfff;
-}
-
 body {
-  background: url(../images/bg.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+  background-color: #29354d;
   font-family: "Open Sans", sans-serif;
   font-size: 14px;
   font-weight: 400;
+}
+@media only screen and (min-width: 769px) {
+  body {
+    background: url(../images/bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
 }
 
 h1, h2 {
@@ -994,6 +991,12 @@ h3 {
   max-width: 600px;
   margin: 0px auto;
 }
+@media only screen and (max-width: 768px) {
+  .small-wrapper .mobile-button {
+    position: fixed;
+    bottom: 0px;
+  }
+}
 
 /*--------------------- ALERTS ---------------------*/
 .version {
@@ -1012,6 +1015,11 @@ h3 {
   font-size: 18px;
   padding: 8px 10px;
 }
+@media only screen and (max-width: 768px) {
+  .note {
+    font-size: 11px;
+  }
+}
 .note i {
   padding-right: 15px;
   font-size: 20px;
@@ -1026,7 +1034,7 @@ h3 {
 
 /*--------------------- NAVIGATION ---------------------*/
 header {
-  background: rgba(41, 53, 77, 0.8);
+  background: #29354d;
   padding: 15px 0px;
 }
 
@@ -1100,9 +1108,6 @@ nav {
   transition: 0.2s ease all;
   text-transform: uppercase;
   text-decoration: none;
-}
-.btn:hover {
-  color: white;
 }
 @media only screen and (min-width: 481px) {
   .btn {
@@ -1200,8 +1205,7 @@ nav {
   border-radius: 7px;
   font-size: 12px;
   width: 100%;
-  text-align: center;
-  padding: 20px 0px;
+  padding: 20px 10px;
   margin: 3px 0px;
 }
 @media only screen and (min-width: 769px) {

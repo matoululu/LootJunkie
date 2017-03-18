@@ -11,39 +11,35 @@ body, html {
   height: 100%;
 }
 
-a{
-  color: $blue;
-  &:hover{
-    color: lighten($blue, 20%);
-  }
-}
-
-body{
-  background: url(../images/bg.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+body {
+  background-color: #29354d;
   font-family: $font-stack;
   font-size: 14px;
   font-weight: 400;
+
+  @media only screen and (min-width: 769px) {
+    background: url(../images/bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+  } 
 }
 
-h1, h2{
+h1, h2 {
   font-family: $header-stack;
   font-size: 2em;
 }
-h3{
+h3 {
   font-family: $header-stack;
   font-size: 1.5em;
 }
 
-.center{
+.center {
   text-align: center;
 }
 
 /*--------------------- CONTAINERS ---------------------*/
 
-.cwrapper{
+.cwrapper {
   width: 100%;
 
   @media only screen and (min-width: 1200px) {
@@ -51,14 +47,14 @@ h3{
   margin: 0px auto;
   }
 }
-.content{
+.content {
   background: white;
   margin: 30px 0px;
   padding: 0px 25px 25px;
   border-radius: 3px;
 }
 
-.item-section{
+.item-section {
   min-height: 300px;
   margin-top: 20px;
 
@@ -68,7 +64,7 @@ h3{
   }
 }
 
-.wrapper{
+.wrapper {
   width: 100%;
 
   @media only screen and (min-width: 1200px) {
@@ -77,15 +73,21 @@ h3{
   }
 }
 
-.small-wrapper{
+.small-wrapper {
   width: 100%;
   max-width: 600px;
   margin: 0px auto;
+  .mobile-button {
+    @media only screen and (max-width: 768px) {
+      position: fixed;
+      bottom: 0px;
+    }
+  }
 }
 
 /*--------------------- ALERTS ---------------------*/
 
-.version{
+.version {
   font-size: 9px;
   color: rgba(255,255,255,0.6);
   font-weight: 300;
@@ -93,23 +95,27 @@ h3{
   padding-left: 15px;
 }
 
-.note{
+.note {
   background-color: rgba(0,0,0,0.3);
   border-radius: 3px;
   color: white;
   margin: 10px;
   font-size: 18px;
   padding: 8px 10px;
+  
+  @media only screen and (max-width: 768px) {
+    font-size: 11px;
+  }
 
-  i{
+  i {
     padding-right: 15px;
     font-size: 20px;
     vertical-align: middle;
   }
 
-  a{
+  a {
     color: white;
-    &:hover{
+    &:hover {
       opacity: 0.7;
     }
   }
@@ -117,9 +123,9 @@ h3{
 
 /*--------------------- NAVIGATION ---------------------*/
 
-header{background: rgba(41, 53, 77, 0.8);padding: 15px 0px;}
-header a{text-decoration: none;}
-header h1{
+header {background: #29354d ;padding: 15px 0px;}
+header a {text-decoration: none;}
+header h1 {
   text-align: center;
   font-family: "Open Sans", sans-serif;
   margin: 0;
@@ -128,20 +134,20 @@ header h1{
 	text-align: left;
   }
 }
-nav{
+nav {
   max-width: 1000px;
   margin: 0px auto;
   width: 100%;
 }
 
-.loot{font-weight: 400; text-decoration: none; color: white;}
-.junkie{font-weight: bold; text-decoration: none; color: #f99e1a; }
+.loot {font-weight: 400; text-decoration: none; color: white;}
+.junkie {font-weight: bold; text-decoration: none; color: #f99e1a; }
 
-.nav{
+.nav {
   text-transform: uppercase;
-  ul{float: right; list-style: none;}
-  li{display: inline;}
-  li a{
+  ul {float: right; list-style: none;}
+  li {display: inline;}
+  li a {
     color: white;
     padding: 0px 12px;
     text-decoration: none;
@@ -149,14 +155,14 @@ nav{
     float: left;
     line-height: 8px;
   }
-  a:hover{
+  a:hover {
     color: darken(white, 50%);
   }
 }
 
 /*--------------------- BUTTONS ---------------------*/
 
-.btn{
+.btn {
   padding: 10px 0px;
   width: 100%;
   display: inline-block;
@@ -170,10 +176,6 @@ nav{
   transition: 0.2s ease all;
   text-transform: uppercase;
   text-decoration: none;
-  
-  &:hover{
-    color: white;
-  }
 
   @media only screen and (min-width: 481px) {
     padding: 10px 50px;
@@ -183,40 +185,40 @@ nav{
   }
 }
 
-.fa{
+.fa {
     font-size: 0.7em;
     vertical-align: middle;
 }
 
-.blue{
+.blue {
   background: $blue;
 }
 
-.blue:hover{
+.blue:hover {
   -webkit-box-shadow: 0px 0px 33px 0px rgba(0, 95, 255, 0.75);
   -moz-box-shadow: 0px 0px 33px 0px rgba(0, 95, 255, 0.75);
   box-shadow: 0px 0px 33px 0px rgba(0, 95, 255, 0.75);
   transition: ease-in-out all infinite 1.5s;
 }
 
-.blue:active{
+.blue:active {
   -webkit-box-shadow: 0px 0px 130px 20px rgba(0, 95, 255, 0.75);
   -moz-box-shadow: 0px 0px 130px 20px rgba(0, 95, 255, 0.75);
   box-shadow: 0px 0px 130px 20px rgba(0, 95, 255, 0.75);
   transition: ease-in-out all infinite 1.5s;
 }
 
-.yellow{
+.yellow {
   background: $yellow;
 }
 
-.yellow:hover{
+.yellow:hover {
   -webkit-box-shadow: 0px 0px 33px 0px rgba(249, 158, 26, 0.75);
   -moz-box-shadow: 0px 0px 33px 0px rgba(249, 158, 26, 0.75);
   box-shadow: 0px 0px 33px 0px rgba(255, 158, 26, 0.75);
   transition: ease-in-out all infinite 1.5s;
 }
-.yellow:active{
+.yellow:active {
   background: lighten($yellow, 30%);
   -webkit-box-shadow: 0px 0px 230px 20px rgba(249, 158, 26, 0.75);
   -moz-box-shadow: 0px 0px 230px 20px rgba(249, 158, 26, 0.75);
@@ -226,7 +228,7 @@ nav{
 
 /*--------------------- LOOT BOX ---------------------*/
 
-#box{
+#box {
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -235,7 +237,7 @@ nav{
 
 }
 
-.shakebox{
+.shakebox {
   animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
   transform: translate3d(0, 0, 0);
   backface-visibility: hidden;
@@ -262,7 +264,7 @@ nav{
 
 /*--------------------- LOOT CARDS ---------------------*/
 
-#crate{
+#crate {
   list-style: none;
   padding: 0px;
   margin: 0px 5px;
@@ -271,13 +273,12 @@ nav{
     margin: 0px;
   }
 
-  li{
+  li {
     float: left;
     border-radius: 7px;
     font-size: 12px;
     width: 100%;
-    text-align: center;
-    padding: 20px 0px;
+    padding: 20px 10px;
     margin: 3px 0px;
 
     @media only screen and (min-width: 769px) {
@@ -288,27 +289,27 @@ nav{
   }
 }
 
-#item0{
+#item0 {
   -webkit-animation-delay: 0.1s; /* Chrome, Safari, Opera */
   animation-delay: 0.1s;
 }
 
-#item1{
+#item1 {
   -webkit-animation-delay: 0.2s; /* Chrome, Safari, Opera */
   animation-delay: 0.2s;
 }
 
-#item2{
+#item2 {
   -webkit-animation-delay: 0.4s; /* Chrome, Safari, Opera */
   animation-delay: 0.4s;
 }
 
-#item3{
+#item3 {
   -webkit-animation-delay: 0.6s; /* Chrome, Safari, Opera */
   animation-delay: 0.6s;
 }
 
-.normal{
+.normal {
   font-weight: bold;
   color: #333;
   border: 1px solid #bbb;
@@ -318,7 +319,7 @@ nav{
   box-shadow: 0px 0px 33px 0px rgba(255,255,255,0.75);
   box-sizing: border-box;
 }
-.rare{
+.rare {
   font-weight: bold;
   color: #0070ff;
   border: 1px solid #0070ff;
@@ -328,7 +329,7 @@ nav{
   box-shadow: 0px 0px 33px 0px rgba(0,112,255,0.75);
   box-sizing: border-box;
 }
-.epic{
+.epic {
   font-weight: bold;
   color: #B048F8;
   border: 1px solid #B048F8;
@@ -338,7 +339,7 @@ nav{
   box-shadow: 0px 0px 33px 0px rgba(176,72,248,0.75);
   box-sizing: border-box;
 }
-.legendary{
+.legendary {
   font-weight: bold;
   color: #ff8000;
   border: 1px solid #ff8000;
@@ -351,165 +352,165 @@ nav{
 
 /*--------------------- HEROES ---------------------*/
 
-.generic{
+.generic {
   background-image: url(../images/generic.png);
   background-size: 100%;
   background-position: 50%;
   background-repeat: no-repeat;
  }
 
-.orisa{
+.orisa {
   background-image: url(../images/orisa.png);
   background-size: 80%;
   background-position: 50%;
   background-repeat: no-repeat;
 }
 
- .sombra{
+ .sombra {
   background-image: url(../images/sombra.png);
   background-size: 48%;
   background-position: 50%;
   background-repeat: no-repeat;
 }
 
-.ana{
+.ana {
   background-image: url(../images/ana.png);
   background-size: 48%;
   background-position: 50%;
   background-repeat: no-repeat;
 }
 
-.bastion{
+.bastion {
   background-image: url(../images/bastion.png);
   background-size: 64%;
   background-position: 50%;
   background-repeat: no-repeat;
 }
-.dva{
+.dva {
   background-image: url(../images/dva.png);
   background-size: 50%;
   background-position: 50%;
   background-repeat: no-repeat;
 }
-.genji{
+.genji {
   background-image: url(../images/genji.png);
   background-size: 50%;
   background-position: 50%;
   background-repeat: no-repeat;
 }
-.hanzo{
+.hanzo {
   background-image: url(../images/hanzo.png);
   background-size: 44%;
   background-position: 50%;
   background-repeat: no-repeat;
 }
-.junkrat{
+.junkrat {
   background-image: url(../images/junkrat.png);
   background-size: 40%;
   background-position: 50%;
   background-repeat: no-repeat;
 }
-.lucio{
+.lucio {
   background-image: url(../images/lucio.png);
   background-size: 31%;
   background-position: 50%;
   background-repeat: no-repeat;
 }
 
-.mccree{
+.mccree {
   background-image: url(../images/mccree.png);
   background-size: 50%;
   background-position: 50%;
   background-repeat: no-repeat;
 }
 
-.mei{
+.mei {
   background-image: url(../images/mei.png);
   background-size: 43%;
   background-position: 50%;
   background-repeat: no-repeat;
 }
-.mercy{
+.mercy {
   background-image: url(../images/mercy.png);
   background-size: 90%;
   background-position: 50%;
   background-repeat: no-repeat;
 }
-.pharah{
+.pharah {
   background-image: url(../images/pharah.png);
   background-size: 50%;
   background-position: 50%;
   background-repeat: no-repeat;
 }
 
-.reaper{
+.reaper {
   background-image: url(../images/reaper.png);
   background-size: 50%;
   background-position: 50%;
   background-repeat: no-repeat;
 }
 
-.reinhardt{
+.reinhardt {
   background-image: url(../images/reinhardt.png);
   background-size: 80%;
   background-position: 50%;
   background-repeat: no-repeat;
 }
-.roadhog{
+.roadhog {
   background-image: url(../images/roadhog.png);
   background-size: 68%;
   background-position: 50%;
   background-repeat: no-repeat;
 }
-.soldier{
+.soldier {
   background-image: url(../images/soldier.png);
   background-size: 50%;
   background-position: 50%;
   background-repeat: no-repeat;
 }
-.soldier{
+.soldier {
   background-image: url(../images/soldier.png);
   background-size: 50%;
   background-position: 50%;
   background-repeat: no-repeat;
 }
-.symmetra{
+.symmetra {
   background-image: url(../images/symmetra.png);
   background-size: 50%;
   background-position: 50%;
   background-repeat: no-repeat;
 }
-.torbjorn{
+.torbjorn {
   background-image: url(../images/torbjorn.png);
   background-size: 65%;
   background-position: 50%;
   background-repeat: no-repeat;
 }
-.tracer{
+.tracer {
   background-image: url(../images/tracer.png);
   background-size: 50%;
   background-position: 50%;
   background-repeat: no-repeat;
 }
-.widowmaker{
+.widowmaker {
   background-image: url(../images/widowmaker.png);
   background-size: 50%;
   background-position: 50%;
   background-repeat: no-repeat;
 }
-.winston{
+.winston {
   background-image: url(../images/winston.png);
   background-size: 75%;
   background-position: 50%;
   background-repeat: no-repeat;
 }
-.zarya{
+.zarya {
   background-image: url(../images/zarya.png);
   background-size: 50%;
   background-position: 50%;
   background-repeat: no-repeat;
 }
-.zenyatta{
+.zenyatta {
   background-image: url(../images/zenyatta.png);
   background-size: 50%;
   background-position: 50%;
@@ -517,7 +518,7 @@ nav{
 }
 
 @media only screen and (max-width: 768px) {
-  .generic, .bastion, .dva, .genji, .hanzo, .junkrat, .lucio, .mccree, .mei, .mercy, .pharah, .reaper, .reinhardt, .roadhog, .soldier, .symmetra, .torbjorn, .tracer, .widowmaker, .winston, .zarya, .zenyatta{
+  .generic, .bastion, .dva, .genji, .hanzo, .junkrat, .lucio, .mccree, .mei, .mercy, .pharah, .reaper, .reinhardt, .roadhog, .soldier, .symmetra, .torbjorn, .tracer, .widowmaker, .winston, .zarya, .zenyatta {
     background-size: 30%;
     background-position: 98% 35%;
   }
