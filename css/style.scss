@@ -11,6 +11,13 @@ body, html {
   height: 100%;
 }
 
+a{
+  color: $blue;
+  &:hover{
+    color: lighten($blue, 20%);
+  }
+}
+
 body{
   background: url(../images/bg.jpg);
   background-size: cover;
@@ -110,7 +117,7 @@ h3{
 
 /*--------------------- NAVIGATION ---------------------*/
 
-header{background: #29354d ;padding: 15px 0px;}
+header{background: rgba(41, 53, 77, 0.8);padding: 15px 0px;}
 header a{text-decoration: none;}
 header h1{
   text-align: center;
@@ -163,6 +170,10 @@ nav{
   transition: 0.2s ease all;
   text-transform: uppercase;
   text-decoration: none;
+  
+  &:hover{
+    color: white;
+  }
 
   @media only screen and (min-width: 481px) {
     padding: 10px 50px;
@@ -346,6 +357,13 @@ nav{
   background-position: 50%;
   background-repeat: no-repeat;
  }
+
+.orisa{
+  background-image: url(../images/orisa.png);
+  background-size: 80%;
+  background-position: 50%;
+  background-repeat: no-repeat;
+}
 
  .sombra{
   background-image: url(../images/sombra.png);
