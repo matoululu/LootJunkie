@@ -7,7 +7,7 @@ var loot = [
 'Epic Pulse - Sombra Highlight',
 'Epic Undetected - Sombra Highlight',
 'Epic Glitch - Sombra Skin',
-'Epic Virus- Sombra Skin',
+'Epic Virus - Sombra Skin',
 'Lgnd Azucar - Sombra Skin',
 'Lgnd Los Muertos - Sombra Skin',
 'Lgnd Augmented - Sombra Skin',
