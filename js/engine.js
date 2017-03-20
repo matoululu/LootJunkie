@@ -3,7 +3,6 @@ var openSound = new Audio('open-box.ogg');
 var results = [];
 var isRunning = false;
 
-
 $.fn.extend({
     animateCss: function (animationName) {
         var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
@@ -12,7 +11,6 @@ $.fn.extend({
         });
     }
 });
-
 
 function openBox(){
 
@@ -56,6 +54,7 @@ function setBox(){
     //Randomize Loot
     crate = chance.weighted(loot, weights);
     results.push(crate);
+    console.log(crate);
   }
 
   cratespec = chance.weighted(specloot, specweights);
@@ -71,27 +70,30 @@ function displayBox(){
   for(i = 0; i < endresults.length; i++){
     var ul = document.getElementById("crate");
     var li = document.createElement("li");
-    li.appendChild(document.createTextNode(endresults[i]));
+    var span = document.createElement("span");
+    span.appendChild(document.createTextNode(endresults[i]));
     li.setAttribute("id", "item" + i);
     ul.appendChild(li);
+    li.appendChild(span);
 
     //Check Quality and Strip
     var str = $("#item" + i).text();
+    console.log(str);
      if(endresults[i].indexOf("Normal") !=-1){
       $("#item" + i).addClass("normal animated bounceInDown");
-      $("#item" + i).text(str.substring(7));
+      $("#item" + i ).find('span').text(str.substring(7));
     }
     if (endresults[i].indexOf("Rare") !=-1){
       $("#item" + i).addClass("rare animated bounceInDown");
-      $("#item" + i).text(str.substring(5));
+      $("#item" + i).find('span').text(str.substring(5));
     }
     if(endresults[i].indexOf("Epic") !=-1){
       $("#item" + i).addClass("epic animated bounceInDown");
-      $("#item" + i).text(str.substring(5));
+      $("#item" + i).find('span').text(str.substring(5));
     }
     if(endresults[i].indexOf("Lgnd") !=-1){
       $("#item" + i).addClass("legendary animated bounceInDown");
-      $("#item" + i).text(str.substring(5));
+      $("#item" + i).find('span').text(str.substring(5));
     }
 
     //Check Hero

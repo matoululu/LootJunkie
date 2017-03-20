@@ -927,10 +927,17 @@ body {
 }
 @media only screen and (min-width: 769px) {
   body {
-    background: url(../images/bg.jpg);
     background-repeat: no-repeat;
     background-size: cover;
   }
+}
+
+a {
+  color: #4099ff;
+  transition: ease-in 0.2s;
+}
+a:hover {
+  color: #a6cfff;
 }
 
 h1, h2 {
@@ -945,6 +952,10 @@ h3 {
 
 .center {
   text-align: center;
+}
+
+.logo:hover {
+  opacity: 0.85;
 }
 
 /*--------------------- CONTAINERS ---------------------*/
@@ -971,8 +982,14 @@ h3 {
 }
 @media only screen and (min-width: 769px) {
   .item-section {
-    min-height: 350px;
+    min-height: 360px;
     margin-top: 50px;
+    margin-bottom: 50px;
+  }
+}
+@media only screen and (min-width: 1400px) {
+  .item-section {
+    min-height: 480px;
   }
 }
 
@@ -991,11 +1008,22 @@ h3 {
   max-width: 600px;
   margin: 0px auto;
 }
-@media only screen and (max-width: 768px) {
-  .small-wrapper .mobile-button {
-    position: fixed;
-    bottom: 0px;
-  }
+
+.details {
+  width: 100%;
+  max-width: 580px;
+  margin: 30px auto 0;
+  border-radius: 3px;
+  background-color: rgba(0, 0, 0, 0.25);
+}
+.details p {
+  text-align: left;
+  padding: 0 10px;
+  color: white;
+}
+.details input {
+  width: 90%;
+  padding: 10px 0;
 }
 
 /*--------------------- ALERTS ---------------------*/
@@ -1011,8 +1039,9 @@ h3 {
   background-color: rgba(0, 0, 0, 0.3);
   border-radius: 3px;
   color: white;
-  margin: 10px;
-  font-size: 18px;
+  width: 81%;
+  margin: 20px auto;
+  font-size: 16px;
   padding: 8px 10px;
 }
 @media only screen and (max-width: 768px) {
@@ -1034,7 +1063,7 @@ h3 {
 
 /*--------------------- NAVIGATION ---------------------*/
 header {
-  background: #29354d;
+  background: rgba(0, 0, 0, 0.35);
   padding: 15px 0px;
 }
 
@@ -1092,6 +1121,12 @@ nav {
 .nav a:hover {
   color: gray;
 }
+.nav li a.donate {
+  color: #f99e1a;
+}
+.nav li a.donate:hover {
+  color: #a96604;
+}
 
 /*--------------------- BUTTONS ---------------------*/
 .btn {
@@ -1108,6 +1143,9 @@ nav {
   transition: 0.2s ease all;
   text-transform: uppercase;
   text-decoration: none;
+}
+.btn:hover {
+  color: white;
 }
 @media only screen and (min-width: 481px) {
   .btn {
@@ -1167,6 +1205,16 @@ nav {
   width: 100%;
   max-width: 500px;
 }
+@media only screen and (min-width: 769px) {
+  #box {
+    padding-top: 55px;
+  }
+}
+@media only screen and (min-width: 1400px) {
+  #box {
+    padding-top: 90px;
+  }
+}
 
 .shakebox {
   animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
@@ -1210,9 +1258,19 @@ nav {
 }
 @media only screen and (min-width: 769px) {
   #crate li {
-    padding: 190px 0px 20px 0px;
+    padding: 125px 0px 125px 0px;
     margin: 1%;
+    text-align: center;
     max-width: 23%;
+    font-size: 13px;
+  }
+  #crate li span {
+    padding: 30px 0;
+  }
+}
+@media only screen and (min-width: 1400px) {
+  #crate li {
+    padding: 185px 0px 185px 0px;
   }
 }
 
@@ -1245,226 +1303,356 @@ nav {
   color: #333;
   border: 1px solid #bbb;
   background-color: white;
-  -webkit-box-shadow: 0px 0px 33px 0px rgba(255, 255, 255, 0.75);
-  -moz-box-shadow: 0px 0px 33px 0px rgba(255, 255, 255, 0.75);
-  box-shadow: 0px 0px 33px 0px rgba(255, 255, 255, 0.75);
   box-sizing: border-box;
+}
+@media only screen and (min-width: 769px) {
+  .normal span {
+    display: block;
+    background-color: rgba(255, 255, 255, 0.8);
+  }
 }
 
 .rare {
   font-weight: bold;
-  color: #0070ff;
+  color: white;
   border: 1px solid #0070ff;
-  background-color: #99c6ff;
-  -webkit-box-shadow: 0px 0px 33px 0px rgba(0, 112, 255, 0.75);
-  -moz-box-shadow: 0px 0px 33px 0px rgba(0, 112, 255, 0.75);
-  box-shadow: 0px 0px 33px 0px rgba(0, 112, 255, 0.75);
+  background-color: #0070ff;
   box-sizing: border-box;
+}
+@media only screen and (min-width: 769px) {
+  .rare span {
+    display: block;
+    background-color: rgba(0, 112, 255, 0.8);
+  }
 }
 
 .epic {
   font-weight: bold;
-  color: #B048F8;
+  color: white;
   border: 1px solid #B048F8;
-  background-color: #f0dbfe;
-  -webkit-box-shadow: 0px 0px 33px 0px rgba(176, 72, 248, 0.75);
-  -moz-box-shadow: 0px 0px 33px 0px rgba(176, 72, 248, 0.75);
-  box-shadow: 0px 0px 33px 0px rgba(176, 72, 248, 0.75);
+  background-color: #B048F8;
   box-sizing: border-box;
+}
+@media only screen and (min-width: 769px) {
+  .epic span {
+    display: block;
+    background-color: rgba(176, 72, 248, 0.8);
+  }
 }
 
 .legendary {
   font-weight: bold;
-  color: #ff8000;
+  color: white;
   border: 1px solid #ff8000;
-  background-color: #ffcc99;
-  -webkit-box-shadow: 0px 0px 33px 0px rgba(255, 128, 0, 0.75);
-  -moz-box-shadow: 0px 0px 33px 0px rgba(255, 128, 0, 0.75);
-  box-shadow: 0px 0px 33px 0px rgba(255, 128, 0, 0.75);
+  background-color: #ff8000;
   box-sizing: border-box;
+}
+@media only screen and (min-width: 769px) {
+  .legendary span {
+    display: block;
+    background-color: rgba(255, 128, 0, 0.8);
+  }
 }
 
 /*--------------------- HEROES ---------------------*/
 .generic {
   background-image: url(../images/generic.png);
-  background-size: 100%;
-  background-position: 50%;
   background-repeat: no-repeat;
+}
+@media only screen and (min-width: 769px) {
+  .generic {
+    background-size: cover;
+    background-position: center;
+    background-image: url(../images/overwatch-full.jpg);
+  }
 }
 
 .orisa {
   background-image: url(../images/orisa.png);
-  background-size: 80%;
-  background-position: 50%;
   background-repeat: no-repeat;
+}
+@media only screen and (min-width: 769px) {
+  .orisa {
+    background-size: cover;
+    background-position: center;
+    background-image: url(../images/orisa-full.jpg);
+  }
 }
 
 .sombra {
   background-image: url(../images/sombra.png);
-  background-size: 48%;
-  background-position: 50%;
   background-repeat: no-repeat;
+}
+@media only screen and (min-width: 769px) {
+  .sombra {
+    background-size: cover;
+    background-position: center;
+    background-image: url(../images/sombra-full.jpg);
+  }
 }
 
 .ana {
   background-image: url(../images/ana.png);
-  background-size: 48%;
-  background-position: 50%;
   background-repeat: no-repeat;
+}
+@media only screen and (min-width: 769px) {
+  .ana {
+    background-size: cover;
+    background-position: center;
+    background-image: url(../images/ana-full.jpg);
+  }
 }
 
 .bastion {
   background-image: url(../images/bastion.png);
-  background-size: 64%;
-  background-position: 50%;
   background-repeat: no-repeat;
+}
+@media only screen and (min-width: 769px) {
+  .bastion {
+    background-size: cover;
+    background-position: center;
+    background-image: url(../images/bastion-full.jpg);
+  }
 }
 
 .dva {
   background-image: url(../images/dva.png);
-  background-size: 50%;
-  background-position: 50%;
   background-repeat: no-repeat;
+}
+@media only screen and (min-width: 769px) {
+  .dva {
+    background-size: cover;
+    background-position: center;
+    background-image: url(../images/dva-full.jpg);
+  }
 }
 
 .genji {
   background-image: url(../images/genji.png);
-  background-size: 50%;
-  background-position: 50%;
   background-repeat: no-repeat;
+}
+@media only screen and (min-width: 769px) {
+  .genji {
+    background-size: cover;
+    background-position: center;
+    background-image: url(../images/genji-full.jpg);
+  }
 }
 
 .hanzo {
   background-image: url(../images/hanzo.png);
-  background-size: 44%;
-  background-position: 50%;
   background-repeat: no-repeat;
+}
+@media only screen and (min-width: 769px) {
+  .hanzo {
+    background-size: cover;
+    background-position: center;
+    background-image: url(../images/hanzo-full.jpg);
+  }
 }
 
 .junkrat {
   background-image: url(../images/junkrat.png);
-  background-size: 40%;
-  background-position: 50%;
   background-repeat: no-repeat;
+}
+@media only screen and (min-width: 769px) {
+  .junkrat {
+    background-size: cover;
+    background-position: center;
+    background-image: url(../images/junkrat-full.jpg);
+  }
 }
 
 .lucio {
   background-image: url(../images/lucio.png);
-  background-size: 31%;
-  background-position: 50%;
   background-repeat: no-repeat;
+}
+@media only screen and (min-width: 769px) {
+  .lucio {
+    background-size: cover;
+    background-position: center;
+    background-image: url(../images/lucio-full.jpg);
+  }
 }
 
 .mccree {
   background-image: url(../images/mccree.png);
-  background-size: 50%;
-  background-position: 50%;
   background-repeat: no-repeat;
+}
+@media only screen and (min-width: 769px) {
+  .mccree {
+    background-size: cover;
+    background-position: center;
+    background-image: url(../images/mccree-full.jpg);
+  }
 }
 
 .mei {
   background-image: url(../images/mei.png);
-  background-size: 43%;
-  background-position: 50%;
   background-repeat: no-repeat;
+}
+@media only screen and (min-width: 769px) {
+  .mei {
+    background-size: cover;
+    background-position: center;
+    background-image: url(../images/mei-full.jpg);
+  }
 }
 
 .mercy {
   background-image: url(../images/mercy.png);
-  background-size: 90%;
-  background-position: 50%;
   background-repeat: no-repeat;
+}
+@media only screen and (min-width: 769px) {
+  .mercy {
+    background-size: cover;
+    background-position: center;
+    background-image: url(../images/mercy-full.jpg);
+  }
 }
 
 .pharah {
   background-image: url(../images/pharah.png);
-  background-size: 50%;
-  background-position: 50%;
   background-repeat: no-repeat;
+}
+@media only screen and (min-width: 769px) {
+  .pharah {
+    background-size: cover;
+    background-position: center;
+    background-image: url(../images/pharah-full.jpg);
+  }
 }
 
 .reaper {
   background-image: url(../images/reaper.png);
-  background-size: 50%;
-  background-position: 50%;
   background-repeat: no-repeat;
+}
+@media only screen and (min-width: 769px) {
+  .reaper {
+    background-size: cover;
+    background-position: center;
+    background-image: url(../images/reaper-full.jpg);
+  }
 }
 
 .reinhardt {
   background-image: url(../images/reinhardt.png);
-  background-size: 80%;
-  background-position: 50%;
   background-repeat: no-repeat;
+}
+@media only screen and (min-width: 769px) {
+  .reinhardt {
+    background-size: cover;
+    background-position: center;
+    background-image: url(../images/reinhardt-full.jpg);
+  }
 }
 
 .roadhog {
   background-image: url(../images/roadhog.png);
-  background-size: 68%;
-  background-position: 50%;
   background-repeat: no-repeat;
+}
+@media only screen and (min-width: 769px) {
+  .roadhog {
+    background-size: cover;
+    background-position: center;
+    background-image: url(../images/roadhog-full.jpg);
+  }
 }
 
 .soldier {
   background-image: url(../images/soldier.png);
-  background-size: 50%;
-  background-position: 50%;
   background-repeat: no-repeat;
 }
-
-.soldier {
-  background-image: url(../images/soldier.png);
-  background-size: 50%;
-  background-position: 50%;
-  background-repeat: no-repeat;
+@media only screen and (min-width: 769px) {
+  .soldier {
+    background-size: cover;
+    background-position: center;
+    background-image: url(../images/soldier-full.jpg);
+  }
 }
 
 .symmetra {
   background-image: url(../images/symmetra.png);
-  background-size: 50%;
-  background-position: 50%;
   background-repeat: no-repeat;
+}
+@media only screen and (min-width: 769px) {
+  .symmetra {
+    background-size: cover;
+    background-position: center;
+    background-image: url(../images/symmetra-full.jpg);
+  }
 }
 
 .torbjorn {
   background-image: url(../images/torbjorn.png);
-  background-size: 65%;
-  background-position: 50%;
   background-repeat: no-repeat;
+}
+@media only screen and (min-width: 769px) {
+  .torbjorn {
+    background-size: cover;
+    background-position: center;
+    background-image: url(../images/torbjorn-full.jpg);
+  }
 }
 
 .tracer {
   background-image: url(../images/tracer.png);
-  background-size: 50%;
-  background-position: 50%;
   background-repeat: no-repeat;
+}
+@media only screen and (min-width: 769px) {
+  .tracer {
+    background-size: cover;
+    background-position: center;
+    background-image: url(../images/tracer-full.jpg);
+  }
 }
 
 .widowmaker {
   background-image: url(../images/widowmaker.png);
-  background-size: 50%;
-  background-position: 50%;
   background-repeat: no-repeat;
+}
+@media only screen and (min-width: 769px) {
+  .widowmaker {
+    background-size: cover;
+    background-position: center;
+    background-image: url(../images/widowmaker-full.jpg);
+  }
 }
 
 .winston {
   background-image: url(../images/winston.png);
-  background-size: 75%;
-  background-position: 50%;
   background-repeat: no-repeat;
+}
+@media only screen and (min-width: 769px) {
+  .winston {
+    background-size: cover;
+    background-position: center;
+    background-image: url(../images/winston-full.jpg);
+  }
 }
 
 .zarya {
   background-image: url(../images/zarya.png);
-  background-size: 50%;
-  background-position: 50%;
   background-repeat: no-repeat;
+}
+@media only screen and (min-width: 769px) {
+  .zarya {
+    background-size: cover;
+    background-position: center;
+    background-image: url(../images/zarya-full.jpg);
+  }
 }
 
 .zenyatta {
   background-image: url(../images/zenyatta.png);
-  background-size: 50%;
-  background-position: 50%;
   background-repeat: no-repeat;
+}
+@media only screen and (min-width: 769px) {
+  .zenyatta {
+    background-size: cover;
+    background-position: center;
+    background-image: url(../images/zenyatta-full.jpg);
+  }
 }
 
 @media only screen and (max-width: 768px) {

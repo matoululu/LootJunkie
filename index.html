@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,9 +8,9 @@
 <meta name="robots" content="index,follows" />
 <title>LootJunkie | Overwatch Loot Box Simulator</title>
 <link rel="icon" type="image/png" href="favicon.png">
-<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type=text/css>
 <link href="css/style.css" rel="stylesheet" type="text/css" />
 <link href="css/animate.css" rel="stylesheet" type="text/css">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type=text/css>
 <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Raleway:400,600,700' rel='stylesheet' type='text/css'>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
@@ -36,7 +35,7 @@
     <div class="grid">
       <div class="grid__item large--one-third logo">
           <h1>
-            <a href="index.html"><span class="loot">Loot</span><span class="junkie">Junkie</span></a>
+            <a href="index.html" class="logo"><span class="loot">Loot</span><span class="junkie">Junkie</span></a>
             <span class="version">reflecting patch 1.10.0</span>
           </h1>
       </div>
@@ -44,7 +43,8 @@
       	<ul>
       	  <li><a href="about.html">About</a></li>
       	  <li><a href="changelog.html">Changelog</a></li>
-          <li><a href="https://twitter.com/lootjunkiexyz">Twitter</a></li>
+          <li><a href="https://twitter.com/lootjunkiexyz" target="_blank">Twitter</a></li>
+          <li><a href="https://www.paypal.me/MatthewMarineau" class="donate" target="_blank">Donate</a></li>
         </ul>
       </div>
     </div>
@@ -61,7 +61,7 @@
   </div>
 
   <div class="small-wrapper">
-    <div class="grid mobile-button">
+    <div class="grid">
       <div class="grid__item center">
         <a class="btn yellow" onclick="openBox()" onmouseover="shakeBox()">OPEN LOOT BOX</a>
         <a class="btn blue" href="https://us.battle.net/shop/en/product/overwatch-loot-box" target="_blank">SHOP <i class="fa fa-external-link" aria-hidden="true"></i></a>
@@ -72,7 +72,6 @@
       </div>
     </div>
   </div>
-
 
 </body>
 </html>

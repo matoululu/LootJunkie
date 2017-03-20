@@ -371,7 +371,7 @@ var specloot = [
 'Rare Royal - Reaper Skin',
 'Rare Confident - Reinhardt Pose',
 'Rare Flex - Reinhardt Pose',
-'Rare Lgnd - Reinhardt Pose',
+'Rare Legendary - Reinhardt Pose',
 'Rare Brass - Reinhardt Skin',
 'Rare Cobalt - Reinhardt Skin',
 'Rare Copper - Reinhardt Skin',

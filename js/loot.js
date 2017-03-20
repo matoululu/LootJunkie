@@ -468,7 +468,7 @@ var loot = [
 'Normal Aint I Killed You Before - McCree Voice Line',
 'Normal Happens To The Best Of Us - McCree Voice Line',
 'Normal Im The Quick - McCree Voice Line',
-'Normal Ive Got ABullet - McCree Voice Line',
+'Normal Ive Got A Bullet - McCree Voice Line',
 'Normal I Tried Being Reasonable - McCree Voice Line',
 'Normal Reach For The Sky - McCree Voice Line',
 'Normal Sure As Hell Aint Ugly - McCree Voice Line',
