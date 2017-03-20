@@ -518,7 +518,7 @@ var loot = [
 'Normal Snowman - Mei Spray',
 'Normal Soft Serve - Mei Spray',
 'Normal Walled - Mei Spray',
-'Normal A-Mei-Zing!- Mei Voice Line',
+'Normal A-Mei-Zing! - Mei Voice Line',
 'Normal Chill Out! - Mei Voice Line',
 'Normal Learned Your Lesson - Mei Voice Line',
 'Normal Okay! - Mei Voice Line',
