@@ -975,6 +975,9 @@ h3 {
   padding: 0px 25px 25px;
   border-radius: 3px;
 }
+.content .content-wrap {
+  padding: 5px 15px;
+}
 
 .item-section {
   min-height: 300px;
@@ -1126,6 +1129,32 @@ nav {
 }
 .nav li a.donate:hover {
   color: #a96604;
+}
+
+.mobile-nav {
+  display: none;
+  list-style: none;
+  margin-left: 0;
+}
+@media only screen and (max-width: 768px) {
+  .mobile-nav {
+    display: block;
+    text-align: center;
+    margin-left: 0;
+    padding-left: 0;
+  }
+  .mobile-nav li {
+    display: inline-block;
+    text-align: center;
+    padding: 0px 15px;
+  }
+  .mobile-nav li a {
+    color: white;
+    opacity: 0.3;
+  }
+  .mobile-nav li a:hover {
+    opacity: 0.15;
+  }
 }
 
 /*--------------------- BUTTONS ---------------------*/
