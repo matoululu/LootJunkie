@@ -88,10 +88,15 @@ h3 {
 
 .wrapper {
   width: 100%;
+  
+  @media only screen and (min-width: 769px) {
+    max-width: 1250px;
+    margin: 0px auto;
+  }
 
-  @media only screen and (min-width: 1200px) {
-  max-width: 1400px;
-  margin: 0px auto;
+  @media only screen and (min-width: 1367px) {
+    max-width: 1400px;
+    margin: 0px auto;
   }
 }
 
