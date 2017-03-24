@@ -959,6 +959,24 @@ h3 {
 }
 
 /*--------------------- CONTAINERS ---------------------*/
+#itemlog.in-use {
+  margin: 30px 0 10px;
+  text-align: left;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+  padding: 10px 30px 10px;
+}
+#itemlog.in-use .rare-inv {
+  color: #0070ff;
+}
+#itemlog.in-use .epic-inv {
+  color: #B048F8;
+}
+#itemlog.in-use .lgnd-inv {
+  color: #ff8000;
+}
+
 .cwrapper {
   width: 100%;
 }
@@ -1014,8 +1032,16 @@ h3 {
 
 .small-wrapper {
   width: 100%;
-  max-width: 600px;
+  max-width: 710px;
   margin: 0px auto;
+}
+.small-wrapper .btn {
+  float: left;
+  margin: 0px 20px 0px 0px;
+}
+.small-wrapper .btn:last-child {
+  float: right;
+  margin: 0px 0px 0px 20px;
 }
 
 .details {
@@ -1048,7 +1074,6 @@ h3 {
   background-color: rgba(0, 0, 0, 0.3);
   border-radius: 3px;
   color: white;
-  width: 81%;
   margin: 20px auto;
   font-size: 16px;
   padding: 8px 10px;
@@ -1184,7 +1209,7 @@ nav {
 }
 @media only screen and (min-width: 481px) {
   .btn {
-    padding: 10px 50px;
+    padding: 10px 75px;
     width: auto;
     margin: 0px 10px;
     border-radius: 3px;
