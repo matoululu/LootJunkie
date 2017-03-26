@@ -87,6 +87,17 @@ h3 {
   }
 }
 
+.stats{
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 3px;
+  color: white;
+  p{
+    padding-left: 0px;
+    font-size: 11px;
+    opacity: 0.3;
+  }
+}
+
 .cwrapper {
   width: 100%;
 
