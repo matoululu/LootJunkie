@@ -4,6 +4,12 @@ var results = [];
 var isRunning = false;
 var isOpen = false;
 
+//Stats
+var whiteGet = 0;
+var blueGet = 0;
+var purpleGet = 0;
+var orangeGet = 0;
+
 $.fn.extend({
     animateCss: function (animationName) {
         var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
@@ -18,14 +24,12 @@ $(document).ready(function(){
   $('.btn-toggle').click(function(){
     
     if(isOpen == true){
-      console.log(isOpen);
       $('#itemlog').css('display', 'none');
       $('.toggle').removeClass('fa-minus-circle');
       $('.toggle').addClass('fa-plus-circle');
       isOpen = false;
     }
     else{
-      console.log(isOpen);
       $('#itemlog').css('display', 'block');
       $('.toggle').removeClass('fa-plus-circle');
       $('.toggle').addClass('fa-minus-circle');
@@ -34,6 +38,13 @@ $(document).ready(function(){
     
   })
 });
+
+function setStats(){
+  document.getElementById("white-stat").innerHTML = whiteGet;
+  document.getElementById("blue-stat").innerHTML = blueGet;
+  document.getElementById("purple-stat").innerHTML = purpleGet;
+  document.getElementById("orange-stat").innerHTML = orangeGet; 
+}
 
 function openBox(){
 
@@ -84,6 +95,7 @@ function setBox(){
 
   endresults = chance.shuffle(results);
   displayBox();
+  setStats();
 
 }
 
@@ -115,18 +127,22 @@ function displayBox(){
      if(endresults[i].indexOf("Normal") !=-1){
       $("#item" + i).addClass("normal animated bounceInDown");
       $("#item" + i ).find('span').text(str.substring(7));
+      whiteGet++;
     }
     if (endresults[i].indexOf("Rare") !=-1){
       $("#item" + i).addClass("rare animated bounceInDown");
       $("#item" + i).find('span').text(str.substring(5));
+      blueGet++;
     }
     if(endresults[i].indexOf("Epic") !=-1){
       $("#item" + i).addClass("epic animated bounceInDown");
       $("#item" + i).find('span').text(str.substring(5));
+      purpleGet++;
     }
     if(endresults[i].indexOf("Lgnd") !=-1){
       $("#item" + i).addClass("legendary animated bounceInDown");
       $("#item" + i).find('span').text(str.substring(5));
+      orangeGet++;
     }
 
     //Check Hero
