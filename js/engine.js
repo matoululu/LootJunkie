@@ -2,6 +2,7 @@ var crate
 var openSound = new Audio('open-box.ogg');
 var results = [];
 var isRunning = false;
+var isOpen = false;
 
 $.fn.extend({
     animateCss: function (animationName) {
@@ -10,6 +11,28 @@ $.fn.extend({
             $(this).removeClass('animated ' + animationName);
         });
     }
+});
+
+$(document).ready(function(){
+
+  $('.btn-toggle').click(function(){
+    
+    if(isOpen == true){
+      console.log(isOpen);
+      $('#itemlog').css('display', 'none');
+      $('.toggle').removeClass('fa-minus-circle');
+      $('.toggle').addClass('fa-plus-circle');
+      isOpen = false;
+    }
+    else{
+      console.log(isOpen);
+      $('#itemlog').css('display', 'block');
+      $('.toggle').removeClass('fa-plus-circle');
+      $('.toggle').addClass('fa-minus-circle');
+      isOpen = true;
+    }
+    
+  })
 });
 
 function openBox(){
@@ -48,13 +71,12 @@ function delay(){
 }
 
 function setBox(){
-
+  
 
   for(i = 0; i < 3; i++){
     //Randomize Loot
     crate = chance.weighted(loot, weights);
     results.push(crate);
-    console.log(crate);
   }
 
   cratespec = chance.weighted(specloot, specweights);
@@ -68,6 +90,8 @@ function setBox(){
 function displayBox(){
   //Add to list
   for(i = 0; i < endresults.length; i++){
+    
+    //Create boxes
     var ul = document.getElementById("crate");
     var li = document.createElement("li");
     var span = document.createElement("span");
@@ -75,10 +99,19 @@ function displayBox(){
     li.setAttribute("id", "item" + i);
     ul.appendChild(li);
     li.appendChild(span);
+    
+    //Create inventory
+    var inv = document.getElementById("itemlog");
+    var invli = document.createElement("li");
+    inv.setAttribute('class', 'in-use');
+    invli.setAttribute("id", "inv" + i);
+    inv.appendChild(invli);
+    invli.appendChild(document.createTextNode(endresults[i]));
 
     //Check Quality and Strip
     var str = $("#item" + i).text();
-    console.log(str);
+    var invstr = $("#item" + i).text();
+
      if(endresults[i].indexOf("Normal") !=-1){
       $("#item" + i).addClass("normal animated bounceInDown");
       $("#item" + i ).find('span').text(str.substring(7));
