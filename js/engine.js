@@ -2,6 +2,7 @@ var crate
 var openSound = new Audio('open-box.ogg');
 var results = [];
 var isRunning = false;
+var isOpen = false;
 
 $.fn.extend({
     animateCss: function (animationName) {
@@ -10,6 +11,28 @@ $.fn.extend({
             $(this).removeClass('animated ' + animationName);
         });
     }
+});
+
+$(document).ready(function(){
+
+  $('.btn-toggle').click(function(){
+    
+    if(isOpen == true){
+      console.log(isOpen);
+      $('#itemlog').css('display', 'none');
+      $('.toggle').removeClass('fa-minus-circle');
+      $('.toggle').addClass('fa-plus-circle');
+      isOpen = false;
+    }
+    else{
+      console.log(isOpen);
+      $('#itemlog').css('display', 'block');
+      $('.toggle').removeClass('fa-plus-circle');
+      $('.toggle').addClass('fa-minus-circle');
+      isOpen = true;
+    }
+    
+  })
 });
 
 function openBox(){

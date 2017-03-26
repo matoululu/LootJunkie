@@ -963,6 +963,7 @@ h3 {
   margin: 30px 0 10px;
   text-align: left;
   color: white;
+  position: relative;
   background-color: rgba(0, 0, 0, 0.2);
   border-radius: 3px;
   padding: 10px 30px 10px;
@@ -975,6 +976,22 @@ h3 {
 }
 #itemlog.in-use .lgnd-inv {
   color: #ff8000;
+}
+#itemlog.in-use:after {
+  position: absolute;
+  top: -20px;
+  right: 50%;
+  content: '';
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 20px 20px 20px;
+  border-color: transparent transparent rgba(0, 0, 0, 0.2) transparent;
+}
+@media only screen and (min-width: 769px) {
+  #itemlog.in-use:after {
+    right: 20%;
+  }
 }
 
 .cwrapper {
