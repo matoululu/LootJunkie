@@ -22,7 +22,7 @@ $.fn.extend({
 $(document).ready(function(){
 
   $('.btn-toggle').click(function(){
-    
+
     if(isOpen == true){
       $('#itemlog').css('display', 'none');
       $('.toggle').removeClass('fa-minus-circle');
@@ -35,7 +35,7 @@ $(document).ready(function(){
       $('.toggle').addClass('fa-minus-circle');
       isOpen = true;
     }
-    
+
   })
 });
 
@@ -43,7 +43,7 @@ function setStats(){
   document.getElementById("white-stat").innerHTML = whiteGet;
   document.getElementById("blue-stat").innerHTML = blueGet;
   document.getElementById("purple-stat").innerHTML = purpleGet;
-  document.getElementById("orange-stat").innerHTML = orangeGet; 
+  document.getElementById("orange-stat").innerHTML = orangeGet;
 }
 
 function openBox(){
@@ -82,7 +82,7 @@ function delay(){
 }
 
 function setBox(){
-  
+
 
   for(i = 0; i < 3; i++){
     //Randomize Loot
@@ -102,7 +102,7 @@ function setBox(){
 function displayBox(){
   //Add to list
   for(i = 0; i < endresults.length; i++){
-    
+
     //Create boxes
     var ul = document.getElementById("crate");
     var li = document.createElement("li");
@@ -111,7 +111,7 @@ function displayBox(){
     li.setAttribute("id", "item" + i);
     ul.appendChild(li);
     li.appendChild(span);
-    
+
     //Create inventory
     var inv = document.getElementById("itemlog");
     var invli = document.createElement("li");
@@ -127,6 +127,7 @@ function displayBox(){
      if(endresults[i].indexOf("Normal") !=-1){
       $("#item" + i).addClass("normal animated bounceInDown");
       $("#item" + i ).find('span').text(str.substring(7));
+      $("#itemlog " + i ).find('span').text(str.substring(7));
       whiteGet++;
     }
     if (endresults[i].indexOf("Rare") !=-1){
@@ -139,9 +140,9 @@ function displayBox(){
       $("#item" + i).find('span').text(str.substring(5));
       purpleGet++;
     }
-    if(endresults[i].indexOf("Lgnd") !=-1){
+    if(endresults[i].indexOf("Legendary") !=-1){
       $("#item" + i).addClass("legendary animated bounceInDown");
-      $("#item" + i).find('span').text(str.substring(5));
+      $("#item" + i).find('span').text(str.substring(10));
       orangeGet++;
     }
 
@@ -154,7 +155,7 @@ function displayBox(){
     if(endresults[i].indexOf("Orisa") !=-1){
       $("#item" + i).addClass("orisa");
     }
-    
+
     //sombra
     if(endresults[i].indexOf("Sombra") !=-1){
       $("#item" + i).addClass("sombra");
