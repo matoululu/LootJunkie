@@ -768,19 +768,23 @@ body {
   padding: 0; }
 
 /*--------------------- GLOBAL ---------------------*/
+html {
+  background-color: #29354d; }
+  @media only screen and (min-width: 769px) {
+    html {
+      background: url(../images/bg.jpg) no-repeat center center fixed;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover; } }
+
 body, html {
   height: 100%; }
 
 body {
-  background-color: #29354d;
   font-family: "Open Sans", sans-serif;
   font-size: 14px;
   font-weight: 400; }
-  @media only screen and (min-width: 769px) {
-    body {
-      background: url(../images/bg.jpg);
-      background-repeat: no-repeat;
-      background-size: cover; } }
 
 a {
   color: #4099ff;
