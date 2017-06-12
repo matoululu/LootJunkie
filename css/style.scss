@@ -40,8 +40,19 @@ h3 {
 }
 
 .logo {
+  display: inline-block;
   &:hover {
     opacity: 0.85;
+  }
+
+  img {
+    max-width: 200px;
+    display: inline-block;
+  }
+
+  @media only screen and (max-width: 769px) {
+    text-align: center;
+    display: block;
   }
 }
 
@@ -208,7 +219,7 @@ h3 {
 
 /*--------------------- NAVIGATION ---------------------*/
 
-header {background: rgba(0,0,0,0.35);padding: 15px 0px;}
+header {background: rgba(0,0,0,0.35);padding: 10px 0px;}
 header a {text-decoration: none;}
 header h1 {
   text-align: center;
@@ -225,10 +236,8 @@ nav {
   width: 100%;
 }
 
-.loot {font-weight: 400; text-decoration: none; color: white;}
-.junkie {font-weight: bold; text-decoration: none; color: #f99e1a; }
-
 .nav {
+  padding-top: 5px;
   text-transform: uppercase;
   ul {float: right; list-style: none;}
   li {display: inline;}

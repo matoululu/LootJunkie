@@ -794,8 +794,17 @@ h3 {
 .center {
   text-align: center; }
 
-.logo:hover {
-  opacity: 0.85; }
+.logo {
+  display: inline-block; }
+  .logo:hover {
+    opacity: 0.85; }
+  .logo img {
+    max-width: 200px;
+    display: inline-block; }
+  @media only screen and (max-width: 769px) {
+    .logo {
+      text-align: center;
+      display: block; } }
 
 /*--------------------- CONTAINERS ---------------------*/
 #itemlog.in-use {
@@ -928,7 +937,7 @@ h3 {
 /*--------------------- NAVIGATION ---------------------*/
 header {
   background: rgba(0, 0, 0, 0.35);
-  padding: 15px 0px; }
+  padding: 10px 0px; }
 
 header a {
   text-decoration: none; }
@@ -946,17 +955,8 @@ nav {
   margin: 0px auto;
   width: 100%; }
 
-.loot {
-  font-weight: 400;
-  text-decoration: none;
-  color: white; }
-
-.junkie {
-  font-weight: bold;
-  text-decoration: none;
-  color: #f99e1a; }
-
 .nav {
+  padding-top: 5px;
   text-transform: uppercase; }
   .nav ul {
     float: right;
@@ -1406,5 +1406,3 @@ nav {
   .generic, .bastion, .dva, .genji, .hanzo, .junkrat, .lucio, .mccree, .mei, .mercy, .pharah, .reaper, .reinhardt, .roadhog, .soldier, .symmetra, .torbjorn, .tracer, .widowmaker, .winston, .zarya, .zenyatta {
     background-size: 30%;
     background-position: 98% 35%; } }
-
-/*# sourceMappingURL=style.css.map */
