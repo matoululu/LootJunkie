@@ -12,7 +12,7 @@ body, html {
 }
 
 body {
-  background-color: #29354d;
+  background-color: #e3e3e3;
   font-family: $font-stack;
   font-size: 14px;
   font-weight: 400;
@@ -30,6 +30,7 @@ h1, h2 {
   font-family: $header-stack;
   font-size: 2em;
 }
+
 h3 {
   font-family: $header-stack;
   font-size: 1.5em;
@@ -93,9 +94,9 @@ h3 {
 }
 
 .stats{
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(255, 255, 255, 0.3);
   border-radius: 3px;
-  color: white;
+  color: black;
   p{
     padding-left: 0px;
     font-size: 11px;
@@ -112,7 +113,7 @@ h3 {
   }
 }
 .content {
-  background: white;
+  //background: white;
   margin: 30px 0px;
   padding: 0px 25px 25px;
   border-radius: 3px;
@@ -156,10 +157,10 @@ h3 {
   margin: 0px auto;
   .btn {
     float: left;
-    margin: 0px 20px 0px 0px;
+    margin: 0px 20px 5px 0px;
     &:last-child {
       float: right;
-      margin: 0px 0px 0px 20px;
+      margin: 0px 0px 5px 20px;
     }
   }
 }
@@ -178,6 +179,12 @@ h3 {
   input {
     width: 90%;
     padding: 10px 0;
+  }
+}
+
+.grid--full > .grid__item.mobile-wrap {
+  @media only screen and (max-width: 768px) {
+    padding: 0px 5px;
   }
 }
 
@@ -219,7 +226,7 @@ h3 {
 
 /*--------------------- NAVIGATION ---------------------*/
 
-header {background: rgba(0,0,0,0.35);padding: 10px 0px;}
+header {background: #212121;padding: 10px 0px;}
 header a {text-decoration: none;}
 header h1 {
   text-align: center;
@@ -274,7 +281,7 @@ nav {
       text-align: center;
       padding: 0px 15px;
       a{
-        color: white;
+        color: #222;
         opacity: 0.3;
         &:hover {
           opacity: 0.15;
@@ -409,7 +416,6 @@ nav {
 
   li {
     float: left;
-    border-radius: 7px;
     font-size: 12px;
     width: 100%;
     padding: 20px 10px;
@@ -421,6 +427,7 @@ nav {
       text-align: center;
       max-width: 23%;
       font-size: 13px;
+      border-radius: 7px;
 
       span {
         padding: 30px 0;
@@ -456,11 +463,8 @@ nav {
 .normal {
   font-weight: bold;
   color: #333;
-  border: 1px solid #bbb;
+  //border: 1px solid #bbb;
   background-color: white;
-  //-webkit-box-shadow: 0px 0px 33px 0px rgba(255,255,255,0.75);
-  //-moz-box-shadow: 0px 0px 33px 0px rgba(255,255,255,0.75);
-  //box-shadow: 0px 0px 33px 0px rgba(255,255,255,0.75);
   box-sizing: border-box;
   @media only screen and (min-width: 769px) {
     span {
@@ -472,11 +476,8 @@ nav {
 .rare {
   font-weight: bold;
   color: white;
-  border: 1px solid #0070ff;
   background-color: #0070ff;
-  //-webkit-box-shadow: 0px 0px 33px 0px rgba(0,112,255,0.75);
-  //-moz-box-shadow: 0px 0px 33px 0px rgba(0,112,255,0.75);
-  //box-shadow: 0px 0px 33px 0px rgba(0,112,255,0.75);
+  //border: 1px solid #0070ff;
   box-sizing: border-box;
   @media only screen and (min-width: 769px) {
     span {
@@ -488,11 +489,8 @@ nav {
 .epic {
   font-weight: bold;
   color: white;
-  border: 1px solid #B048F8;
+  //border: 1px solid #B048F8;
   background-color: #B048F8;
-  //-webkit-box-shadow: 0px 0px 33px 0px rgba(176,72,248,0.75);
-  //-moz-box-shadow: 0px 0px 33px 0px rgba(176,72,248,0.75);
-  //box-shadow: 0px 0px 33px 0px rgba(176,72,248,0.75);
   box-sizing: border-box;
   @media only screen and (min-width: 769px) {
     span {
@@ -504,11 +502,8 @@ nav {
 .legendary {
   font-weight: bold;
   color: white;
-  border: 1px solid #ff8000;
+  //border: 1px solid #ff8000;
   background-color: #ff8000;
-  //-webkit-box-shadow: 0px 0px 33px 0px rgba(255,128,0,0.75);
-  //-moz-box-shadow: 0px 0px 33px 0px rgba(255,128,0,0.75);
-  //box-shadow: 0px 0px 33px 0px rgba(255,128,0,0.75);
   box-sizing: border-box;
   @media only screen and (min-width: 769px) {
     span {
@@ -521,8 +516,9 @@ nav {
 /*--------------------- HEROES ---------------------*/
 
 .generic {
-  background-image: url(../images/generic.png);;
+  background-image: url(../images/mobile/generic.png);;
   background-repeat: no-repeat;
+  background-position: right;
   @media only screen and (min-width: 769px) {
     background-size: cover;
     background-position: center;
@@ -531,8 +527,9 @@ nav {
  }
 
 .orisa {
-  background-image: url(../images/orisa.png);
+  background-image: url(../images/mobile/orisa.png);
   background-repeat: no-repeat;
+  background-position: right;
   @media only screen and (min-width: 769px) {
     background-size: cover;
     background-position: center;
@@ -541,8 +538,9 @@ nav {
 }
 
  .sombra {
-  background-image: url(../images/sombra.png);
+  background-image: url(../images/mobile/sombra.png);
   background-repeat: no-repeat;
+  background-position: right;
   @media only screen and (min-width: 769px) {
     background-size: cover;
     background-position: center;
@@ -551,8 +549,9 @@ nav {
 }
 
 .ana {
-  background-image: url(../images/ana.png);
+  background-image: url(../images/mobile/ana.png);
   background-repeat: no-repeat;
+  background-position: right;
   @media only screen and (min-width: 769px) {
     background-size: cover;
     background-position: center;
@@ -561,8 +560,9 @@ nav {
 }
 
 .bastion {
-  background-image: url(../images/bastion.png);
+  background-image: url(../images/mobile/bastion.png);
   background-repeat: no-repeat;
+  background-position: right;
   @media only screen and (min-width: 769px) {
     background-size: cover;
     background-position: center;
@@ -570,8 +570,9 @@ nav {
   }
 }
 .dva {
-  background-image: url(../images/dva.png);
+  background-image: url(../images/mobile/dva.png);
   background-repeat: no-repeat;
+  background-position: right;
   @media only screen and (min-width: 769px) {
     background-size: cover;
     background-position: center;
@@ -579,8 +580,9 @@ nav {
   }
 }
 .genji {
-  background-image: url(../images/genji.png);
+  background-image: url(../images/mobile/genji.png);
   background-repeat: no-repeat;
+  background-position: right;
   @media only screen and (min-width: 769px) {
     background-size: cover;
     background-position: center;
@@ -588,8 +590,9 @@ nav {
   }
 }
 .hanzo {
-  background-image: url(../images/hanzo.png);
+  background-image: url(../images/mobile/hanzo.png);
   background-repeat: no-repeat;
+  background-position: right;
   @media only screen and (min-width: 769px) {
     background-size: cover;
     background-position: center;
@@ -597,8 +600,9 @@ nav {
   }
 }
 .junkrat {
-  background-image: url(../images/junkrat.png);
+  background-image: url(../images/mobile/junkrat.png);
   background-repeat: no-repeat;
+  background-position: right;
   @media only screen and (min-width: 769px) {
     background-size: cover;
     background-position: center;
@@ -606,8 +610,9 @@ nav {
   }
 }
 .lucio {
-  background-image: url(../images/lucio.png);
+  background-image: url(../images/mobile/lucio.png);
   background-repeat: no-repeat;
+  background-position: right;
   @media only screen and (min-width: 769px) {
     background-size: cover;
     background-position: center;
@@ -616,8 +621,9 @@ nav {
 }
 
 .mccree {
-  background-image: url(../images/mccree.png);
+  background-image: url(../images/mobile/mccree.png);
   background-repeat: no-repeat;
+  background-position: right;
   @media only screen and (min-width: 769px) {
     background-size: cover;
     background-position: center;
@@ -626,8 +632,9 @@ nav {
 }
 
 .mei {
-  background-image: url(../images/mei.png);
+  background-image: url(../images/mobile/mei.png);
   background-repeat: no-repeat;
+  background-position: right;
   @media only screen and (min-width: 769px) {
     background-size: cover;
     background-position: center;
@@ -635,8 +642,9 @@ nav {
   }
 }
 .mercy {
-  background-image: url(../images/mercy.png);
+  background-image: url(../images/mobile/mercy.png);
   background-repeat: no-repeat;
+  background-position: right;
   @media only screen and (min-width: 769px) {
     background-size: cover;
     background-position: center;
@@ -644,8 +652,9 @@ nav {
   }
 }
 .pharah {
-  background-image: url(../images/pharah.png);
+  background-image: url(../images/mobile/pharah.png);
   background-repeat: no-repeat;
+  background-position: right;
   @media only screen and (min-width: 769px) {
     background-size: cover;
     background-position: center;
@@ -654,8 +663,9 @@ nav {
 }
 
 .reaper {
-  background-image: url(../images/reaper.png);
+  background-image: url(../images/mobile/reaper.png);
   background-repeat: no-repeat;
+  background-position: right;
   @media only screen and (min-width: 769px) {
     background-size: cover;
     background-position: center;
@@ -664,8 +674,9 @@ nav {
 }
 
 .reinhardt {
-  background-image: url(../images/reinhardt.png);
+  background-image: url(../images/mobile/reinhardt.png);
   background-repeat: no-repeat;
+  background-position: right;
   @media only screen and (min-width: 769px) {
     background-size: cover;
     background-position: center;
@@ -673,8 +684,9 @@ nav {
   }
 }
 .roadhog {
-  background-image: url(../images/roadhog.png);
+  background-image: url(../images/mobile/roadhog.png);
   background-repeat: no-repeat;
+  background-position: right;
   @media only screen and (min-width: 769px) {
     background-size: cover;
     background-position: center;
@@ -682,8 +694,9 @@ nav {
   }
 }
 .soldier {
-  background-image: url(../images/soldier.png);
+  background-image: url(../images/mobile/soldier.png);
   background-repeat: no-repeat;
+  background-position: right;
   @media only screen and (min-width: 769px) {
     background-size: cover;
     background-position: center;
@@ -691,8 +704,9 @@ nav {
   }
 }
 .symmetra {
-  background-image: url(../images/symmetra.png);
+  background-image: url(../images/mobile/symmetra.png);
   background-repeat: no-repeat;
+  background-position: right;
   @media only screen and (min-width: 769px) {
     background-size: cover;
     background-position: center;
@@ -700,8 +714,9 @@ nav {
   }
 }
 .torbjorn {
-  background-image: url(../images/torbjorn.png);
+  background-image: url(../images/mobile/torbjorn.png);
   background-repeat: no-repeat;
+  background-position: right;
   @media only screen and (min-width: 769px) {
     background-size: cover;
     background-position: center;
@@ -709,8 +724,9 @@ nav {
   }
 }
 .tracer {
-  background-image: url(../images/tracer.png);
+  background-image: url(../images/mobile/tracer.png);
   background-repeat: no-repeat;
+  background-position: right;
   @media only screen and (min-width: 769px) {
     background-size: cover;
     background-position: center;
@@ -718,8 +734,9 @@ nav {
   }
 }
 .widowmaker {
-  background-image: url(../images/widowmaker.png);
+  background-image: url(../images/mobile/widowmaker.png);
   background-repeat: no-repeat;
+  background-position: right;
   @media only screen and (min-width: 769px) {
     background-size: cover;
     background-position: center;
@@ -727,8 +744,9 @@ nav {
   }
 }
 .winston {
-  background-image: url(../images/winston.png);
+  background-image: url(../images/mobile/winston.png);
   background-repeat: no-repeat;
+  background-position: right;
   @media only screen and (min-width: 769px) {
     background-size: cover;
     background-position: center;
@@ -736,8 +754,9 @@ nav {
   }
 }
 .zarya {
-  background-image: url(../images/zarya.png);
+  background-image: url(../images/mobile/zarya.png);
   background-repeat: no-repeat;
+  background-position: right;
   @media only screen and (min-width: 769px) {
     background-size: cover;
     background-position: center;
@@ -745,8 +764,9 @@ nav {
   }
 }
 .zenyatta {
-  background-image: url(../images/zenyatta.png);
+  background-image: url(../images/mobile/zenyatta.png);
   background-repeat: no-repeat;
+  background-position: right;
   @media only screen and (min-width: 769px) {
     background-size: cover;
     background-position: center;
@@ -757,6 +777,5 @@ nav {
 @media only screen and (max-width: 768px) {
   .generic, .bastion, .dva, .genji, .hanzo, .junkrat, .lucio, .mccree, .mei, .mercy, .pharah, .reaper, .reinhardt, .roadhog, .soldier, .symmetra, .torbjorn, .tracer, .widowmaker, .winston, .zarya, .zenyatta {
     background-size: 30%;
-    background-position: 98% 35%;
   }
 }
