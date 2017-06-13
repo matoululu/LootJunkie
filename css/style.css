@@ -812,6 +812,12 @@ h3 {
       text-align: center;
       display: block; } }
 
+.sponsored {
+  margin-top: 15px; }
+  .sponsored img {
+    max-width: 100%;
+    border-radius: 3px; }
+
 /*--------------------- CONTAINERS ---------------------*/
 #itemlog.in-use {
   margin: 30px 0 10px;
@@ -986,6 +992,12 @@ nav {
     color: #f99e1a; }
     .nav li a.donate:hover {
       color: #a96604; }
+
+.mobile {
+  display: none; }
+  @media only screen and (max-width: 768px) {
+    .mobile {
+      display: block; } }
 
 .mobile-nav {
   display: none;
