@@ -776,6 +776,12 @@ body {
   font-family: "Open Sans", sans-serif;
   font-size: 14px;
   font-weight: 400; }
+  @media only screen and (min-width: 769px) {
+    body {
+      background-image: url(../images/bg.png);
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center; } }
 
 a {
   color: #4099ff;
@@ -852,6 +858,7 @@ h3 {
       margin: 0px auto; } }
 
 .content {
+  background: #efefef;
   margin: 30px 0px;
   padding: 0px 25px 25px;
   border-radius: 3px; }
