@@ -305,6 +305,18 @@ nav {
   }
 }
 
+@media only screen and (max-width: 767px) {
+  .mobile-fixed {
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    z-index: 9001;
+    .blue {
+      display: none;
+    }
+  }
+}
+
 /*--------------------- BUTTONS ---------------------*/
 
 .btn {

@@ -50,7 +50,7 @@
   <div class="wrapper">
     <div class="grid">
       <div class="grid__item item-section">
-        <img id="box" src="images/loot-box.png" alt="Loot Box">
+        <img id="box" src="images/loot-box.png" alt="Loot Box" onclick="openBox(); ga('send', 'event', 'Generate box', 'Click', 'Open loot box');">
         <ul id="crate" class="add-remove"></ul>
       </div>
     </div>
@@ -58,9 +58,9 @@
 
   <div class="small-wrapper">
     <div class="grid--full">
-      <div class="grid__item center mobile-wrap">
+      <div class="grid__item center mobile-wrap mobile-fixed">
         <a class="btn yellow generate" onclick="openBox(); ga('send', 'event', 'Generate box', 'Click', 'Open loot box');" onmouseover="shakeBox()">Open Loot Box</a>
-        <a class="btn blue btn-toggle" href="#">Item Log <i class="toggle fa fa-plus-circle" aria-hidden="true"></i></a>
+        <a class="btn blue btn-toggle medium-down--hide" href="#">Item Log <i class="toggle fa fa-plus-circle" aria-hidden="true"></i></a>
       </div>
 
       <div class="grid__item center">
@@ -91,11 +91,6 @@
     <div class="grid--full center sponsored medium-down--hide">
      <a href="http://www.anrdoezrs.net/click-8370060-12559379" target="_top" onclick="ga('send', 'event', 'Affiliate', 'Click', 'GMG');">
      <img src="http://www.ftjcfx.com/image-8370060-12559379" width="728" height="90" alt="GreenMan Gaming" border="0"/></a>
-    </div>
-
-    <div class="grid--full center sponsored mobile">
-      <a href="http://www.tkqlhce.com/click-8370060-12913403" target="_top" onclick="ga('send', 'event', 'Affiliate', 'Click', 'GMG');">
-      <img src="http://www.ftjcfx.com/image-8370060-12913403" width="200" height="200" alt="" border="0"/></a>
     </div>
 
     <ul class="mobile-nav">
