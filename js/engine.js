@@ -19,6 +19,33 @@ $.fn.extend({
     }
 });
 
+$('.add-remove').slick({
+  slidesToShow: 4,
+  slidesToScroll: 1,
+  arrows: false,
+  lazyLoad: 'progressive',
+  responsive: [
+    {
+      breakpoint: 1025,
+      settings: {
+        slidesToShow: 3
+      }
+    },
+    {
+      breakpoint: 769,
+      settings: {
+        slidesToShow: 2
+      }
+    },
+    {
+      breakpoint: 767,
+      settings: {
+        slidesToShow: 1
+      }
+    }
+    ]
+});
+
 $(document).ready(function(){
 
   $('.btn-toggle').click(function(){
@@ -105,12 +132,14 @@ function displayBox(){
 
     //Create boxes
     var ul = document.getElementById("crate");
-    var li = document.createElement("li");
+    var li = $('.add-remove').slick('slickAdd','<li id="item'+i+'"><span>'+endresults[i]+'</span></li>');
+
+    //var li = document.createElement("li");
     var span = document.createElement("span");
     span.appendChild(document.createTextNode(endresults[i]));
-    li.setAttribute("id", "item" + i);
-    ul.appendChild(li);
-    li.appendChild(span);
+    //li.setAttribute("id", "item" + i);
+   // ul.appendChild(li);
+    //li.appendChild(span);
 
     //Create inventory
     var inv = document.getElementById("itemlog");
