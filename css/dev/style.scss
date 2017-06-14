@@ -138,6 +138,7 @@ h3 {
 
 .item-section {
   min-height: 450px;
+  margin-top: 25px;
 
   @media only screen and (min-width: 769px) {
     min-height: 360px;
@@ -394,7 +395,7 @@ nav {
   margin-right: auto;
   width: 100%;
   max-width: 500px;
-  padding-top: 105px;
+  padding-top: 90px;
   @media only screen and (min-width: 769px) {
     padding-top: 55px;
   }

@@ -28,21 +28,24 @@ $('.add-remove').slick({
       breakpoint: 1025,
       settings: {
         slidesToShow: 3,
-        centerMode: true
+        centerMode: true,
+        infinite: false,
       }
     },
     {
       breakpoint: 769,
       settings: {
         slidesToShow: 2,
-        centerMode: true
+        centerMode: true,
+        infinite: false,
       }
     },
     {
       breakpoint: 767,
       settings: {
         slidesToShow: 1,
-        centerMode: true
+        centerMode: true,
+         infinite: false,
       }
     }
     ]
