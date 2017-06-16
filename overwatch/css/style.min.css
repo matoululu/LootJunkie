@@ -1494,17 +1494,17 @@ nav {
   z-index: 9001; }
 
 #primary_nav_wrap ul li.current-menu-item {
-  background: #111; }
+  background: #212121; }
 
 #primary_nav_wrap ul li:hover {
-  background: #222; }
+  background: #111; }
 
 #primary_nav_wrap ul ul {
   display: none;
   position: absolute;
   top: 100%;
   left: 0;
-  background: #111;
+  background: #212121;
   padding: 0;
   border-radius: 7px;
   z-index: 9001; }
