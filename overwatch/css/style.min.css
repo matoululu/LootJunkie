@@ -1497,7 +1497,7 @@ nav {
   background: #212121; }
 
 #primary_nav_wrap ul li:hover {
-  background: #111; }
+  background: #212121; }
 
 #primary_nav_wrap ul ul {
   display: none;
@@ -1512,6 +1512,8 @@ nav {
 #primary_nav_wrap ul ul li {
   float: none;
   z-index: 9001; }
+  #primary_nav_wrap ul ul li:hover {
+    background: #111; }
 
 #primary_nav_wrap ul ul a {
   line-height: 120%;

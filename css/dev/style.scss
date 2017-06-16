@@ -890,6 +890,9 @@ nav {
 
 #primary_nav_wrap ul ul li {
   float:none;
+  &:hover {
+    background:#111;
+  }
 }
 
 #primary_nav_wrap ul ul a {

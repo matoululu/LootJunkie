@@ -1204,6 +1204,8 @@ nav {
 
 #primary_nav_wrap ul ul li {
   float: none; }
+  #primary_nav_wrap ul ul li:hover {
+    background: #111; }
 
 #primary_nav_wrap ul ul a {
   line-height: 120%;
