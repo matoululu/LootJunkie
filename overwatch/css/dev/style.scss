@@ -17,6 +17,7 @@ body {
   font-size: 14px;
   font-weight: 400;
   @media only screen and (min-width: 769px) {
+    background-image: url(../images/bg.png);
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
@@ -70,37 +71,18 @@ h3 {
   }
 }
 
-.dark {
-  background-color: #212121;
-}
-
-.navbtn {
-  width: 100%;
-  display: block;
-  transition: ease all 0.3s;
-  &:hover {
-    opacity: 0.8;
-  }
-}
-
 /*--------------------- CONTAINERS ---------------------*/
 
 #itemlog.in-use {
   margin: 30px 0 10px;
   text-align: left;
-  color: white;
+  color: black;
   position: relative;
-  background-color: rgba(0,0,0,0.2);
+  background-color: rgba(255, 255, 255, 0.3);
   border-radius: 3px;
   padding: 10px 30px 10px;
-  .rare-inv {
-    color: #0070ff;
-  }
-  .epic-inv {
-    color: #B048F8;
-  }
-  .lgnd-inv {
-    color: #ff8000
+  li {
+    opacity: 0.5;
   }
 
   &:after {
@@ -112,7 +94,7 @@ h3 {
     height: 0;
     border-style: solid;
     border-width: 0 20px 20px 20px;
-    border-color: transparent transparent rgba(0,0,0,0.2) transparent;
+    border-color: transparent transparent rgba(255, 255, 255, 0.3) transparent;
     @media only screen and (min-width: 769px) {
       right: 20%;
     }
@@ -835,9 +817,9 @@ nav {
 /*--------------------- Dropdown menu ---------------------*/
 
 #primary_nav_wrap {
-
+  z-index: 9001;
   img {
-    max-width: 24px;
+    max-width: 16px;
   }
 
   li:first-child {
@@ -850,7 +832,8 @@ nav {
   position:relative;
   float:left;
   margin:0;
-  padding:0
+  padding:0;
+  z-index: 9001;
 }
 
 #primary_nav_wrap ul a {
@@ -868,6 +851,7 @@ nav {
   margin:0;
   padding:0;
   border-radius: 7px;
+  z-index: 9001;
 }
 
 #primary_nav_wrap ul li.current-menu-item {
@@ -886,15 +870,18 @@ nav {
   background:#111;
   padding:0;
   border-radius: 7px;
+  z-index: 9001;
 }
 
 #primary_nav_wrap ul ul li {
   float:none;
+  z-index: 9001;
 }
 
 #primary_nav_wrap ul ul a {
   line-height:120%;
   padding:10px 15px;
+  z-index: 9001;
 }
 
 #primary_nav_wrap ul ul ul {

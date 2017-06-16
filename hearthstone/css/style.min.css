@@ -778,6 +778,7 @@ body {
   font-weight: 400; }
   @media only screen and (min-width: 769px) {
     body {
+      background-image: url(../images/bg.png);
       background-repeat: no-repeat;
       background-size: contain;
       background-position: center; } }
@@ -817,31 +818,17 @@ h3 {
     max-width: 100%;
     border-radius: 3px; }
 
-.dark {
-  background-color: #212121; }
-
-.navbtn {
-  width: 100%;
-  display: block;
-  transition: ease all 0.3s; }
-  .navbtn:hover {
-    opacity: 0.8; }
-
 /*--------------------- CONTAINERS ---------------------*/
 #itemlog.in-use {
   margin: 30px 0 10px;
   text-align: left;
-  color: white;
+  color: black;
   position: relative;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(255, 255, 255, 0.3);
   border-radius: 3px;
   padding: 10px 30px 10px; }
-  #itemlog.in-use .rare-inv {
-    color: #0070ff; }
-  #itemlog.in-use .epic-inv {
-    color: #B048F8; }
-  #itemlog.in-use .lgnd-inv {
-    color: #ff8000; }
+  #itemlog.in-use li {
+    opacity: 0.5; }
   #itemlog.in-use:after {
     position: absolute;
     top: -20px;
@@ -851,7 +838,7 @@ h3 {
     height: 0;
     border-style: solid;
     border-width: 0 20px 20px 20px;
-    border-color: transparent transparent rgba(0, 0, 0, 0.2) transparent; }
+    border-color: transparent transparent rgba(255, 255, 255, 0.3) transparent; }
     @media only screen and (min-width: 769px) {
       #itemlog.in-use:after {
         right: 20%; } }
@@ -881,16 +868,13 @@ h3 {
     padding: 5px 15px; }
 
 .item-section {
-  min-height: 300px;
-  margin-top: 20px; }
+  margin-top: 20px;
+  min-height: 290px; }
   @media only screen and (min-width: 769px) {
     .item-section {
-      min-height: 360px;
       margin-top: 50px;
-      margin-bottom: 50px; } }
-  @media only screen and (min-width: 1400px) {
-    .item-section {
-      min-height: 480px; } }
+      margin-bottom: 50px;
+      min-height: 365px; } }
 
 .wrapper {
   width: 100%; }
@@ -949,13 +933,6 @@ h3 {
     margin: 0; }
     .alert p a, .alert p a:visited, .alert p a:hover {
       color: white; }
-
-.version {
-  font-size: 9px;
-  color: rgba(255, 255, 255, 0.6);
-  font-weight: 300;
-  vertical-align: middle;
-  padding-left: 15px; }
 
 .note {
   background-color: rgba(0, 0, 0, 0.3);
@@ -1109,13 +1086,16 @@ nav {
   margin-left: auto;
   margin-right: auto;
   width: 100%;
-  max-width: 500px; }
+  max-width: 200px;
+  padding-bottom: 15px; }
   @media only screen and (min-width: 769px) {
     #box {
-      padding-top: 55px; } }
+      padding-top: 25px;
+      padding-bottom: 25px; } }
   @media only screen and (min-width: 1400px) {
     #box {
-      padding-top: 90px; } }
+      padding-top: 45px;
+      padding-bottom: 45px; } }
 
 .shakebox {
   animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
@@ -1137,28 +1117,21 @@ nav {
   list-style: none;
   padding: 0px;
   margin: 0px 5px; }
-  @media only screen and (min-width: 769px) {
-    #crate {
-      margin: 0px; } }
   #crate li {
     float: left;
     font-size: 12px;
-    width: 100%;
-    padding: 20px 10px;
-    margin: 3px 0px; }
-    @media only screen and (min-width: 769px) {
+    width: 48%;
+    padding: 20px 0px;
+    margin: 0px 1%; }
+    @media only screen and (min-width: 768px) {
       #crate li {
-        padding: 125px 0px 125px 0px;
-        margin: 1%;
-        text-align: center;
-        max-width: 23%;
-        font-size: 13px;
-        border-radius: 7px; }
-        #crate li span {
-          padding: 30px 0; } }
-    @media only screen and (min-width: 1400px) {
+        width: 31.333%; } }
+    @media only screen and (min-width: 1024px) {
       #crate li {
-        padding: 185px 0px 185px 0px; } }
+        width: 18%; } }
+    #crate li img {
+      max-width: 210px;
+      width: 100%; }
 
 #item0 {
   -webkit-animation-delay: 0.1s;
@@ -1180,303 +1153,14 @@ nav {
   /* Chrome, Safari, Opera */
   animation-delay: 0.6s; }
 
-.normal {
-  font-weight: bold;
-  color: #333;
-  background-color: white;
-  box-sizing: border-box; }
-  @media only screen and (min-width: 769px) {
-    .normal span {
-      display: block;
-      background-color: rgba(255, 255, 255, 0.8); } }
+#item4 {
+  -webkit-animation-delay: 0.8s;
+  /* Chrome, Safari, Opera */
+  animation-delay: 0.8s; }
 
-.rare {
-  font-weight: bold;
-  color: white;
-  background-color: #0070ff;
-  box-sizing: border-box; }
-  @media only screen and (min-width: 769px) {
-    .rare span {
-      display: block;
-      background-color: rgba(0, 112, 255, 0.8); } }
-
-.epic {
-  font-weight: bold;
-  color: white;
-  background-color: #B048F8;
-  box-sizing: border-box; }
-  @media only screen and (min-width: 769px) {
-    .epic span {
-      display: block;
-      background-color: rgba(176, 72, 248, 0.8); } }
-
-.legendary {
-  font-weight: bold;
-  color: white;
-  background-color: #ff8000;
-  box-sizing: border-box; }
-  @media only screen and (min-width: 769px) {
-    .legendary span {
-      display: block;
-      background-color: rgba(255, 128, 0, 0.8); } }
-
-/*--------------------- HEROES ---------------------*/
-.generic {
-  background-image: url(../images/mobile/generic.png);
-  background-repeat: no-repeat;
-  background-position: right; }
-  @media only screen and (min-width: 769px) {
-    .generic {
-      background-size: cover;
-      background-position: center;
-      background-image: url(../images/overwatch-full.jpg); } }
-
-.orisa {
-  background-image: url(../images/mobile/orisa.png);
-  background-repeat: no-repeat;
-  background-position: right; }
-  @media only screen and (min-width: 769px) {
-    .orisa {
-      background-size: cover;
-      background-position: center;
-      background-image: url(../images/orisa-full.jpg); } }
-
-.sombra {
-  background-image: url(../images/mobile/sombra.png);
-  background-repeat: no-repeat;
-  background-position: right; }
-  @media only screen and (min-width: 769px) {
-    .sombra {
-      background-size: cover;
-      background-position: center;
-      background-image: url(../images/sombra-full.jpg); } }
-
-.ana {
-  background-image: url(../images/mobile/ana.png);
-  background-repeat: no-repeat;
-  background-position: right; }
-  @media only screen and (min-width: 769px) {
-    .ana {
-      background-size: cover;
-      background-position: center;
-      background-image: url(../images/ana-full.jpg); } }
-
-.bastion {
-  background-image: url(../images/mobile/bastion.png);
-  background-repeat: no-repeat;
-  background-position: right; }
-  @media only screen and (min-width: 769px) {
-    .bastion {
-      background-size: cover;
-      background-position: center;
-      background-image: url(../images/bastion-full.jpg); } }
-
-.dva {
-  background-image: url(../images/mobile/dva.png);
-  background-repeat: no-repeat;
-  background-position: right; }
-  @media only screen and (min-width: 769px) {
-    .dva {
-      background-size: cover;
-      background-position: center;
-      background-image: url(../images/dva-full.jpg); } }
-
-.genji {
-  background-image: url(../images/mobile/genji.png);
-  background-repeat: no-repeat;
-  background-position: right; }
-  @media only screen and (min-width: 769px) {
-    .genji {
-      background-size: cover;
-      background-position: center;
-      background-image: url(../images/genji-full.jpg); } }
-
-.hanzo {
-  background-image: url(../images/mobile/hanzo.png);
-  background-repeat: no-repeat;
-  background-position: right; }
-  @media only screen and (min-width: 769px) {
-    .hanzo {
-      background-size: cover;
-      background-position: center;
-      background-image: url(../images/hanzo-full.jpg); } }
-
-.junkrat {
-  background-image: url(../images/mobile/junkrat.png);
-  background-repeat: no-repeat;
-  background-position: right; }
-  @media only screen and (min-width: 769px) {
-    .junkrat {
-      background-size: cover;
-      background-position: center;
-      background-image: url(../images/junkrat-full.jpg); } }
-
-.lucio {
-  background-image: url(../images/mobile/lucio.png);
-  background-repeat: no-repeat;
-  background-position: right; }
-  @media only screen and (min-width: 769px) {
-    .lucio {
-      background-size: cover;
-      background-position: center;
-      background-image: url(../images/lucio-full.jpg); } }
-
-.mccree {
-  background-image: url(../images/mobile/mccree.png);
-  background-repeat: no-repeat;
-  background-position: right; }
-  @media only screen and (min-width: 769px) {
-    .mccree {
-      background-size: cover;
-      background-position: center;
-      background-image: url(../images/mccree-full.jpg); } }
-
-.mei {
-  background-image: url(../images/mobile/mei.png);
-  background-repeat: no-repeat;
-  background-position: right; }
-  @media only screen and (min-width: 769px) {
-    .mei {
-      background-size: cover;
-      background-position: center;
-      background-image: url(../images/mei-full.jpg); } }
-
-.mercy {
-  background-image: url(../images/mobile/mercy.png);
-  background-repeat: no-repeat;
-  background-position: right; }
-  @media only screen and (min-width: 769px) {
-    .mercy {
-      background-size: cover;
-      background-position: center;
-      background-image: url(../images/mercy-full.jpg); } }
-
-.pharah {
-  background-image: url(../images/mobile/pharah.png);
-  background-repeat: no-repeat;
-  background-position: right; }
-  @media only screen and (min-width: 769px) {
-    .pharah {
-      background-size: cover;
-      background-position: center;
-      background-image: url(../images/pharah-full.jpg); } }
-
-.reaper {
-  background-image: url(../images/mobile/reaper.png);
-  background-repeat: no-repeat;
-  background-position: right; }
-  @media only screen and (min-width: 769px) {
-    .reaper {
-      background-size: cover;
-      background-position: center;
-      background-image: url(../images/reaper-full.jpg); } }
-
-.reinhardt {
-  background-image: url(../images/mobile/reinhardt.png);
-  background-repeat: no-repeat;
-  background-position: right; }
-  @media only screen and (min-width: 769px) {
-    .reinhardt {
-      background-size: cover;
-      background-position: center;
-      background-image: url(../images/reinhardt-full.jpg); } }
-
-.roadhog {
-  background-image: url(../images/mobile/roadhog.png);
-  background-repeat: no-repeat;
-  background-position: right; }
-  @media only screen and (min-width: 769px) {
-    .roadhog {
-      background-size: cover;
-      background-position: center;
-      background-image: url(../images/roadhog-full.jpg); } }
-
-.soldier {
-  background-image: url(../images/mobile/soldier.png);
-  background-repeat: no-repeat;
-  background-position: right; }
-  @media only screen and (min-width: 769px) {
-    .soldier {
-      background-size: cover;
-      background-position: center;
-      background-image: url(../images/soldier-full.jpg); } }
-
-.symmetra {
-  background-image: url(../images/mobile/symmetra.png);
-  background-repeat: no-repeat;
-  background-position: right; }
-  @media only screen and (min-width: 769px) {
-    .symmetra {
-      background-size: cover;
-      background-position: center;
-      background-image: url(../images/symmetra-full.jpg); } }
-
-.torbjorn {
-  background-image: url(../images/mobile/torbjorn.png);
-  background-repeat: no-repeat;
-  background-position: right; }
-  @media only screen and (min-width: 769px) {
-    .torbjorn {
-      background-size: cover;
-      background-position: center;
-      background-image: url(../images/torbjorn-full.jpg); } }
-
-.tracer {
-  background-image: url(../images/mobile/tracer.png);
-  background-repeat: no-repeat;
-  background-position: right; }
-  @media only screen and (min-width: 769px) {
-    .tracer {
-      background-size: cover;
-      background-position: center;
-      background-image: url(../images/tracer-full.jpg); } }
-
-.widowmaker {
-  background-image: url(../images/mobile/widowmaker.png);
-  background-repeat: no-repeat;
-  background-position: right; }
-  @media only screen and (min-width: 769px) {
-    .widowmaker {
-      background-size: cover;
-      background-position: center;
-      background-image: url(../images/widowmaker-full.jpg); } }
-
-.winston {
-  background-image: url(../images/mobile/winston.png);
-  background-repeat: no-repeat;
-  background-position: right; }
-  @media only screen and (min-width: 769px) {
-    .winston {
-      background-size: cover;
-      background-position: center;
-      background-image: url(../images/winston-full.jpg); } }
-
-.zarya {
-  background-image: url(../images/mobile/zarya.png);
-  background-repeat: no-repeat;
-  background-position: right; }
-  @media only screen and (min-width: 769px) {
-    .zarya {
-      background-size: cover;
-      background-position: center;
-      background-image: url(../images/zarya-full.jpg); } }
-
-.zenyatta {
-  background-image: url(../images/mobile/zenyatta.png);
-  background-repeat: no-repeat;
-  background-position: right; }
-  @media only screen and (min-width: 769px) {
-    .zenyatta {
-      background-size: cover;
-      background-position: center;
-      background-image: url(../images/zenyatta-full.jpg); } }
-
-@media only screen and (max-width: 768px) {
-  .generic, .bastion, .dva, .genji, .hanzo, .junkrat, .lucio, .mccree, .mei, .mercy, .pharah, .reaper, .reinhardt, .roadhog, .soldier, .symmetra, .torbjorn, .tracer, .widowmaker, .winston, .zarya, .zenyatta {
-    background-size: 30%; } }
 /*--------------------- Dropdown menu ---------------------*/
 #primary_nav_wrap img {
-  max-width: 24px; }
+  max-width: 16px; }
 #primary_nav_wrap li:first-child {
   padding-top: 12px; }
 
@@ -1485,7 +1169,8 @@ nav {
   position: relative;
   float: left;
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  z-index: 9001; }
 
 #primary_nav_wrap ul a {
   display: block;
