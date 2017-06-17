@@ -132,6 +132,7 @@ h3 {
 
 .item-section {
   margin-top: 20px;
+  margin-bottom: 20px;
   min-height: 290px;
 
   @media only screen and (min-width: 769px) {
@@ -208,7 +209,7 @@ h3 {
     right: 10px;
   }
   p {
-    margin: 0;
+    margin: 0 30px;
     a, a:visited, a:hover {
         color: white;
     }

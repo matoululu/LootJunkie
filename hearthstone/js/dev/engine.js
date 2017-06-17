@@ -20,6 +20,35 @@ $.fn.extend({
     }
 });
 
+$('#crate').slick({
+  slidesToShow: 5,
+  slidesToScroll: 1,
+  arrows: false,
+  responsive: [
+    {
+      breakpoint: 1025,
+      settings: {
+        slidesToShow: 3,
+        centerMode: true
+      }
+    },
+    {
+      breakpoint: 769,
+      settings: {
+        slidesToShow: 2,
+        centerMode: true
+      }
+    },
+    {
+      breakpoint: 767,
+      settings: {
+        slidesToShow: 2,
+        centerMode: true
+      }
+    }
+    ]
+});
+
 $(document).ready(function(){
 
   $('.btn-toggle').click(function(){
@@ -99,7 +128,7 @@ function displayBox(){
     //Create boxes
     var ul = document.getElementById("crate");
 
-    $("#crate").append('<li class="animated bounceInDown" id="item' + i + '"><img src="' + path + endresults[i] + '-210x300.png" alt=""></li>');
+    $("#crate").slick('slickAdd', '<li class="animated bounceInDown" id="item' + i + '"><img src="' + path + endresults[i] + '-210x300.png" alt=""></li>');
 
     //Create inventory
     var inv = document.getElementById("itemlog");
