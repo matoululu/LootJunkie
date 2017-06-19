@@ -1,4 +1,87 @@
 /*--------------------- IMPORTS ---------------------*/
+.slick-slider {
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  -khtml-user-select: none;
+  -ms-touch-action: pan-y;
+  touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent; }
+
+.slick-list {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  margin: 0;
+  padding: 0; }
+
+.slick-list:focus {
+  outline: 0; }
+
+.slick-list.dragging {
+  cursor: pointer;
+  cursor: hand; }
+
+.slick-slider .slick-list, .slick-slider .slick-track {
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0); }
+
+.slick-track {
+  position: relative;
+  top: 0;
+  left: 0;
+  display: block; }
+
+.slick-track:after, .slick-track:before {
+  display: table;
+  content: ''; }
+
+.slick-track:after {
+  clear: both; }
+
+.slick-loading .slick-track {
+  visibility: hidden; }
+
+.slick-slide {
+  display: none;
+  float: left;
+  height: 100%;
+  min-height: 1px; }
+
+[dir=rtl] .slick-slide {
+  float: right; }
+
+.slick-slide img {
+  display: block; }
+
+.slick-slide.slick-loading img {
+  display: none; }
+
+.slick-slide.dragging img {
+  pointer-events: none; }
+
+.slick-initialized .slick-slide {
+  display: block; }
+
+.slick-loading .slick-slide {
+  visibility: hidden; }
+
+.slick-vertical .slick-slide {
+  display: block;
+  height: auto;
+  border: 1px solid transparent; }
+
+.slick-arrow.slick-hidden {
+  display: none; }
+
 .left {
   float: left; }
 
@@ -788,11 +871,11 @@ a {
   a:hover {
     color: #a6cfff; }
 
-h1, h2 {
+h1 {
   font-family: "Raleway", sans-serif;
   font-size: 2em; }
 
-h3 {
+h2, h3 {
   font-family: "Raleway", sans-serif;
   font-size: 1.5em; }
 
@@ -826,6 +909,23 @@ h3 {
   transition: ease all 0.3s; }
   .navbtn:hover {
     opacity: 0.8; }
+
+.bump {
+  padding-top: 10px; }
+  @media only screen and (min-width: 768px) {
+    .bump {
+      padding-top: 30px; } }
+  .bump h1 {
+    margin-top: 0; }
+
+.afterbump {
+  padding-bottom: 10px; }
+  @media only screen and (min-width: 768px) {
+    .afterbump {
+      padding-bottom: 30px; } }
+
+.hero-slide img {
+  width: 100%; }
 
 /*--------------------- CONTAINERS ---------------------*/
 #itemlog.in-use {
@@ -874,11 +974,11 @@ h3 {
 
 .content {
   background: #efefef;
-  margin: 30px 0px;
-  padding: 0px 25px 25px;
+  padding: 10px;
   border-radius: 3px; }
-  .content .content-wrap {
-    padding: 5px 15px; }
+  @media only screen and (max-width: 768px) {
+    .content {
+      margin-top: 10px; } }
 
 .item-section {
   min-height: 300px;
@@ -931,6 +1031,13 @@ h3 {
 @media only screen and (max-width: 768px) {
   .grid--full > .grid__item.mobile-wrap {
     padding: 0px 5px; } }
+
+.content {
+  padding: 10px; }
+
+.fill {
+  width: 100%;
+  display: block; }
 
 /*--------------------- ALERTS ---------------------*/
 .alert {
@@ -1012,6 +1119,9 @@ nav {
     font-weight: 600;
     float: left;
     line-height: 8px; }
+    .nav li a img {
+      max-width: 32px;
+      width: 100%; }
   .nav a:hover {
     color: gray; }
   .nav li a.donate {
@@ -1047,14 +1157,13 @@ nav {
 
 /*--------------------- BUTTONS ---------------------*/
 .btn {
-  padding: 10px 0px;
-  width: 100%;
+  padding: 10px 20px;
   display: inline-block;
   text-align: center;
   cursor: pointer;
   margin: 0px;
   color: white;
-  font-size: 24px;
+  font-size: 16px;
   font-weight: bold;
   vertical-align: middle;
   transition: 0.2s ease all;
@@ -1064,9 +1173,7 @@ nav {
     color: white; }
   @media only screen and (min-width: 481px) {
     .btn {
-      padding: 10px 75px;
       width: auto;
-      margin: 0px 10px;
       border-radius: 3px; } }
 
 .fa {

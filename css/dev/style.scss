@@ -31,12 +31,13 @@ a {
   }
 }
 
-h1, h2 {
+h1 {
   font-family: $header-stack;
   font-size: 2em;
 }
 
-h3 {
+
+h2, h3 {
   font-family: $header-stack;
   font-size: 1.5em;
 }
@@ -80,6 +81,29 @@ h3 {
   transition: ease all 0.3s;
   &:hover {
     opacity: 0.8;
+  }
+}
+
+.bump {
+  padding-top: 10px;
+  @media only screen and (min-width: 768px) {
+    padding-top: 30px;
+  }
+  h1 {
+    margin-top: 0;
+  }
+}
+
+.afterbump {
+  padding-bottom: 10px;
+  @media only screen and (min-width: 768px) {
+    padding-bottom: 30px;
+  }
+}
+
+.hero-slide {
+  img {
+    width: 100%;
   }
 }
 
@@ -138,13 +162,13 @@ h3 {
   margin: 0px auto;
   }
 }
+
 .content {
   background: #efefef;
-  margin: 30px 0px;
-  padding: 0px 25px 25px;
+  padding: 10px;
   border-radius: 3px;
-  .content-wrap{
-    padding: 5px 15px;
+  @media only screen and (max-width: 768px) {
+    margin-top: 10px;
   }
 }
 
@@ -212,6 +236,15 @@ h3 {
   @media only screen and (max-width: 768px) {
     padding: 0px 5px;
   }
+}
+
+.content {
+  padding: 10px;
+}
+
+.fill {
+  width: 100%;
+  display: block;
 }
 
 /*--------------------- ALERTS ---------------------*/
@@ -302,6 +335,10 @@ nav {
     font-weight: 600;
     float: left;
     line-height: 8px;
+    img {
+      max-width: 32px;
+      width: 100%;
+    }
   }
   a:hover {
     color: darken(white, 50%);
@@ -348,14 +385,13 @@ nav {
 /*--------------------- BUTTONS ---------------------*/
 
 .btn {
-  padding: 10px 0px;
-  width: 100%;
+  padding: 10px 20px;
   display: inline-block;
   text-align: center;
   cursor: pointer;
   margin: 0px;
   color: white;
-  font-size: 24px;
+  font-size: 16px;
   font-weight: bold;
   vertical-align: middle;
   transition: 0.2s ease all;
@@ -366,9 +402,7 @@ nav {
   }
 
   @media only screen and (min-width: 481px) {
-    padding: 10px 75px;
     width: auto;
-    margin: 0px 10px;
     border-radius: 3px;
   }
 }
