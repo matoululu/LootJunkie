@@ -1632,13 +1632,38 @@ header {
         .news #alert ul p a {
           color: white; }
 
+#mobilealert {
+  display: block;
+  text-align: center;
+  width: 90%;
+  margin: 30px auto; }
+  #mobilealert ul {
+    list-style: none;
+    padding-left: 0;
+    display: inline-block;
+    color: white;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 10px 20px;
+    margin: 0; }
+    #mobilealert ul a {
+      color: white; }
+    #mobilealert ul span:first-child, #mobilealert ul span:nth-child(2) {
+      display: none; }
+    #mobilealert ul p {
+      margin: 0; }
+      #mobilealert ul p a {
+        color: white; }
+
 /*--------------------- FOOTER ---------------------*/
 footer {
-  position: absolute;
+  position: relative;
   bottom: 0;
   left: 0;
   text-align: center;
   width: 100%; }
+  @media screen and (min-width: 769px) {
+    footer {
+      position: absolute; } }
   footer ul {
     list-style: none;
     padding-left: 0;
