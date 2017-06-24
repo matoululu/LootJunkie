@@ -1,0 +1,605 @@
+/*--------------------- IMPORTS ---------------------*/
+
+@import 'variables';
+@import 'snippets';
+@import 'grids';
+@import 'reset';
+
+/*--------------------- GLOBAL ---------------------*/
+
+body, html {
+  height: 100%;
+}
+
+body {
+  background-color: #e3e3e3;
+  font-family: $font-stack;
+  font-size: 16px;
+  font-weight: 400;
+  @media only screen and (min-width: 769px) {
+    background-image: url(../images/bg.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: bottom center;
+  }
+}
+
+a {
+  color: $blue;
+  transition: ease-in 0.2s;
+  &:hover {
+    color: lighten($blue ,20%);
+  }
+}
+
+.center {
+  text-align: center;
+}
+
+.logo {
+  display: block;
+  margin: 0px auto;
+  max-width: 200px;
+  cursor: pointer;
+  &:hover {
+    opacity: 0.85;
+  }
+}
+
+
+/*--------------------- CONTAINERS ---------------------*/
+
+.item-section {
+  min-height: 300px;
+  margin-top: 20px;
+
+  @media only screen and (min-width: 769px) {
+    min-height: 360px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+
+  @media only screen and (min-width: 1400px) {
+    min-height: 480px
+  }
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0px auto;
+}
+
+
+
+
+
+/*--------------------- NAVIGATION ---------------------*/
+
+header {
+  background: #212121;
+  padding: 10px 0px;
+
+  nav {
+    max-width: 1000px;
+    margin: 0px auto;
+    width: 100%;
+  }
+}
+
+/*--------------------- BUTTONS ---------------------*/
+
+.btn {
+  padding: 10px 20px;
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+  margin: 0px auto;
+  color: white;
+  font-size: 26px;
+  font-weight: bold;
+  vertical-align: middle;
+  transition: 0.2s ease all;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-radius: 7px;
+  &:hover {
+    color: white;
+  }
+}
+
+.yellow {
+  background: $yellow;
+  &:hover {
+    -webkit-box-shadow: 0px 0px 33px 0px rgba(249, 158, 26, 0.75);
+    -moz-box-shadow: 0px 0px 33px 0px rgba(249, 158, 26, 0.75);
+    box-shadow: 0px 0px 33px 0px rgba(255, 158, 26, 0.75);
+    transition: ease-in-out all infinite 1.5s;
+  }
+
+  &:active {
+    background: lighten($yellow, 30%);
+    -webkit-box-shadow: 0px 0px 230px 20px rgba(249, 158, 26, 0.75);
+    -moz-box-shadow: 0px 0px 230px 20px rgba(249, 158, 26, 0.75);
+    box-shadow: 0px 0px 230px 20px rgba(255, 255, 55, 1);
+  }
+}
+
+/*--------------------- TWEETS ---------------------*/
+
+.news {
+  background-color: #111;
+  width: 100%;
+  text-align: center;
+  display: none;
+
+  @include at-query($min, $large) {
+    display: block;
+  }
+
+  .twitter {
+    text-decoration: none;
+  }
+
+  #alert {
+    display: inline-block;
+    ul {
+      list-style: none;
+      padding-left: 0;
+
+      color: white;
+      padding: 10px 0px;
+      margin: 0;
+      p {
+        margin: 0;
+        a {
+          color: white;
+        }
+      }
+    }
+  }
+}
+
+/*--------------------- FOOTER ---------------------*/
+
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+  width: 100%;
+  ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 2px 0 10px;
+    font-size: 16px;
+    li {
+      display: inline-block;
+      padding: 0px 10px;
+      a {
+        color: #aaa;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+
+/*--------------------- LOOT BOX ---------------------*/
+
+#box {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: 500px;
+  padding-top: 40px;
+  @media only screen and (min-width: 769px) {
+    padding-top: 55px;
+  }
+
+  @media only screen and (min-width: 1400px) {
+    padding-top: 90px;
+  }
+
+}
+
+.shakebox {
+  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+
+/*--------------------- LOOT CARDS ---------------------*/
+
+#crate {
+  list-style: none;
+  padding: 0px;
+  margin: 0px 5px;
+
+  @media only screen and (min-width: 769px) {
+    margin: 0px;
+  }
+
+  li {
+    float: left;
+    font-size: 12px;
+    width: 100%;
+    padding: 20px 10px;
+    margin: 3px 0px;
+
+    @media only screen and (min-width: 769px) {
+      padding: 125px 0px 125px 0px;
+      margin: 1%;
+      text-align: center;
+      max-width: 23%;
+      font-size: 13px;
+      border-radius: 7px;
+
+      span {
+        padding: 30px 0;
+      }
+    }
+
+    @media only screen and (min-width: 1400px) {
+      padding: 185px 0px 185px 0px;
+    }
+  }
+}
+
+#item0 {
+  -webkit-animation-delay: 0.1s; /* Chrome, Safari, Opera */
+  animation-delay: 0.1s;
+}
+
+#item1 {
+  -webkit-animation-delay: 0.2s; /* Chrome, Safari, Opera */
+  animation-delay: 0.2s;
+}
+
+#item2 {
+  -webkit-animation-delay: 0.4s; /* Chrome, Safari, Opera */
+  animation-delay: 0.4s;
+}
+
+#item3 {
+  -webkit-animation-delay: 0.6s; /* Chrome, Safari, Opera */
+  animation-delay: 0.6s;
+}
+
+.normal {
+  font-weight: bold;
+  color: #333;
+  //border: 1px solid #bbb;
+  background-color: white;
+  box-sizing: border-box;
+  @media only screen and (min-width: 769px) {
+    span {
+      display: block;
+      background-color: rgba(255,255,255,0.8);
+    }
+  }
+}
+.rare {
+  font-weight: bold;
+  color: white;
+  background-color: #0070ff;
+  //border: 1px solid #0070ff;
+  box-sizing: border-box;
+  @media only screen and (min-width: 769px) {
+    span {
+      display: block;
+      background-color: rgba(0,112,255,0.8);
+    }
+  }
+}
+.epic {
+  font-weight: bold;
+  color: white;
+  //border: 1px solid #B048F8;
+  background-color: #B048F8;
+  box-sizing: border-box;
+  @media only screen and (min-width: 769px) {
+    span {
+      display: block;
+      background-color: rgba(176,72,248,0.8);
+    }
+  }
+}
+.legendary {
+  font-weight: bold;
+  color: white;
+  //border: 1px solid #ff8000;
+  background-color: #ff8000;
+  box-sizing: border-box;
+  @media only screen and (min-width: 769px) {
+    span {
+      display: block;
+      background-color: rgba(255,128,0,0.8);
+    }
+  }
+}
+
+/*--------------------- HEROES ---------------------*/
+
+.generic {
+  background-image: url(../images/mobile/generic.png);;
+  background-repeat: no-repeat;
+  background-position: right;
+  @media only screen and (min-width: 769px) {
+    background-size: cover;
+    background-position: center;
+    background-image: url(../images/overwatch-full.jpg);
+  }
+ }
+
+.orisa {
+  background-image: url(../images/mobile/orisa.png);
+  background-repeat: no-repeat;
+  background-position: right;
+  @media only screen and (min-width: 769px) {
+    background-size: cover;
+    background-position: center;
+    background-image: url(../images/orisa-full.jpg);
+  }
+}
+
+ .sombra {
+  background-image: url(../images/mobile/sombra.png);
+  background-repeat: no-repeat;
+  background-position: right;
+  @media only screen and (min-width: 769px) {
+    background-size: cover;
+    background-position: center;
+    background-image: url(../images/sombra-full.jpg);
+  }
+}
+
+.ana {
+  background-image: url(../images/mobile/ana.png);
+  background-repeat: no-repeat;
+  background-position: right;
+  @media only screen and (min-width: 769px) {
+    background-size: cover;
+    background-position: center;
+    background-image: url(../images/ana-full.jpg);
+  }
+}
+
+.bastion {
+  background-image: url(../images/mobile/bastion.png);
+  background-repeat: no-repeat;
+  background-position: right;
+  @media only screen and (min-width: 769px) {
+    background-size: cover;
+    background-position: center;
+    background-image: url(../images/bastion-full.jpg);
+  }
+}
+.dva {
+  background-image: url(../images/mobile/dva.png);
+  background-repeat: no-repeat;
+  background-position: right;
+  @media only screen and (min-width: 769px) {
+    background-size: cover;
+    background-position: center;
+    background-image: url(../images/dva-full.jpg);
+  }
+}
+.genji {
+  background-image: url(../images/mobile/genji.png);
+  background-repeat: no-repeat;
+  background-position: right;
+  @media only screen and (min-width: 769px) {
+    background-size: cover;
+    background-position: center;
+    background-image: url(../images/genji-full.jpg);
+  }
+}
+.hanzo {
+  background-image: url(../images/mobile/hanzo.png);
+  background-repeat: no-repeat;
+  background-position: right;
+  @media only screen and (min-width: 769px) {
+    background-size: cover;
+    background-position: center;
+    background-image: url(../images/hanzo-full.jpg);
+  }
+}
+.junkrat {
+  background-image: url(../images/mobile/junkrat.png);
+  background-repeat: no-repeat;
+  background-position: right;
+  @media only screen and (min-width: 769px) {
+    background-size: cover;
+    background-position: center;
+    background-image: url(../images/junkrat-full.jpg);
+  }
+}
+.lucio {
+  background-image: url(../images/mobile/lucio.png);
+  background-repeat: no-repeat;
+  background-position: right;
+  @media only screen and (min-width: 769px) {
+    background-size: cover;
+    background-position: center;
+    background-image: url(../images/lucio-full.jpg);
+  }
+}
+
+.mccree {
+  background-image: url(../images/mobile/mccree.png);
+  background-repeat: no-repeat;
+  background-position: right;
+  @media only screen and (min-width: 769px) {
+    background-size: cover;
+    background-position: center;
+    background-image: url(../images/mccree-full.jpg);
+  }
+}
+
+.mei {
+  background-image: url(../images/mobile/mei.png);
+  background-repeat: no-repeat;
+  background-position: right;
+  @media only screen and (min-width: 769px) {
+    background-size: cover;
+    background-position: center;
+    background-image: url(../images/mei-full.jpg);
+  }
+}
+.mercy {
+  background-image: url(../images/mobile/mercy.png);
+  background-repeat: no-repeat;
+  background-position: right;
+  @media only screen and (min-width: 769px) {
+    background-size: cover;
+    background-position: center;
+    background-image: url(../images/mercy-full.jpg);
+  }
+}
+.pharah {
+  background-image: url(../images/mobile/pharah.png);
+  background-repeat: no-repeat;
+  background-position: right;
+  @media only screen and (min-width: 769px) {
+    background-size: cover;
+    background-position: center;
+    background-image: url(../images/pharah-full.jpg);
+  }
+}
+.reaper {
+  background-image: url(../images/mobile/reaper.png);
+  background-repeat: no-repeat;
+  background-position: right;
+  @media only screen and (min-width: 769px) {
+    background-size: cover;
+    background-position: center;
+    background-image: url(../images/reaper-full.jpg);
+  }
+}
+.reinhardt {
+  background-image: url(../images/mobile/reinhardt.png);
+  background-repeat: no-repeat;
+  background-position: right;
+  @media only screen and (min-width: 769px) {
+    background-size: cover;
+    background-position: center;
+    background-image: url(../images/reinhardt-full.jpg);
+  }
+}
+.roadhog {
+  background-image: url(../images/mobile/roadhog.png);
+  background-repeat: no-repeat;
+  background-position: right;
+  @media only screen and (min-width: 769px) {
+    background-size: cover;
+    background-position: center;
+    background-image: url(../images/roadhog-full.jpg);
+  }
+}
+.soldier {
+  background-image: url(../images/mobile/soldier.png);
+  background-repeat: no-repeat;
+  background-position: right;
+  @media only screen and (min-width: 769px) {
+    background-size: cover;
+    background-position: center;
+    background-image: url(../images/soldier-full.jpg);
+  }
+}
+.symmetra {
+  background-image: url(../images/mobile/symmetra.png);
+  background-repeat: no-repeat;
+  background-position: right;
+  @media only screen and (min-width: 769px) {
+    background-size: cover;
+    background-position: center;
+    background-image: url(../images/symmetra-full.jpg);
+  }
+}
+.torbjorn {
+  background-image: url(../images/mobile/torbjorn.png);
+  background-repeat: no-repeat;
+  background-position: right;
+  @media only screen and (min-width: 769px) {
+    background-size: cover;
+    background-position: center;
+    background-image: url(../images/torbjorn-full.jpg);
+  }
+}
+.tracer {
+  background-image: url(../images/mobile/tracer.png);
+  background-repeat: no-repeat;
+  background-position: right;
+  @media only screen and (min-width: 769px) {
+    background-size: cover;
+    background-position: center;
+    background-image: url(../images/tracer-full.jpg);
+  }
+}
+.widowmaker {
+  background-image: url(../images/mobile/widowmaker.png);
+  background-repeat: no-repeat;
+  background-position: right;
+  @media only screen and (min-width: 769px) {
+    background-size: cover;
+    background-position: center;
+    background-image: url(../images/widowmaker-full.jpg);
+  }
+}
+.winston {
+  background-image: url(../images/mobile/winston.png);
+  background-repeat: no-repeat;
+  background-position: right;
+  @media only screen and (min-width: 769px) {
+    background-size: cover;
+    background-position: center;
+    background-image: url(../images/winston-full.jpg);
+  }
+}
+.zarya {
+  background-image: url(../images/mobile/zarya.png);
+  background-repeat: no-repeat;
+  background-position: right;
+  @media only screen and (min-width: 769px) {
+    background-size: cover;
+    background-position: center;
+    background-image: url(../images/zarya-full.jpg);
+  }
+}
+.zenyatta {
+  background-image: url(../images/mobile/zenyatta.png);
+  background-repeat: no-repeat;
+  background-position: right;
+  @media only screen and (min-width: 769px) {
+    background-size: cover;
+    background-position: center;
+    background-image: url(../images/zenyatta-full.jpg);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .generic, .bastion, .dva, .genji, .hanzo, .junkrat, .lucio, .mccree, .mei, .mercy, .pharah, .reaper, .reinhardt, .roadhog, .soldier, .symmetra, .torbjorn, .tracer, .widowmaker, .winston, .zarya, .zenyatta {
+    background-size: 30%;
+  }
+}
