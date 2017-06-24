@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -67,4 +68,75 @@
   <script type="text/javascript" src="js/spec-loot.min.js"></script>
   <script type="text/javascript" src="js/engine.min.js"></script>
 </body>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="LootJunkie is a loot box simulator where you can open loot boxes for free!" />
+<meta name="keywords" content="overwatch,over watch,overwatch loot,overwatch loot box,simulator,overwatch simulator,overwatch loot simulator,overwatch loot box simulator,loot junkie,lootjunkie,loot junky, hearthstone,over watch,hearthstone loot,hearthstone loot box,simulator,hearthstone simulator,hearthstone loot simulator,hearthstone loot box simulator" />
+<meta name="robots" content="index,follows" />
+<title>LootJunkie - Overwatch Loot Box Simulator</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<link href="css/style.min.css" rel="stylesheet" type="text/css" />
+<link href="css/animate.min.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-62106034-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="index.html"><img class="logo" src="images/logo.svg"></a>
+    </nav>
+  </header>
+
+  <section class="news">
+    <div class="wrapper">
+      <a href="https://twitter.com/lootjunkiexyz" class="twitter" target="_blank">@LootJunkiexyz:</a>
+      <div id="alert"></div>
+    </div>
+  </section>
+
+  <div class="wrapper">
+
+    <div class="grid">
+      <div class="grid__item item-section">
+        <img id="box" src="images/loot-box.png" alt="Loot Box" onclick="openBox(); ga('send', 'event', 'Generate box', 'Click', 'Open loot box');">
+        <ul id="crate" class="add-remove"></ul>
+      </div>
+    </div>
+
+    <div class="grid">
+      <div class="grid__item center mobile-wrap mobile-fixed">
+        <a class="btn yellow generate" onclick="openBox(); ga('send', 'event', 'Generate box', 'Click', 'Open loot box');" onmouseover="shakeBox()">Open Loot Box</a>
+      </div>
+    </div>
+
+    <footer>
+      <ul>
+        <li><a href="https://twitter.com/lootjunkiexyz" target="_blank">Twitter</a></li>
+        <li><a href="mailto:hello@matou.io" target="_blank">Email</a></li>
+        <li><a href="https://streamtip.com/t/omgmrm" target="_blank">Donate</a></li>
+      </ul>
+    </footer>
+
+  </div>
+  <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="js/chance.min.js"></script>
+  <script type="text/javascript" src="js/loot.min.js"></script>
+  <script type="text/javascript" src="js/spec-loot.min.js"></script>
+  <script type="text/javascript" src="js/engine.min.js"></script>
+</body>
+>>>>>>> master
 </html>
