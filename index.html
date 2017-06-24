@@ -1,18 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="LootJunkie is a loot box simulator where you can open loot boxes for free!" />
 <meta name="keywords" content="overwatch,over watch,overwatch loot,overwatch loot box,simulator,overwatch simulator,overwatch loot simulator,overwatch loot box simulator,loot junkie,lootjunkie,loot junky, hearthstone,over watch,hearthstone loot,hearthstone loot box,simulator,hearthstone simulator,hearthstone loot simulator,hearthstone loot box simulator" />
 <meta name="robots" content="index,follows" />
-<title>LootJunkie | Overwatch Loot Box Simulator</title>
+<title>LootJunkie - Overwatch Loot Box Simulator</title>
 <link rel="icon" type="image/png" href="favicon.png">
 <link href="css/style.min.css" rel="stylesheet" type="text/css" />
 <link href="css/animate.min.css" rel="stylesheet" type="text/css">
-<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type=text/css>
-<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Raleway:400,600,700' rel='stylesheet' type='text/css'>
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -25,88 +24,39 @@
 </script>
 </head>
 <body>
+  <header>
+    <nav>
+      <a href="index.html"><img class="logo" src="images/logo.svg"></a>
+    </nav>
+  </header>
 
-
-<header>
-  <nav>
-    <div class="grid">
-      <div class="grid__item large--one-third">
-        <a href="index.html" class="logo"><img src="images/logo.svg"></a>
-      </div>
-      <div class="grid__item large--two-thirds medium-down--hide nav">
-      	<ul>
-          <li><a href="overwatch/index.html">Overwatch</a></li>
-          <li><a href="hearthstone/index.html">Hearthstone</a></li>
-          <li><a href="https://twitter.com/lootjunkiexyz" target="_blank">Twitter</a></li>
-          <li><a href="https://streamtip.com/t/omgmrm" class="donate" target="_blank">Donate</a></li>
-        </ul>
-      </div>
+  <section class="news">
+    <div class="wrapper">
+      <a href="#" class="twitter" target="_blank">@LootJunkiexyz:</a>
+      <div id="alert"></div>
     </div>
-  </nav>
-</header>
+  </section>
 
-  <div class="wrapper bump">
+  <div class="wrapper">
+
     <div class="grid">
-      <div class="grid__item large--two-thirds small--one-whole">
-        <div class="hero-slide">
-          <div>
-            <a href="hearthstone/index.html"><img src="images/slide-ungoro.png"></a>
-          </div>
-          <div>
-            <a href="overwatch/index.html"><img src="images/slide-overhaul.png"></a>
-          </div>
-        </div>
-
-        <div class="grid bump afterbump">
-          <div class="grid__item large--one-half small--one-whole">
-            <a href="overwatch/index.html"><img class="fill" src="images/btn-ow.png"></a>
-          </div>
-          <div class="grid__item large--one-half small--one-whole">
-            <a href="hearthstone/index.html"><img class="fill" src="images/btn-hs.png"></a>
-          </div>
-        </div>
-
-        <div class="grid--full content">
-          <div class="grid__item one-whole">
-            <div class="grid">
-              <div class="grid__item large--two-thirds small--one-whole">
-                <h3>Latest Overwatch discussion</h3>
-                <script src="https://www.reddit.com/r/Overwatch/.embed?limit=3&t=day&bordercolor=efefef&bgcolor=efefef" type="text/javascript"></script>
-              </div>
-              <div class="grid__item large--two-thirds small--one-whole">
-                <h3>Latest Overwatch discussion</h3>
-                <script src="https://www.reddit.com/r/hearthstone/.embed?limit=3&t=day&bordercolor=efefef&bgcolor=efefef" type="text/javascript"></script>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="grid__item large--one-third small--one-whole darken">
-        <div class="content">
-          <h1>Welcome to LootJunkie</h1>
-          <p>LootJunkie is a loot box simulator where you can open loot boxes from your favorite games for free!</p>
-          <p>Want to stay up to date with everything LootJunkie?<br>Follow us on Twitter!</p>
-          <a href="" target="_blank" class="blue btn"><i class="fa fa-twitter" aria-hidden="true"></i> @Lootjunkiexyz</a>
-          <h2>Latest Changes</h2>
-          <ul>
-            <li>Improved mobile experiences</li>
-            <li>Added Hearthstone beta</li>
-            <li>Design overhaul</li>
-          </ul>
-        </div>
+      <div class="grid__item item-section">
+        <img id="box" src="images/loot-box.png" alt="Loot Box" onclick="openBox(); ga('send', 'event', 'Generate box', 'Click', 'Open loot box');">
+        <ul id="crate" class="add-remove"></ul>
       </div>
     </div>
 
-
-    <ul class="mobile-nav">
-      <li><a href="https://twitter.com/lootjunkiexyz" target="_blank">Twitter</a></li>
-      <li><a href="https://streamtip.com/t/omgmrm" class="donate" target="_blank">Donate</a></li>
-    </ul>
+    <div class="grid">
+      <div class="grid__item center mobile-wrap mobile-fixed">
+        <a class="btn yellow generate" onclick="openBox(); ga('send', 'event', 'Generate box', 'Click', 'Open loot box');" onmouseover="shakeBox()">Open Loot Box</a>
+      </div>
+    </div>
 
   </div>
-<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
-<script type="text/javascript" src="js/slick.min.js"></script>
-<script type="text/javascript" src="js/engine.min.js"></script>
+  <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="js/chance.min.js"></script>
+  <script type="text/javascript" src="js/loot.min.js"></script>
+  <script type="text/javascript" src="js/spec-loot.min.js"></script>
+  <script type="text/javascript" src="js/engine.min.js"></script>
 </body>
 </html>
