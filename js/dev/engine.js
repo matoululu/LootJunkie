@@ -299,3 +299,19 @@ var configProfile = {
 };
 
 twitterFetcher.fetch(configProfile);
+
+var configProfileMobile = {
+  "profile": {"screenName": 'lootjunkiexyz'},
+  "domId": 'mobilealert',
+  "maxTweets": 1,
+  "enableLinks": true,
+  "showUser": true,
+  "showTime": false,
+  "showImages": false,
+  "showRetweet": false,
+  "showInteraction": false,
+  "lang": 'en'
+};
+
+twitterFetcher.fetch(configProfileMobile);
+
