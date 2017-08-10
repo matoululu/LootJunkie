@@ -62,7 +62,6 @@ function setBox(){
 
   endresults = chance.shuffle(results);
   displayBox();
-  setStats();
 
 }
 
