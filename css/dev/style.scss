@@ -385,6 +385,17 @@ footer {
   }
  }
 
+ .doomfist {
+  background-image: url(../images/mobile/doomfist.png);
+  background-repeat: no-repeat;
+  background-position: right;
+  @media only screen and (min-width: 769px) {
+    background-size: cover;
+    background-position: center;
+    background-image: url(../images/doomfist-full.jpg);
+  }
+}
+
 .orisa {
   background-image: url(../images/mobile/orisa.png);
   background-repeat: no-repeat;
