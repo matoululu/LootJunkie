@@ -104,6 +104,10 @@ function displayBox(){
     if(endresults[i].indexOf("Spray") || endresults[i].indexOf("Coins") !=-1){
       $("#item" + i).addClass("generic");
     }
+    //doomfist
+    if(endresults[i].indexOf("Doomfist") !=-1){
+      $("#item" + i).addClass("doomfist");
+    }
     //orisa
     if(endresults[i].indexOf("Orisa") !=-1){
       $("#item" + i).addClass("orisa");
