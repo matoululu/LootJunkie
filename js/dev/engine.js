@@ -80,6 +80,7 @@ function displayCrate() {
     $('<p/>').text(crate[i].name + ' - ' + heroName + ' ' + crate[i].type).appendTo('.crate-'+i+ ' span');
   });
   isRunning = false;
+  console.log(crate);
 }
 
 $('.box-type ul li a').click(function(){
@@ -136,6 +137,8 @@ function getItems(token) {
     filterType = 'ANNIVERSARY_2017';
   } else if(token == 'uprising') {
     filterType = 'UPRISING_2017';
+  } else if(token == 'standard') {
+    filterType = '';
   }
 
   //Get all items
