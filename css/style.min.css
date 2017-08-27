@@ -1961,6 +1961,22 @@ th {
       background-color: rgba(255, 128, 0, 0.8); } }
 
 /*--------------------- Heroes ---------------------*/
+#crate span {
+  background-repeat: no-repeat;
+  background-position: 95% 3%; }
+  #crate span.WINTER_WONDERLAND_2016 {
+    background-image: url(../images/events/winter.png); }
+  #crate span.SUMMER_GAMES {
+    background-image: url(../images/events/summer.png); }
+  #crate span.HALLOWEEN_2016 {
+    background-image: url(../images/events/halloween.png); }
+  #crate span.YEAR_OF_THE_ROOSTER_2017 {
+    background-image: url(../images/events/rooster.png); }
+  #crate span.ANNIVERSARY_2017 {
+    background-image: url(../images/events/anniversary.png); }
+  #crate span.UPRISING_2017 {
+    background-image: url(../images/events/uprising.png); }
+
 #crate li {
   background-image: url(../images/mobile/generic.png);
   background-repeat: no-repeat;

@@ -75,7 +75,7 @@ function displayCrate() {
     var heroString= crate[i].id;
     var heroName = heroString.substr(0, heroString.indexOf('-'));
     $('<li/>').addClass(heroName + ' ' + crate[i].quality + ' shadow animated bounceInDown crate-' + i ).appendTo('#crate');
-    $('<span/>').appendTo('.crate-'+i);
+    $('<span/>').addClass(crate[i].event).appendTo('.crate-'+i);
     $('<p/>').text(crate[i].name + ' - ' + heroName + ' ' + crate[i].type).appendTo('.crate-'+i+ ' span');
   });
   isRunning = false;
