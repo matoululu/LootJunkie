@@ -1965,17 +1965,17 @@ th {
   background-repeat: no-repeat;
   background-position: 95% 3%; }
   #crate span.WINTER_WONDERLAND_2016 {
-    background-image: url(../images/events/winter.png); }
+    background-image: url(../images/overlay/winter.png); }
   #crate span.SUMMER_GAMES {
-    background-image: url(../images/events/summer.png); }
+    background-image: url(../images/overlay/summer.png); }
   #crate span.HALLOWEEN_2016 {
-    background-image: url(../images/events/halloween.png); }
+    background-image: url(../images/overlay/halloween.png); }
   #crate span.YEAR_OF_THE_ROOSTER_2017 {
-    background-image: url(../images/events/rooster.png); }
+    background-image: url(../images/overlay/rooster.png); }
   #crate span.ANNIVERSARY_2017 {
-    background-image: url(../images/events/anniversary.png); }
+    background-image: url(../images/overlay/anniversary.png); }
   #crate span.UPRISING_2017 {
-    background-image: url(../images/events/uprising.png); }
+    background-image: url(../images/overlay/uprising.png); }
 
 #crate li {
   background-image: url(../images/mobile/generic.png);
