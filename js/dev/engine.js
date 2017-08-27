@@ -5,6 +5,7 @@ var rareItems = [];
 
 var isRunning = false;
 var openSound = new Audio('open-box.ogg');
+var filterType;
 
 var weights = [];
 var rareWeights = [];
@@ -93,19 +94,35 @@ $('.box-type ul li a').click(function(){
 function createWeights(list, weight) {
   for(var i = 0; i < list.length; i++) {
     if(list[i].quality == 'common') {
-      weight.push(59);
+      if(list[i].event == filterType) {
+        weight.push(354);
+      } else {
+        weight.push(59);
+      }
     } else if(list[i].quality == 'rare') {
-      weight.push(32);
+      if(list[i].event == filterType) {
+        weight.push(192);
+      } else {
+        weight.push(32);
+      }
     } else if(list[i].quality == 'epic') {
-      weight.push(7);
+      if(list[i].event == filterType) {
+        weight.push(42);
+      } else {
+        weight.push(7);
+      }
     } else if(list[i].quality == 'legendary') {
-      weight.push(2);
+      if(list[i].event == filterType) {
+        weight.push(12);
+      } else {
+        weight.push(2);
+      }
     }
   }
 }
 
 function getItems(token) {
-  var filterType;
+
 
   if(token == 'summer2016') {
    filterType = 'SUMMER_GAMES';
