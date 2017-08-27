@@ -1,76 +1,66 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="LootJunkie is a loot box simulator where you can open loot boxes for free!" />
-<meta name="keywords" content="overwatch,over watch,overwatch loot,overwatch loot box,simulator,overwatch simulator,overwatch loot simulator,overwatch loot box simulator,loot junkie,lootjunkie,loot junky, hearthstone,over watch,hearthstone loot,hearthstone loot box,simulator,hearthstone simulator,hearthstone loot simulator,hearthstone loot box simulator" />
-<meta name="robots" content="index,follows" />
-<title>LootJunkie - Overwatch Loot Box Simulator</title>
-<link rel="icon" type="image/png" href="favicon.png">
-<link href="css/style.min.css" rel="stylesheet" type="text/css" />
-<link href="css/animate.min.css" rel="stylesheet" type="text/css">
-<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="LootJunkie is a loot box simulator where you can open loot boxes for free!" />
+    <meta name="keywords" content="overwatch,over watch,overwatch loot,overwatch loot box,simulator,overwatch simulator,overwatch loot simulator,overwatch loot box simulator,loot junkie,lootjunkie,loot junky, hearthstone,over watch,hearthstone loot,hearthstone loot box,simulator,hearthstone simulator,hearthstone loot simulator,hearthstone loot box simulator" />
+    <meta name="robots" content="index,follows" />
+    <title>LootJunkie - Overwatch Loot Box Simulator</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <title>PackCracker - Hearthstone Pack Simulator</title>
+    <link href="css/style.min.css" rel="stylesheet" type="text/css" />
+    <link href="css/animate.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Rubik:400,500,700|Ubuntu:300,400,500,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="grid">
+          <div class="grid__item large--one-fifth">
+            <a href="index.html"><img src="images/logo.svg" alt="LootJunkie"></a>
+          </div>
+          <div class="grid__item large--four-fifths">
+            <small>reflecting 1.13.0.2</small>
+            <ul class="horizontal-menu right">
+              <li><a href="https://twitter.com/lootjunkiexyz" target="_blank">Twitter</a></li>
+              <li><a href="mailto:hello@matou.io" target="_blank">Email</a></li>
+              <li><a href="https://streamtip.com/t/omgmrm" target="_blank">Donate</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+    <section class="news shadow">
+        <div class="wrapper">
+          <a href="https://twitter.com/lootjunkiexyz" class="twitter" target="_blank">@LootJunkiexyz:</a>
+          <div id="alert"></div>
+        </div>
+      </section>
 
-  ga('create', 'UA-62106034-1', 'auto');
-  ga('send', 'pageview');
-
-</script>
-</head>
-<body>
-  <header>
-    <nav>
-      <a href="index.html"><img class="logo" src="images/logo.svg"></a>
-    </nav>
-  </header>
-
-  <section class="news">
-    <div class="wrapper">
-      <a href="https://twitter.com/lootjunkiexyz" class="twitter" target="_blank">@LootJunkiexyz:</a>
-      <div id="alert"></div>
-    </div>
-  </section>
-
-  <div class="wrapper">
-
-    <div class="grid">
-      <div class="grid__item item-section">
+    <div class="container">
+      <div class="card-section">
         <img id="box" src="images/loot-box.png" alt="Loot Box" onclick="openBox(); ga('send', 'event', 'Generate box', 'Click', 'Open loot box');">
-        <ul id="crate" class="add-remove"></ul>
+        <ul id="crate"></ul>
       </div>
+      <button class="generate btn shadow yellow" onclick="ga('send', 'event', 'Generate box', 'Click', 'Open loot box');">Open Loot Box</button><br>
+      <div class="box-type">
+        <ul class="horizontal-menu">
+          <li><a title="Standard" id="standard" href="javascript: void(0)" class="active"><img src="images/events/ow.png" alt="Standard"></a></li>
+          <li><a title="Summer Games" id="summer2016" href="javascript: void(0)"><img src="images/events/summer.png" alt="Summer Games 2016"></a></li>
+          <li><a title="Halloween Terror" id="halloween" href="javascript: void(0)"><img src="images/events/halloween.png" alt="Halloween Terror"></a></li>
+          <li><a title="Winter Wonderland" id="winter" href="javascript: void(0)"><img src="images/events/winter.png" alt="Winter Wonderland"></a></li>
+          <li><a title="Year of the Rooster" id="rooster" href="javascript: void(0)"><img src="images/events/rooster.png" alt="Year of the Rooster"></a></li>
+          <li><a title="Anniversary" id="anniversary" href="javascript: void(0)"><img src="images/events/anniversary.png" alt="Anniversary"></a></li>
+          <li><a title="Uprising" id="uprising" href="javascript: void(0)"><img src="images/events/uprising.png" alt="Uprising"></a></li>
+        </ul>
+      </div>
+      <small class="center courtesy">Item database from <a href="https://github.com/Js41637/Overwatch-Item-Tracker" target="_blank">Overwatch Item Tracker</a></small>
     </div>
 
-    <div class="grid">
-      <div class="grid__item center mobile-wrap mobile-fixed">
-        <a class="btn yellow generate" onclick="openBox(); ga('send', 'event', 'Generate box', 'Click', 'Open loot box');" onmouseover="shakeBox()">Open Loot Box</a>
-      </div>
-    </div>
-
-    <div class="grid large--hide">
-      <div class="grid__item">
-        <div id="mobilealert"></div>
-      </div>
-    </div>
-
-    <footer>
-      <ul>
-        <li><a href="https://twitter.com/lootjunkiexyz" target="_blank">Twitter</a></li>
-        <li><a href="mailto:hello@matou.io" target="_blank">Email</a></li>
-        <li><a href="https://streamtip.com/t/omgmrm" target="_blank">Donate</a></li>
-      </ul>
-    </footer>
-
-  </div>
-  <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
-  <script type="text/javascript" src="js/chance.min.js"></script>
-  <script type="text/javascript" src="js/loot.min.js"></script>
-  <script type="text/javascript" src="js/spec-loot.min.js"></script>
-  <script type="text/javascript" src="js/engine.min.js"></script>
-</body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="js/chance.min.js"></script>
+    <script src="js/engine.min.js"></script>
+  </body>
 </html>

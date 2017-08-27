@@ -1,224 +1,227 @@
-var crate
-var openSound = new Audio('open-box.ogg');
-var results = [];
+var allHeroes = [];
+var allItems = [];
+var refinedItems = [];
+var rareItems = [];
+
 var isRunning = false;
-var isOpen = false;
+var openSound = new Audio('open-box.ogg');
+
+var weights = [];
+var rareWeights = [];
+
+var randomizedItem = [];
+var crate = [];
 
 $.fn.extend({
-    animateCss: function (animationName) {
-        var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
-        $(this).addClass('animated ' + animationName).one(animationEnd, function() {
-            $(this).removeClass('animated ' + animationName);
-        });
-    }
+  animateCss: function (animationName) {
+    var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+    $(this).addClass('animated ' + animationName).one(animationEnd, function() {
+      $(this).removeClass('animated ' + animationName);
+    });
+  }
 });
 
-function openBox(){
+$(document).ready(function(){
+  pullJSON('standard');
+});
 
-  if(isRunning == false){
-    //Reset Crate
-    results = [];
-    setTimeout(delay,1750);
-    setTimeout(hideBox,750);
-    setTimeout(deleteCards,1050);
-    openSound.play();
-    $('#box').animateCss('bounceOutUp');
-    $('#item0').animateCss('bounceOutUp');
-    $('#item1').animateCss('bounceOutUp');
-    $('#item2').animateCss('bounceOutUp');
-    $('#item3').animateCss('bounceOutUp');
 
+/* ---- PULL FROM JSON ----- */
+
+function pullJSON(token) {
+  allItems = [];
+  weights = [];
+  refinedItems = [];
+  rareItems = [];
+  rareWeights = [];
+  $.ajax({
+      url: "https://raw.githubusercontent.com/Js41637/Overwatch-Item-Tracker/master/data/master.json",
+      dataType: 'json',
+      success: function(results){
+        allHeroes = results.heroes;
+        getItems(token);
+        createWeights(refinedItems, weights);
+        createWeights(rareItems, rareWeights);
+      }
+  });
+}
+
+/* ---- DISPLAY ----- */
+
+$('.generate').click(function(){
+  if(isRunning == false) {
     isRunning = true;
+    crate = [];
+    openSound.play();
+    $('#box, .crate-0, .crate-1, .crate-2, .crate-3').animateCss('bounceOutUp');
+    setTimeout(deleteCards, 950);
+    for(i = 0; i < 3; i++) {
+      randomizedItem = chance.weighted(refinedItems, weights);
+      crate.push(randomizedItem);
+    }
+    randomizedItem = chance.weighted(rareItems, rareWeights);
+    crate.push(randomizedItem);
+    setTimeout(displayCrate, 1850);
   }
+});
+
+function deleteCards() {
+  $('#crate li').remove();
+  $('#box').remove();
 }
 
-function deleteCards(){
-  $( "#item0" ).remove();
-  $( "#item1" ).remove();
-  $( "#item2" ).remove();
-  $( "#item3" ).remove();
-}
-
-function hideBox(){
-  $( "#box" ).remove();
-}
-
-function delay(){
-  setTimeout(setBox,250);
-
-}
-
-function setBox(){
-
-
-  for(i = 0; i < 3; i++){
-    //Randomize Loot
-    crate = chance.weighted(loot, weights);
-    results.push(crate);
-  }
-
-  cratespec = chance.weighted(specloot, specweights);
-  results.push(cratespec);
-
-  endresults = chance.shuffle(results);
-  displayBox();
-
-}
-
-function displayBox(){
-  //Add to list
-  for(i = 0; i < endresults.length; i++){
-
-    //Create boxes
-    var ul = document.getElementById("crate");
-    var li = document.createElement("li");
-    var span = document.createElement("span");
-    span.appendChild(document.createTextNode(endresults[i]));
-    li.setAttribute("id", "item" + i);
-    ul.appendChild(li);
-    li.appendChild(span);
-
-    //Check Quality and Strip
-    var str = $("#item" + i).text();
-    var invstr = $("#item" + i).text();
-
-     if(endresults[i].indexOf("Normal") !=-1){
-      $("#item" + i).addClass("normal animated bounceInDown");
-      $("#item" + i ).find('span').text(str.substring(7));
-    }
-    if (endresults[i].indexOf("Rare") !=-1){
-      $("#item" + i).addClass("rare animated bounceInDown");
-      $("#item" + i).find('span').text(str.substring(5));
-    }
-    if(endresults[i].indexOf("Epic") !=-1){
-      $("#item" + i).addClass("epic animated bounceInDown");
-      $("#item" + i).find('span').text(str.substring(5));
-    }
-    if(endresults[i].indexOf("Legendary") !=-1){
-      $("#item" + i).addClass("legendary animated bounceInDown");
-      $("#item" + i).find('span').text(str.substring(10));
-    }
-
-    //Check Hero
-    //Generic
-    if(endresults[i].indexOf("Spray") || endresults[i].indexOf("Coins") !=-1){
-      $("#item" + i).addClass("generic");
-    }
-    //doomfist
-    if(endresults[i].indexOf("Doomfist") !=-1){
-      $("#item" + i).addClass("doomfist");
-    }
-    //orisa
-    if(endresults[i].indexOf("Orisa") !=-1){
-      $("#item" + i).addClass("orisa");
-    }
-
-    //sombra
-    if(endresults[i].indexOf("Sombra") !=-1){
-      $("#item" + i).addClass("sombra");
-    }
-    //ana
-    if(endresults[i].indexOf("Ana") !=-1){
-      $("#item" + i).addClass("ana");
-    }
-    //bastion
-    if(endresults[i].indexOf("Bastion") !=-1){
-      $("#item" + i).addClass("bastion");
-    }
-    //dva
-    if(endresults[i].indexOf("D.Va") !=-1){
-      $("#item" + i).addClass("dva");
-    }
-    //genji
-    if(endresults[i].indexOf("Genji") !=-1){
-      $("#item" + i).addClass("genji");
-    }
-    //hanzo
-    if(endresults[i].indexOf("Hanzo") !=-1){
-      $("#item" + i).addClass("hanzo");
-    }
-    //junkrat
-    if(endresults[i].indexOf("Junkrat") !=-1){
-      $("#item" + i).addClass("junkrat");
-    }
-    //lucio
-    if(endresults[i].indexOf("Lucio") !=-1){
-      $("#item" + i).addClass("lucio");
-    }
-    //McCree
-    if(endresults[i].indexOf("McCree") !=-1){
-      $("#item" + i).addClass("mccree");
-    }
-    //Reaper
-    if(endresults[i].indexOf("Reaper") !=-1){
-      $("#item" + i).addClass("reaper");
-    }
-    //Mei
-    if(endresults[i].indexOf("Mei") !=-1){
-      $("#item" + i).addClass("mei");
-    }
-    //Mercy
-    if(endresults[i].indexOf("Mercy") !=-1){
-      $("#item" + i).addClass("mercy");
-    }
-    //Pharah
-    if(endresults[i].indexOf("Pharah") !=-1){
-      $("#item" + i).addClass("pharah");
-    }
-    //Reinhardt
-    if(endresults[i].indexOf("Reinhardt") !=-1){
-      $("#item" + i).addClass("reinhardt");
-    }
-    //Roadhog
-    if(endresults[i].indexOf("Roadhog") !=-1){
-      $("#item" + i).addClass("roadhog");
-    }
-    //Solider76
-    if(endresults[i].indexOf("Soldier: 76") !=-1){
-      $("#item" + i).addClass("soldier");
-    }
-    //Symmetra
-    if(endresults[i].indexOf("Symmetra") !=-1){
-      $("#item" + i).addClass("symmetra");
-    }
-    //Torbjorn
-    if(endresults[i].indexOf("Torbjorn") !=-1){
-      $("#item" + i).addClass("torbjorn");
-    }
-    //Tracer
-    if(endresults[i].indexOf("Tracer") !=-1){
-      $("#item" + i).addClass("tracer");
-    }
-    //Widowmaker
-    if(endresults[i].indexOf("Widowmaker") !=-1){
-      $("#item" + i).addClass("widowmaker");
-    }
-    //Winston
-    if(endresults[i].indexOf("Winston") !=-1){
-      $("#item" + i).addClass("winston");
-    }
-    //Zarya
-    if(endresults[i].indexOf("Zarya") !=-1){
-      $("#item" + i).addClass("zarya");
-    }
-    //Zenyatta
-    if(endresults[i].indexOf("Zenyatta") !=-1){
-      $("#item" + i).addClass("zenyatta");
-    }
-
-  }
-
+function displayCrate() {
+  $.each(crate, function(i){
+    var heroString= crate[i].id;
+    var heroName = heroString.substr(0, heroString.indexOf('-'));
+    $('<li/>').addClass(heroName + ' ' + crate[i].quality + ' shadow animated bounceInDown crate-' + i ).appendTo('#crate');
+    $('<span/>').appendTo('.crate-'+i);
+    $('<p/>').text(crate[i].name + ' - ' + heroName + ' ' + crate[i].type).appendTo('.crate-'+i+ ' span');
+  });
   isRunning = false;
 }
 
-function shakeBox(){
-  $("#box").addClass("shakebox");
-  setTimeout(removeShake,820);
+$('.box-type ul li a').click(function(){
+  $('.box-type ul li a').removeClass('active');
+  $(this).addClass('active');
+  var boxType = $(this).attr('id');
+  pullJSON(boxType);
+})
+
+/* ---- NITTY GRITTY BELOW ----- */
+
+function createWeights(list, weight) {
+  for(var i = 0; i < list.length; i++) {
+    if(list[i].quality == 'common') {
+      weight.push(59);
+    } else if(list[i].quality == 'rare') {
+      weight.push(32);
+    } else if(list[i].quality == 'epic') {
+      weight.push(7);
+    } else if(list[i].quality == 'legendary') {
+      weight.push(2);
+    }
+  }
 }
 
-function removeShake(){
-  $("#box").removeClass("shakebox");
-  setTimeout(shakeBox,1820);
+function getItems(token) {
+  var filterType;
+
+  if(token == 'summer2016') {
+   filterType = 'SUMMER_GAMES';
+  } else if(token == 'halloween') {
+    filterType = 'HALLOWEEN_2016';
+  } else if(token == 'winter') {
+    filterType = 'WINTER_WONDERLAND_2016';
+  } else if(token == 'rooster') {
+    filterType = 'YEAR_OF_THE_ROOSTER_2017';
+  } else if(token == 'anniversary') {
+    filterType = 'ANNIVERSARY_2017';
+  } else if(token == 'uprising') {
+    filterType = 'UPRISING_2017';
+  }
+
+  //Get all items
+  for(var key in allHeroes) {
+    if (allHeroes.hasOwnProperty(key)) {
+      var val = allHeroes[key].items;
+      allHeroes[key].items.hero = key;
+      allItems.push(val);
+    }
+  }
+
+  //Filter items
+  for(var i = 0; i < allItems.length; i++) {
+    if (allItems[i].sprays) {
+      for(var c = 0; c < allItems[i].sprays.length; c++) {
+        if( allItems[i].sprays[c].achievement || allItems[i].sprays[c].standardItem) {
+        } else {
+          allItems[i].sprays[c].type = 'Spray';
+          if(allItems[i].sprays[c].event == filterType || !allItems[i].sprays[c].event ) {
+            refinedItems.push(allItems[i].sprays[c]);
+            if (allItems[i].sprays[c].quality != 'common') {
+              rareItems.push(allItems[i].sprays[c]);
+            }
+          }
+        }
+      }
+    }
+
+    if (allItems[i].emotes) {
+      for(var c = 0; c < allItems[i].emotes.length; c++) {
+        if( allItems[i].emotes[c].standardItem) {
+        } else {
+          allItems[i].emotes[c].type = 'Emote';
+          if(allItems[i].emotes[c].event == filterType || !allItems[i].emotes[c].event ) {
+            refinedItems.push(allItems[i].emotes[c]);
+            if (allItems[i].emotes[c].quality != 'common') {
+              rareItems.push(allItems[i].emotes[c]);
+            }
+          }
+        }
+      }
+    }
+
+    if (allItems[i].intros) {
+    for(var c = 0; c < allItems[i].intros.length; c++) {
+        if( allItems[i].intros[c].standardItem) {
+        } else {
+          allItems[i].intros[c].type = 'Intro';
+          if(allItems[i].intros[c].event == filterType || !allItems[i].intros[c].event ) {
+            refinedItems.push(allItems[i].intros[c]);
+            if (allItems[i].intros[c].quality != 'common') {
+              rareItems.push(allItems[i].intros[c]);
+            }
+          }
+        }
+      }
+    }
+
+    if (allItems[i].poses) {
+      for(var c = 0; c < allItems[i].poses.length; c++) {
+        if( allItems[i].poses[c].standardItem) {
+        } else {
+          allItems[i].poses[c].type = 'Victory Pose';
+          if(allItems[i].poses[c].event == filterType || !allItems[i].poses[c].event ) {
+            refinedItems.push(allItems[i].poses[c]);
+            if (allItems[i].poses[c].quality != 'common') {
+              rareItems.push(allItems[i].poses[c]);
+            }
+          }
+        }
+      }
+    }
+
+    if (allItems[i].skins) {
+      for(var c = 0; c < allItems[i].skins.length; c++) {
+        if( allItems[i].skins[c].standardItem) {
+        } else {
+          allItems[i].skins[c].type = 'Skin';
+          if(allItems[i].skins[c].event == filterType || !allItems[i].skins[c].event ) {
+            refinedItems.push(allItems[i].skins[c]);
+            if (allItems[i].skins[c].quality != 'common') {
+              rareItems.push(allItems[i].skins[c]);
+            }
+          }
+        }
+      }
+    }
+
+    if (allItems[i].voicelines) {
+      for(var c = 0; c < allItems[i].voicelines.length; c++) {
+        if( allItems[i].voicelines[c].standardItem) {
+        } else {
+          allItems[i].voicelines[c].type = 'Voiceline';
+          if(allItems[i].voicelines[c].event == filterType || !allItems[i].voicelines[c].event ) {
+            refinedItems.push(allItems[i].voicelines[c]);
+            if (allItems[i].voicelines[c].quality != 'common') {
+              rareItems.push(allItems[i].voicelines[c]);
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 //Twitter stuff
@@ -317,4 +320,6 @@ var configProfileMobile = {
 };
 
 twitterFetcher.fetch(configProfileMobile);
+
+
 
