@@ -88,7 +88,11 @@
   background-color: white;
   box-sizing: border-box;
   @include at-query($min, $large) {
-    p { background-color: rgba(255,255,255,0.8); }
+    p {
+      border-top: 1px solid #fff;
+      border-bottom: 1px solid darken(#fff, 20%);
+      background-color: rgba(255,255,255,0.8);
+   }
   }
 }
 
@@ -96,21 +100,33 @@
   background-color: #0070ff;
   box-sizing: border-box;
   @include at-query($min, $large) {
-    p { background-color: rgba(0,112,255,0.8); }
+    p {
+      border-top: 1px solid #0070ff;
+      border-bottom: 1px solid darken(#0070ff, 20%);
+      background-color: rgba(0,112,255,0.8);
+    }
   }
 }
 .epic {
   background-color: #B048F8;
   box-sizing: border-box;
   @include at-query($min, $large) {
-    p { background-color: rgba(176,72,248,0.8); }
+    p {
+      border-top: 1px solid #B048F8;
+      border-bottom: 1px solid darken(#B048F8, 20%);
+      background-color: rgba(176,72,248,0.8);
+    }
   }
 }
 .legendary {
   background-color: #ff8000;
   box-sizing: border-box;
   @include at-query($min, $large) {
-    p { background-color: rgba(255,128,0,0.8); }
+    p {
+      border-top: 1px solid #ff8000;
+      border-bottom: 1px solid darken(#ff8000, 20%);
+      background-color: rgba(255,128,0,0.8);
+    }
   }
 }
 

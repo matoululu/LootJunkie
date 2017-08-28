@@ -1937,6 +1937,8 @@ th {
   box-sizing: border-box; }
   @media screen and (min-width: 769px) {
     .common p {
+      border-top: 1px solid #fff;
+      border-bottom: 1px solid #cccccc;
       background-color: rgba(255, 255, 255, 0.8); } }
 
 .rare {
@@ -1944,6 +1946,8 @@ th {
   box-sizing: border-box; }
   @media screen and (min-width: 769px) {
     .rare p {
+      border-top: 1px solid #0070ff;
+      border-bottom: 1px solid #004399;
       background-color: rgba(0, 112, 255, 0.8); } }
 
 .epic {
@@ -1951,6 +1955,8 @@ th {
   box-sizing: border-box; }
   @media screen and (min-width: 769px) {
     .epic p {
+      border-top: 1px solid #B048F8;
+      border-bottom: 1px solid #7f08d2;
       background-color: rgba(176, 72, 248, 0.8); } }
 
 .legendary {
@@ -1958,6 +1964,8 @@ th {
   box-sizing: border-box; }
   @media screen and (min-width: 769px) {
     .legendary p {
+      border-top: 1px solid #ff8000;
+      border-bottom: 1px solid #994d00;
       background-color: rgba(255, 128, 0, 0.8); } }
 
 /*--------------------- Heroes ---------------------*/
@@ -2285,7 +2293,7 @@ a {
   padding: 10px 20px;
   background-color: #f99e1a;
   color: white;
-  border-radius: 7px;
+  border-radius: 0px;
   border: 0px; }
   .btn:visited {
     background-color: #fcc87d;
@@ -2300,7 +2308,7 @@ a {
 
 input, select {
   padding: 7px;
-  border-radius: 3.5px;
+  border-radius: 0px;
   border: 1px solid #ccc;
   outline: none; }
   input:focus, select:focus {
@@ -2349,7 +2357,9 @@ h1, h2, h3, h4, h5 {
   margin: 0px auto;
   font-size: 24px;
   font-weight: 700;
-  display: block; }
+  display: block;
+  border-top: 1px solid #fab34c;
+  border-bottom: 1px solid #da8406; }
   .btn:hover, .btn:focus {
     background: #f99e1a;
     -webkit-box-shadow: 0px 0px 33px 0px rgba(249, 158, 26, 0.75);
@@ -2413,13 +2423,14 @@ header {
     .card-section #crate li {
       max-height: 460px;
       display: table;
-      table-layout: fixed;
-      border-radius: 7px; }
+      table-layout: fixed; }
       .card-section #crate li span {
         font-weight: 400;
         font-size: 14px;
         display: table-cell;
-        vertical-align: middle; }
+        vertical-align: middle;
+        border-bottom: 1px solid #ccc;
+        border-top: 1px solid #eee; }
 
 .box-type {
   float: right;
@@ -2431,12 +2442,13 @@ header {
     position: relative;
     left: 50%; }
     .box-type ul a.active img {
-      background-color: rgba(0, 0, 0, 0.2); }
+      background-color: rgba(0, 0, 0, 0.2);
+      border: 1px solid rgba(0, 0, 0, 0.04); }
     .box-type ul a img {
-      width: 30px;
+      border-radius: 7px;
+      max-width: 24px;
       cursor: pointer;
-      padding: 10px;
-      border-radius: 7px; }
+      padding: 10px; }
       .box-type ul a img:hover {
         opacity: 0.5; }
   .box-type .horizontal-menu li {
