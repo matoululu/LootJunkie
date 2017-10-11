@@ -128,7 +128,7 @@ function getItems(token) {
   if(token == 'summer2016') {
    filterType = 'SUMMER_GAMES';
   } else if(token == 'halloween') {
-    filterType = 'HALLOWEEN_2016';
+    filterType = 'HALLOWEEN';
   } else if(token == 'winter') {
     filterType = 'WINTER_WONDERLAND_2016';
   } else if(token == 'rooster') {
