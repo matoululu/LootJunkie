@@ -14,7 +14,7 @@ body {
   line-height: 30px;
   background-color: #eee;
   color: #222;
-  background-image: url(../images/pattern.png);
+  background-image: url(../images/bg.jpg);
 }
 
 h1, h2, h3, h4, h5 {
@@ -139,13 +139,12 @@ header {
     a{
       &.active {
         img {
-          background-color: rgba(0,0,0,0.2);
-          border: 1px solid rgba(0,0,0,0.04);
+          opacity: 0.3;
         }
       }
       img {
         border-radius: 7px;
-        max-width: 24px;
+        max-height: 24px;
         cursor: pointer;
         padding: 10px;
         &:hover {

@@ -1971,19 +1971,20 @@ th {
 /*--------------------- Heroes ---------------------*/
 #crate span {
   background-repeat: no-repeat;
-  background-position: 95% 3%; }
+  background-position: 95% 3%;
+  background-size: 12%; }
   #crate span.WINTER_WONDERLAND_2016 {
-    background-image: url(../images/overlay/winter.png); }
+    background-image: url(../images/events/winter.svg); }
   #crate span.SUMMER_GAMES {
-    background-image: url(../images/overlay/summer.png); }
+    background-image: url(../images/events/summer.svg); }
   #crate span.HALLOWEEN {
-    background-image: url(../images/overlay/halloween.png); }
+    background-image: url(../images/events/halloween.svg); }
   #crate span.YEAR_OF_THE_ROOSTER_2017 {
-    background-image: url(../images/overlay/rooster.png); }
+    background-image: url(../images/events/rooster.svg); }
   #crate span.ANNIVERSARY_2017 {
-    background-image: url(../images/overlay/anniversary.png); }
+    background-image: url(../images/events/anniversary.svg); }
   #crate span.UPRISING_2017 {
-    background-image: url(../images/overlay/uprising.png); }
+    background-image: url(../images/events/uprising.svg); }
 
 #crate li {
   background-image: url(../images/mobile/generic.png);
@@ -2340,7 +2341,7 @@ body {
   line-height: 30px;
   background-color: #eee;
   color: #222;
-  background-image: url(../images/pattern.png); }
+  background-image: url(../images/bg.jpg); }
 
 h1, h2, h3, h4, h5 {
   font-family: "Ubuntu", sans-serif; }
@@ -2442,11 +2443,10 @@ header {
     position: relative;
     left: 50%; }
     .box-type ul a.active img {
-      background-color: rgba(0, 0, 0, 0.2);
-      border: 1px solid rgba(0, 0, 0, 0.04); }
+      opacity: 0.3; }
     .box-type ul a img {
       border-radius: 7px;
-      max-width: 24px;
+      max-height: 24px;
       cursor: pointer;
       padding: 10px; }
       .box-type ul a img:hover {
