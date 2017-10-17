@@ -2480,7 +2480,8 @@ header {
     .news {
       display: block; } }
   .news .twitter {
-    text-decoration: none; }
+    text-decoration: none;
+    color: #fcc87d; }
   .news #alert {
     display: inline-block; }
     .news #alert ul {
