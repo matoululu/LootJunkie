@@ -5,6 +5,7 @@ var rareItems = [];
 
 var isRunning = false;
 var openSound = new Audio('open-box.ogg');
+var volume = 0.25;
 var filterType;
 
 var weights = [];
@@ -25,6 +26,18 @@ $.fn.extend({
 $(document).ready(function(){
   pullJSON('standard');
 });
+
+$('.js-volume').click(function(){
+  if($(this).hasClass('is-on')) {
+    $(this).text('volume_off').removeClass('is-on').addClass('is-off');
+    openSound.muted = true;
+  } else {
+    $(this).text('volume_up').removeClass('is-off').addClass('is-on');
+    openSound.muted = false;
+  }
+});
+
+
 
 
 /* ---- PULL FROM JSON ----- */
@@ -51,8 +64,10 @@ function pullJSON(token) {
 
 $('.generate').click(function(){
   if(isRunning == false) {
+    pauseCrate();
     isRunning = true;
     crate = [];
+    openSound.volume = volume;
     openSound.play();
     $('#box, .crate-0, .crate-1, .crate-2, .crate-3').animateCss('bounceOutUp');
     setTimeout(deleteCards, 950);
@@ -62,9 +77,18 @@ $('.generate').click(function(){
     }
     randomizedItem = chance.weighted(rareItems, rareWeights);
     crate.push(randomizedItem);
-    setTimeout(displayCrate, 1850);
+    setTimeout(displayCrate, 2350);
+    setTimeout(restoreCrate, 5000);
   }
 });
+
+function pauseCrate() {
+  $('.generate').attr('disabled','disabled');
+}
+
+function restoreCrate() {
+  $('.generate').removeAttr('disabled');
+}
 
 function deleteCards() {
   $('#crate li').remove();
@@ -80,7 +104,6 @@ function displayCrate() {
     $('<p/>').text(crate[i].name + ' - ' + heroName + ' ' + crate[i].type).appendTo('.crate-'+i+ ' span');
   });
   isRunning = false;
-  console.log(crate);
 }
 
 $('.box-type ul li a').click(function(){
