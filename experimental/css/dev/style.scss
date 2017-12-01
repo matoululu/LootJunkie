@@ -152,24 +152,28 @@ header {
       img.back:hover{
         -webkit-filter: drop-shadow(0px 0px 15px #fff );
         filter: drop-shadow(0px 0px 15px #fff);
+        transform: scale(1.1) rotateY(-180deg);
       }
     }
     .RARE {
       img.back:hover{
         -webkit-filter: drop-shadow(0px 0px 15px #0070ff );
         filter: drop-shadow(0px 0px 15px #0070ff);
+        transform: scale(1.1) rotateY(-180deg);
       }
     }
     .EPIC {
       img.back:hover{
         -webkit-filter: drop-shadow(0px 0px 15px #B048F8 );
         filter: drop-shadow(0px 0px 15px #B048F8);
+        transform: scale(1.1) rotateY(-180deg);
       }
     }
     .LEGENDARY {
       img.back:hover{
         -webkit-filter: drop-shadow(0px 0px 15px #ff8000 );
         filter: drop-shadow(0px 0px 15px #ff8000);
+        transform: scale(1.1) rotateY(-180deg);
       }
     }
   }
@@ -180,7 +184,7 @@ header {
     position: relative;
 }
 .flip .card.flipped {
-  transform: rotateY(180deg);
+  transform: rotateY(-180deg);
 }
 .flip .card {
   -webkit-transform-style: preserve-3d;
@@ -201,7 +205,7 @@ header {
 }
 .flip .card .back {
     cursor: pointer;
-    transform: rotateY(180deg);
+    transform: rotateY(-180deg);
 }
 
 img.front.COMMON, .flipped .COMMON img.back {
