@@ -96,12 +96,13 @@ function deleteCards() {
 }
 
 function displayCrate() {
-  $.each(crate, function(i){
-    var heroString= crate[i].id;
+  var shuffledCrate = chance.shuffle(crate);
+  $.each(shuffledCrate, function(i){
+    var heroString= shuffledCrate[i].id;
     var heroName = heroString.substr(0, heroString.indexOf('-'));
-    $('<li/>').addClass(heroName + ' ' + crate[i].quality + ' shadow animated bounceInDown crate-' + i ).appendTo('#crate');
-    $('<span/>').addClass(crate[i].event).appendTo('.crate-'+i);
-    $('<p/>').text(crate[i].name + ' - ' + heroName + ' ' + crate[i].type).appendTo('.crate-'+i+ ' span');
+    $('<li/>').addClass(heroName + ' ' + shuffledCrate[i].quality + ' shadow animated bounceInDown crate-' + i ).appendTo('#crate');
+    $('<span/>').addClass(shuffledCrate[i].event).appendTo('.crate-'+i);
+    $('<p/>').text(shuffledCrate[i].name + ' - ' + heroName + ' ' + shuffledCrate[i].type).appendTo('.crate-'+i+ ' span');
   });
   isRunning = false;
 }
