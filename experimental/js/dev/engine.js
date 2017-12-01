@@ -79,7 +79,7 @@ function randomCard() {
   isGold = chance.weighted(imgURL, goldChance);
   var cardRarity = card.rarity;
   var cardURL = isGold;
-  var cardElement = '<div class="flip"><div class="card"><div class="face front ' + cardRarity + '"><img src="images/back.png"></div><div class="face back"><img class="' + cardRarity +'" src="' + cardURL + '"></div></div></div>';
+  var cardElement = '<div class="flip"><div class="card"><div class="face front ' + cardRarity + '"><img class="back" src="images/back.png"></div><div class="face back"><img class="front ' + cardRarity +'" src="' + cardURL + '"></div></div></div>';
   pack.push(cardElement);
 }
 
@@ -94,7 +94,7 @@ function randomRareCard() {
   isGold = chance.weighted(imgURL, goldChance);
   var cardRarity = card.rarity;
   var cardURL = isGold;
-  var cardElement = '<div class="flip"><div class="card"><div class="face front ' + cardRarity + '"><img src="images/back.png"></div><div class="face back"><img class="' + cardRarity +'" src="' + cardURL + '"></div></div></div>';
+  var cardElement = '<div class="flip"><div class="card"><div class="face front ' + cardRarity + '"><img class="back" src="images/back.png"></div><div class="face back"><img class="front ' + cardRarity +'" src="' + cardURL + '"></div></div></div>';
   pack.push(cardElement);
 }
 

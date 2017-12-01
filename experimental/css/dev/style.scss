@@ -12,7 +12,7 @@ body {
   font-weight: 400;
   font-size: 14px;
   line-height: 30px;
-  background-color: #242424;
+  background-color: #ccc;
   color: #222;
 }
 
@@ -142,6 +142,35 @@ header {
     }
     img {
       width: 100%;
+      transition: ease-in-out 0.3s all;
+      &.back {
+        -webkit-filter: drop-shadow(0px 0px 10px rgba(0,0,0,0) );
+        filter: drop-shadow(0px 0px 10px rgba(0,0,0,0));
+      }
+    }
+    .COMMON {
+      img.back:hover{
+        -webkit-filter: drop-shadow(0px 0px 15px #fff );
+        filter: drop-shadow(0px 0px 15px #fff);
+      }
+    }
+    .RARE {
+      img.back:hover{
+        -webkit-filter: drop-shadow(0px 0px 15px #0070ff );
+        filter: drop-shadow(0px 0px 15px #0070ff);
+      }
+    }
+    .EPIC {
+      img.back:hover{
+        -webkit-filter: drop-shadow(0px 0px 15px #B048F8 );
+        filter: drop-shadow(0px 0px 15px #B048F8);
+      }
+    }
+    .LEGENDARY {
+      img.back:hover{
+        -webkit-filter: drop-shadow(0px 0px 15px #ff8000 );
+        filter: drop-shadow(0px 0px 15px #ff8000);
+      }
     }
   }
 }
@@ -173,6 +202,26 @@ header {
 .flip .card .back {
     cursor: pointer;
     transform: rotateY(180deg);
+}
+
+img.front.COMMON, .flipped .COMMON img.back {
+  -webkit-filter: drop-shadow(0px 0px 15px #fff );
+  filter: drop-shadow(0px 0px 15px #fff);
+}
+
+img.front.RARE, .flipped .RARE img.back {
+  -webkit-filter: drop-shadow(0px 0px 15px #0070ff );
+  filter: drop-shadow(0px 0px 15px #0070ff);
+}
+
+img.front.EPIC, .flipped .EPIC img.back {
+  -webkit-filter: drop-shadow(0px 0px 15px #B048F8 );
+  filter: drop-shadow(0px 0px 15px #B048F8);
+}
+
+img.front.LEGENDARY, .flipped .LEGENDARY img.back {
+  -webkit-filter: drop-shadow(0px 0px 15px #ff8000 );
+  filter: drop-shadow(0px 0px 15px #ff8000);
 }
 
 /* News
