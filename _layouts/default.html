@@ -30,7 +30,7 @@
               <a class="logo__link" href="{% if page.handle == 'hearthstone' %}{{ "/hearthstone" | relative_url }}{% else %}{{ "/" | relative_url }}{% endif %}">
                 {% if page.handle == 'hearthstone' %}
                   <img src="{{ "images/logo-hearthstone.svg" | relative_url }}">
-                {% else %}
+                {% elsif page.handle == 'overwatch' %}
                   <img src="{{ "images/logo-overwatch.svg" | relative_url }}">
                 {% endif %}
               </a>
@@ -70,10 +70,11 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="{{ "js/chance.min.js" | relative_url }}"></script>
+    {% if page.handle == 'overwatch' %}
+    <script src="{{ "js/ow-engine.min.js" | relative_url }}"></script>
+    {% endif %}
     {% if page.handle == 'hearthstone' %}
-      <script src="{{ "js/hs-engine.min.js" | relative_url }}"></script>
-    {% else %}
-      <script src="{{ "js/ow-engine.min.js" | relative_url }}"></script>
+    <script src="{{ "js/hs-engine.min.js" | relative_url }}"></script>
     {% endif %}
 
   </body>
