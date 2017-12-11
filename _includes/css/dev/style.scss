@@ -111,6 +111,10 @@ header {
       @include at-query($max, $medium) {
         padding: 0 10px 0 10px;
       }
+      i {
+        margin-top: -3px;
+        vertical-align: middle;
+      }
     }
   }
 }
