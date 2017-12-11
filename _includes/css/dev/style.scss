@@ -26,7 +26,8 @@ body {
   font-family: $font-stack;
   font-size: 16px;
   background-color: #ddd;
-  &.overwatch {
+  -webkit-font-smoothing: antialiased;
+  &.overwatch, .changelog {
     color: $ow;
     a, a:visited {
       color: $ow;
@@ -132,7 +133,7 @@ header {
     vertical-align: middle;
     font-size: 18px;
   }
-  &.overwatch { background-color: $ow; }
+  &.overwatch, &.changelog { background-color: $ow; }
   &.hearthstone { background-color: $hs; }
   #alert {
     display: inline-block;
