@@ -1,0 +1,174 @@
+/*============================================================================
+  Variables
+==============================================================================*/
+
+$font-stack: 'Ubuntu', sans-serif;
+$ow: #f99e1a;
+$hs: #2797e8;
+
+/*============================================================================
+  Includes
+==============================================================================*/
+@import 'itty';
+@import 'normalize';
+@import 'overwatch';
+@import 'hearthstone';
+
+/*============================================================================
+  Basics
+==============================================================================*/
+
+.text-align--left { text-align: left; }
+.text-align--center { text-align: center; }
+.text-align--right { text-align: right; }
+
+body {
+  font-family: $font-stack;
+  font-size: 16px;
+  background-color: #ddd;
+  &.overwatch {
+    color: $ow;
+    a, a:visited {
+      color: $ow;
+      text-decoration: none;
+      &:hover {
+        color: lighten($ow, 10%);
+      }
+    }
+  }
+  &.hearthstone {
+    color: $hs;
+    a, a:visited {
+      color: $hs;
+      text-decoration: none;
+      &:hover {
+        color: lighten($hs, 10%);
+      }
+    }
+  }
+}
+
+.container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0px auto;
+  &.main {
+    margin-top: $gutter * 2;
+  }
+}
+
+/*============================================================================
+  Header
+==============================================================================*/
+
+header {
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-color: #131313;
+  line-height: 0;
+  &.hearthstone {
+    @include at-query($min, $large) {
+      background-image: url('../images/hearthstone.png');
+    }
+  }
+  &.overwatch {
+    @include at-query($min, $large) {
+      background-image: url('../images/overwatch.jpg');
+    }
+  }
+  a.logo__link {
+    display: block;
+    img {
+      width: 100%;
+      @include at-query($max, $medium) {
+        display: block;
+        margin: 5px auto;
+        width: 50%;
+      }
+    }
+  }
+  ul {
+    list-style: none;
+    padding: 5px 0 0 0;
+    margin: 0;
+    display: inline-block;
+    line-height: 35px;
+    float: right;
+    @include at-query($max, $medium) {
+      width: 100%;
+      display: block;
+      text-align: center;
+    }
+    li {
+      display: inline-block;
+      font-weight: 700;
+      padding: 0 0 0 20px;
+      line-height: 25px;
+      @include at-query($max, $medium) {
+        padding: 0 10px 0 10px;
+      }
+    }
+  }
+}
+
+.news.shadow {
+  width: 100%;
+  padding: 7px 0;
+  font-size: 14px;
+  display: none;
+  @include at-query($min, $large) {
+    display: block;
+  }
+  i {
+    color: white;
+    vertical-align: middle;
+    font-size: 18px;
+  }
+  &.overwatch { background-color: $ow; }
+  &.hearthstone { background-color: $hs; }
+  #alert {
+    display: inline-block;
+  }
+  a.twitter {
+    color: white;
+    display: inline-block;
+    opacity: 0.8;
+  }
+  ul {
+    list-style: none;
+    padding-left: 0;
+    color: white;
+    padding: 0px;
+    margin: 0;
+    p {
+      margin: 0;
+      a {
+        color: white;
+      }
+    }
+  }
+}
+
+/*============================================================================
+  Footer
+==============================================================================*/
+
+.courtesy {
+  display: block;
+  color: #222;
+  opacity: 0.2;
+  a {
+    color: #222 !important;
+  }
+}
+
+.footer {
+  width: 100%;
+  position: absolute;
+  bottom: 2%;
+  font-size: 80%;
+}
