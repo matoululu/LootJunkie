@@ -101,13 +101,13 @@ function randomCard() {
   isGold = chance.weighted(imgURL, goldChance);
   var cardRarity = card.rarity;
   if( cardRarity == 'COMMON') {
-    value = 20;
+    value = 10;
   } else if(cardRarity == 'RARE') {
-    value = 40;
+    value = 60;
   } else if(cardRarity == 'EPIC') {
-    value = 80;
+    value = 120;
   } else if(cardRarity == 'LEGENDARY') {
-    value = 160;
+    value = 240;
   } else {
     value = 0;
   }
@@ -127,13 +127,13 @@ function randomRareCard() {
   isGold = chance.weighted(imgURL, goldChance);
   var cardRarity = card.rarity;
   if( cardRarity == 'COMMON') {
-    value = 20;
+    value = 10;
   } else if(cardRarity == 'RARE') {
-    value = 40;
+    value = 60;
   } else if(cardRarity == 'EPIC') {
-    value = 80;
+    value = 120;
   } else if(cardRarity == 'LEGENDARY') {
-    value = 160;
+    value = 240;
   } else {
     value = 0;
   }
