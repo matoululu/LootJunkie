@@ -76,7 +76,6 @@ $(document).ready(function(){
 
   $('.btn-wrap').slick({
     infinite: true,
-    lazyLoad: 'ondemand',
     slidesToShow: 6,
     slidesToScroll: 1,
     dots: false,
@@ -85,7 +84,9 @@ $(document).ready(function(){
         breakpoint: 768,
         settings: {
           slidesToShow: 3,
-          slidesToScroll: 1
+          slidesToScroll: 3,
+          arrows: false,
+          dots: true
         }
       }
     ]

@@ -12,45 +12,19 @@
 .hearthstone {
   .btn {
     display: block;
-    margin: 5px 10px;
-    background-image: url('../images/pack.png');
-    background-color: transparent;
-    background-size: cover;
-    background-repeat: no-repeat;
-    //height: calc(216px / 4);
-    //width: calc(160px / 4);
+    padding: 5px 20px;
+    width: 100%;
     transition: ease-in-out 0.5s all;
     cursor: pointer;
     border: 0;
-    @include at-query($min, $large) {
-      //height: calc(216px / 2);
-      //width: calc(160px / 2);
-      margin: 10px 20px;
+    outline: none !important;
+    &:active, &:focus {
+      outline: none !important;
     }
+
     &:hover {
       background-color: transparent;
       opacity: 0.6;
-    }
-    &.gvg {
-      background-image: url('../images/packgvg.png');
-    }
-    &.kotft {
-      background-image: url('../images/packkotft.png');
-    }
-    &.ungoro {
-      background-image: url('../images/packungoro.png');
-    }
-    &.msog {
-      background-image: url('../images/packmsog.png');
-    }
-    &.tgt {
-      background-image: url('../images/packtgt.png');
-    }
-    &.wotog {
-      background-image: url('../images/packwotog.png');
-    }
-    &.kac {
-      background-image: url('../images/packkac.png');
     }
   }
 }
@@ -65,18 +39,14 @@
   padding: 10px 20px;
   color: #777;
   display: none;
-  .value--rare {
-    color: #0070ff;
+  margin: 10px 0;
+  .value {
+    color: #fff;
     font-weight: bold;
   }
-  .value--epic {
-    color: #B048F8;
-    font-weight: bold;
-  }
-  .value--legendary {
-    color: #ff8000;
-    font-weight: bold;
-  }
+  .value--rare {color: #0070ff;}
+  .value--epic {color: #B048F8;}
+  .value--legendary {color: #ff8000;}
 }
 
 

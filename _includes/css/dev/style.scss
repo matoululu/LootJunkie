@@ -159,6 +159,14 @@ header {
   }
 }
 
+
+
+/*============================================================================
+  Slick
+==============================================================================*/
+
+.slick-slide:focus { outline: none; }
+
 .btn-wrap {
   .slick-prev, .slick-next {
     &:before {
@@ -183,7 +191,12 @@ header {
 
 .footer {
   width: 100%;
-  position: absolute;
-  bottom: 2%;
+  position: relative;
+  margin: 30px 0;
   font-size: 80%;
+  @include at-query($min, $large) {
+    position: absolute;
+    margin: 0;
+    bottom: 2%;
+  }
 }
