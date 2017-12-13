@@ -32,25 +32,28 @@ $('.btn').click(function(){
 
 
 $(document.body).on('click', '.flip', function(){
-  $(this).find('.card').addClass('flipped');
-  if($(this).find('.img-front').data('is-gold')) {
-    packValue += $(this).find('.card').data('card-value')*2;
-  } else {
-    packValue += $(this).find('.card').data('card-value');
-  }
 
-  $('.score').show();
-  $('.value').text(packValue);
-  if(!(this).find('.card').hasClass('flipped')) {
-    if(packValue >= 350) {
-      $('.value').addClass('value--legendary');
-    } else if(packValue >= 2500) {
-      $('.value').addClass('value--epic');
-    } else if(packValue >= 150) {
-      $('.value').addClass('value--rare');
+  var clickedCard = $(this).find('.card');
+
+  if(!clickedCard.hasClass('flipped')) {
+    if($(this).find('.img-front').data('is-gold')) {
+      packValue += $(this).find('.card').data('card-value')*2;
+    } else {
+      packValue += $(this).find('.card').data('card-value');
     }
   }
 
+  clickedCard.addClass('flipped');
+
+  $('.score').show();
+  $('.value').text(packValue);
+  if(packValue >= 350) {
+    $('.value').addClass('value--legendary');
+  } else if(packValue >= 2500) {
+    $('.value').addClass('value--epic');
+  } else if(packValue >= 150) {
+    $('.value').addClass('value--rare');
+  }
 });
 
 /* On Ready
