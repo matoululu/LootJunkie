@@ -7,6 +7,7 @@ rareFilteredCards = [];
 odds = [];
 rareOdds = [];
 pack= [];
+packValue = 0;
 
 
 
@@ -14,7 +15,9 @@ pack= [];
 ======================== */
 
 $('.btn').click(function(){
+  $('.score').hide();
   pack = [];
+  packValue = 0;
 
   $('.flip').remove();
   token = $(this).data('pack');
@@ -27,6 +30,9 @@ $('.btn').click(function(){
 
 $(document.body).on('click', '.flip', function(){
   $(this).find('.card').addClass('flipped');
+  packValue += $(this).find('.card').data('card-value');
+  $('.score').show();
+  $('.value').text(packValue);
 });
 
 /* On Ready
@@ -46,6 +52,7 @@ function pullJSON(set) {
 }
 
 $(document).ready(function(){
+
   $('.btn-wrap').slick({
     infinite: true,
     lazyLoad: 'ondemand',
@@ -93,8 +100,19 @@ function randomCard() {
   goldChance = [98,2];
   isGold = chance.weighted(imgURL, goldChance);
   var cardRarity = card.rarity;
+  if( cardRarity == 'COMMON') {
+    value = 20;
+  } else if(cardRarity == 'RARE') {
+    value = 40;
+  } else if(cardRarity == 'EPIC') {
+    value = 80;
+  } else if(cardRarity == 'LEGENDARY') {
+    value = 160;
+  } else {
+    value = 0;
+  }
   var cardURL = isGold;
-  var cardElement = '<div class="flip"><div class="card"><div class="face front ' + cardRarity + '"><img class="img-back" src="../images/back.png"></div><div class="face back"><img class="img-front ' + cardRarity +'" src="' + cardURL + '"></div></div></div>';
+  var cardElement = '<div class="flip"><div class="card" data-card-value="' + value + '"><div class="face front ' + cardRarity + '"><img class="img-back" src="../images/back.png"></div><div class="face back"><img class="img-front ' + cardRarity +'" src="' + cardURL + '"></div></div></div>';
   pack.push(cardElement);
 }
 
@@ -108,8 +126,19 @@ function randomRareCard() {
   goldChance = [98,2];
   isGold = chance.weighted(imgURL, goldChance);
   var cardRarity = card.rarity;
+  if( cardRarity == 'COMMON') {
+    value = 20;
+  } else if(cardRarity == 'RARE') {
+    value = 40;
+  } else if(cardRarity == 'EPIC') {
+    value = 80;
+  } else if(cardRarity == 'LEGENDARY') {
+    value = 160;
+  } else {
+    value = 0;
+  }
   var cardURL = isGold;
-  var cardElement = '<div class="flip"><div class="card"><div class="face front ' + cardRarity + '"><img class="img-back" src="../images/back.png"></div><div class="face back"><img class="img-front ' + cardRarity +'" src="' + cardURL + '"></div></div></div>';
+  var cardElement = '<div class="flip"><div class="card" data-card-value="' + value + '"><div class="face front ' + cardRarity + '"><img class="img-back" src="../images/back.png"></div><div class="face back"><img class="img-front ' + cardRarity +'" src="' + cardURL + '"></div></div></div>';
   pack.push(cardElement);
 }
 
