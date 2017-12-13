@@ -46,7 +46,22 @@ function pullJSON(set) {
 }
 
 $(document).ready(function(){
-
+  $('.btn-wrap').slick({
+    infinite: true,
+    lazyLoad: 'ondemand',
+    slidesToShow: 6,
+    slidesToScroll: 1,
+    dots: false,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1
+        }
+      }
+    ]
+  });
 });
 
 
