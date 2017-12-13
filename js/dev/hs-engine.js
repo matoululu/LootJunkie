@@ -49,7 +49,7 @@ $(document.body).on('click', '.flip', function(){
   $('.value').text(packValue);
   if(packValue >= 350) {
     $('.value').addClass('value--legendary');
-  } else if(packValue >= 2500) {
+  } else if(packValue >= 250) {
     $('.value').addClass('value--epic');
   } else if(packValue >= 150) {
     $('.value').addClass('value--rare');
