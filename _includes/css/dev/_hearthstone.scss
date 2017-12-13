@@ -65,6 +65,18 @@
   padding: 10px 20px;
   color: #777;
   display: none;
+  .value--rare {
+    color: #0070ff;
+    font-weight: bold;
+  }
+  .value--epic {
+    color: #B048F8;
+    font-weight: bold;
+  }
+  .value--legendary {
+    color: #ff8000;
+    font-weight: bold;
+  }
 }
 
 

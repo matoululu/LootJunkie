@@ -16,6 +16,9 @@ packValue = 0;
 
 $('.btn').click(function(){
   $('.score').hide();
+  $('.value--rare').removeClass('value--rare');
+  $('.value--epic').removeClass('value--epic');
+  $('.value--legendary').removeClass('value--legendary');
   pack = [];
   packValue = 0;
 
@@ -30,9 +33,21 @@ $('.btn').click(function(){
 
 $(document.body).on('click', '.flip', function(){
   $(this).find('.card').addClass('flipped');
-  packValue += $(this).find('.card').data('card-value');
+  if($(this).find('.img-front').data('is-gold')) {
+    packValue += $(this).find('.card').data('card-value')*2;
+  } else {
+    packValue += $(this).find('.card').data('card-value');
+  }
+
   $('.score').show();
   $('.value').text(packValue);
+  if(packValue >= 350) {
+    $('.value').addClass('value--legendary');
+  } else if(packValue >= 2500) {
+    $('.value').addClass('value--epic');
+  } else if(packValue >= 150) {
+    $('.value').addClass('value--rare');
+  }
 });
 
 /* On Ready
@@ -95,7 +110,7 @@ function randomCard() {
   card = chance.weighted(filteredCards, odds);
   imgURL = [
     'https://media.services.zam.com/v1/media/byName/hs/cards/enus/' + card.id +'.png',
-    'https://media.services.zam.com/v1/media/byName/hs/cards/enus/animated/' + card.id +'_premium.gif'
+    'https://media.services.zam.com/v1/media/byName/hs/cards/enus/animated/' + card.id +'_premium.gif"' + 'data-is-gold="true'
   ];
   goldChance = [98,2];
   isGold = chance.weighted(imgURL, goldChance);
@@ -121,7 +136,7 @@ function randomRareCard() {
   card = chance.weighted(rareFilteredCards, rareOdds);
   imgURL = [
     'https://media.services.zam.com/v1/media/byName/hs/cards/enus/' + card.id +'.png',
-    'https://media.services.zam.com/v1/media/byName/hs/cards/enus/animated/' + card.id +'_premium.gif'
+    'https://media.services.zam.com/v1/media/byName/hs/cards/enus/animated/' + card.id +'_premium.gif"' + 'data-is-gold="true'
   ];
   goldChance = [98,2];
   isGold = chance.weighted(imgURL, goldChance);
