@@ -41,13 +41,16 @@ $(document.body).on('click', '.flip', function(){
 
   $('.score').show();
   $('.value').text(packValue);
-  if(packValue >= 350) {
-    $('.value').addClass('value--legendary');
-  } else if(packValue >= 2500) {
-    $('.value').addClass('value--epic');
-  } else if(packValue >= 150) {
-    $('.value').addClass('value--rare');
+  if(!(this).find('.card').hasClass('flipped')) {
+    if(packValue >= 350) {
+      $('.value').addClass('value--legendary');
+    } else if(packValue >= 2500) {
+      $('.value').addClass('value--epic');
+    } else if(packValue >= 150) {
+      $('.value').addClass('value--rare');
+    }
   }
+
 });
 
 /* On Ready
