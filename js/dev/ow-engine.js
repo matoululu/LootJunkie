@@ -154,7 +154,7 @@ function getItems(token) {
   } else if(token == 'halloween') {
     filterType = 'HALLOWEEN';
   } else if(token == 'winter') {
-    filterType = 'WINTER_WONDERLAND_2016';
+    filterType = 'WINTER_WONDERLAND';
   } else if(token == 'rooster') {
     filterType = 'YEAR_OF_THE_ROOSTER_2017';
   } else if(token == 'anniversary') {
