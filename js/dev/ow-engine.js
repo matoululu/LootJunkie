@@ -337,7 +337,7 @@ handleTweets(arrayTweets);inProgress=false;if(queue.length>0){twitterFetcher.fet
 
 var configProfile = {
   "profile": {"screenName": 'lootjunkiexyz'},
-  "domId": 'alert',
+  "domId": 'tw-alert',
   "maxTweets": 1,
   "enableLinks": true,
   "showUser": false,
@@ -352,7 +352,7 @@ twitterFetcher.fetch(configProfile);
 
 var configProfileMobile = {
   "profile": {"screenName": 'lootjunkiexyz'},
-  "domId": 'mobilealert',
+  "domId": 'tw-mobilealert',
   "maxTweets": 1,
   "enableLinks": true,
   "showUser": true,
