@@ -112,9 +112,7 @@ $('.box-type ul li a').click(function(){
   $(this).addClass('active');
   var boxType = $(this).attr('id');
   pullJSON(boxType);
-})
-
-/* ---- NITTY GRITTY BELOW ----- */
+});
 
 function createWeights(list, weight) {
   for(var i = 0; i < list.length; i++) {
