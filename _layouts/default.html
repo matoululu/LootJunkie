@@ -33,6 +33,13 @@
 
   </head>
   <body class="{{ page.handle }}">
+    <div class="switchto">
+      {% if page.handle == 'hearthstone' %}
+        <a href='{{ "/" | relative_url }}'><img src="{{ "images/switchto-ow.png" | relative_url }}"></a>
+      {% elsif page.handle == 'overwatch' %}
+        <a href='{{ "/hearthstone" | relative_url }}'><img src="{{ "images/switchto-hs.png" | relative_url }}"></a>
+      {% endif %}
+    </div>
     <header class="{{ page.handle }}">
       <div class="container itty">
           <div class="item--one-fifth medium__item--one-whole">
@@ -62,7 +69,7 @@
         <div id="alert">
           <ul>
             <li>
-              <p><a href="https://buymeacoff.ee/lootjunkie" title="donate" target="_blank">Like us? Please consider donating to keep the site running</a></p>
+              <p><a href="https://buymeacoff.ee/lootjunkie" title="donate" target="_blank">Like us? Please <u>consider donating</u> to help keep the site running</a></p>
             </li>
           </ul>
         </div>
