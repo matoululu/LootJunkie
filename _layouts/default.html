@@ -96,10 +96,15 @@
 
     <footer class="footer text-align--center">
       {% if page.handle == 'hearthstone' %}
-      <a href="{{ "/" | relative_url }}" title="Overwatch">Switch to Overwatch</a>
+        <a href="{{ "/" | relative_url }}" title="Overwatch">Switch to Overwatch</a>
       {% elsif page.handle == 'overwatch' %}
         <a href="{{ "/hearthstone" | relative_url }}" title="Hearthstone">Switch to Hearthstone</a>
       {% endif %}
+      <ul>
+        <li><a href="https://twitter.com/lootjunkiexyz" target="_blank">Twitter</a></li>
+        <li><a href="https://twitter.com/messages/compose?recipient_id=3592322542" target="_blank">Contact</a></li>
+        <li><a href="/about">About</a></li>
+      </ul>
     </footer>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
