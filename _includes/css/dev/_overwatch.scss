@@ -31,10 +31,10 @@
 .card-section {
   min-height: 300px;
   overflow: hidden;
-  padding: 20px 0;
+  padding: 20px 0 0;
   @include at-query($min, $large) {
-    min-height: 480px;
-    padding: 40px 0;
+    min-height: 460px;
+    padding: 20px 0 40px;
   }
   #crate{
     overflow: hidden;
