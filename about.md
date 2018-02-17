@@ -7,8 +7,8 @@ handle: about
 
 <div class="legal">
   <h1>LootJunkie</h1>
-  <p>This site has/is created and maintained by <a href="https://twitter.com/omgmrm" target="_blank">Matt</a>. LootJunkie was created to mimic the experience of opening Loot boxes in Overwatch.</p>
-  <p>As of lately the website has also been expanded to support card packs in Hearthstone.</p>
+  <p>This site has/is created and maintained by <a href="https://twitter.com/omgmrm" target="_blank">Matt</a>. LootJunkie was created to mimic the experience of opening Loot boxes in Overwatch. As of lately the website has also been expanded to support card packs in Hearthstone.</p>
+  <p>LootJunkie's goal is to maintain an up-to-date item database with as accurate odds as possible. Using community driven data LootJunkie succeeds in creating a fun and accurate loot box opening experience.</p>
   <br>
   <h2>Terms of Service</h2>
   <h3>1. Terms</h3>
