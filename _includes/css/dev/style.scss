@@ -32,7 +32,7 @@ body {
   font-size: 16px;
   background-color: #ddd;
   -webkit-font-smoothing: antialiased;
-  &.overwatch, .changelog {
+  &.overwatch, &.changelog, &.about {
     color: $ow;
     a, a:visited {
       color: $ow;
@@ -42,7 +42,7 @@ body {
       }
     }
   }
-  &.hearthstone {
+  &.hearthstone,  &.about {
     color: $hs;
     a, a:visited {
       color: $hs;
@@ -76,12 +76,12 @@ header {
   background-size: cover;
   background-color: #131313;
   line-height: 0;
-  &.hearthstone {
+  &.hearthstone, &.about {
     @include at-query($min, $large) {
       background-image: url('../images/hearthstone.png');
     }
   }
-  &.overwatch {
+  &.overwatch, &.changelog {
     @include at-query($min, $large) {
       background-image: url('../images/overwatch.jpg');
     }
@@ -140,7 +140,7 @@ header {
     font-size: 18px;
   }
   &.overwatch, &.changelog { background-color: $ow; }
-  &.hearthstone { background-color: $hs; }
+  &.hearthstone, &.about { background-color: $hs; }
   #alert {
     display: inline-block;
   }
@@ -161,6 +161,23 @@ header {
         color: white;
       }
     }
+  }
+}
+
+/*============================================================================
+  Legal
+==============================================================================*/
+
+.legal {
+  p,
+  li,
+  h1,
+  h2,
+  h3 {
+    color: #131313;
+  }
+  a {
+    text-decoration: underline !important;
   }
 }
 

@@ -44,7 +44,7 @@
       <div class="container itty">
           <div class="item--one-fifth medium__item--one-whole">
               <a class="logo__link" href="{% if page.handle == 'hearthstone' %}{{ "/hearthstone" | relative_url }}{% else %}{{ "/" | relative_url }}{% endif %}">
-                {% if page.handle == 'hearthstone' %}
+                {% if page.handle == 'hearthstone' or page.handle == 'about' %}
                   <img src="{{ "images/logo-hearthstone.svg" | relative_url }}">
                 {% elsif page.handle == 'overwatch' %}
                   <img src="{{ "images/logo-overwatch.svg" | relative_url }}">
@@ -58,6 +58,7 @@
                   {% endif %}
                   <li><a href="https://twitter.com/lootjunkiexyz" target="_blank">Twitter</a></li>
                   <li><a href="https://twitter.com/messages/compose?recipient_id=3592322542" target="_blank">Contact</a></li>
+                  <li><a href="/about">About</a></li>
               </ul>
           </div>
       </div>
@@ -76,15 +77,18 @@
       </div>
     </section>
 
+
     <div class="main container">
-      <div class="aff-bar">
-        <a class="smallScreen--hide" href="http://www.anrdoezrs.net/k1102lnwtnvAJEIBBHBACEDDGEEI" target="_blank">
-          <img src="http://www.awltovhc.com/ta122snrflj4D8C55B546877A88C" alt="" border="0"/>
-        </a>
-        <a class="smallScreen--show" href="http://www.kqzyfj.com/click-8370060-13233925" target="_top">
-          <img src="http://www.ftjcfx.com/image-8370060-13233925" width="300" height="50" alt="" border="0"/>
-        </a>
-      </div>
+      {% if page.handle != 'about' %}
+        <div class="aff-bar">
+          <a class="smallScreen--hide" href="http://www.anrdoezrs.net/k1102lnwtnvAJEIBBHBACEDDGEEI" target="_blank">
+            <img src="http://www.awltovhc.com/ta122snrflj4D8C55B546877A88C" alt="" border="0"/>
+          </a>
+          <a class="smallScreen--show" href="http://www.kqzyfj.com/click-8370060-13233925" target="_top">
+            <img src="http://www.ftjcfx.com/image-8370060-13233925" width="300" height="50" alt="" border="0"/>
+          </a>
+        </div>
+      {% endif %}
       <main role="main">
         {{content}}
       </main>
