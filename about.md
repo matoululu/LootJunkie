@@ -7,8 +7,13 @@ handle: about
 
 <div class="legal">
   <h1>LootJunkie</h1>
-  <p>This site has/is created and maintained by <a href="https://twitter.com/omgmrm" target="_blank">Matt</a>. LootJunkie was created to mimic the experience of opening Loot boxes in Overwatch. As of lately the website has also been expanded to support card packs in Hearthstone.</p>
+  <p>LootJunkie was created to mimic the experience of opening Loot boxes in Overwatch. As of lately the website has also been expanded to support card packs in Hearthstone.</p>
   <p>LootJunkie's goal is to maintain an up-to-date item database with as accurate odds as possible. Using community driven data LootJunkie succeeds in creating a fun and accurate loot box opening experience.</p>
+  <h2>Third party services</h2>
+  <ul>
+    <li>Hearthstone card database provided by <a href="https://hearthstonejson.com/" target="_blank">HearthstoneJSON</a></li>
+    <li>Overwatch item database provided by <a href="https://github.com/Js41637/Overwatch-Item-Tracker" target="_blank">Overwatch Item Tracker</a></li>
+  </ul>
   <br>
   <h2>Terms of Service</h2>
   <h3>1. Terms</h3>
@@ -42,6 +47,6 @@ handle: about
   <h3>8. Governing Law</h3>
   <p>These terms and conditions are governed by and construed in accordance with the laws of Canada and you irrevocably submit to the exclusive jurisdiction of the courts in that State or location.</p><br>
   <h2>Copyright</h2>
-  <p>All original work on this site is copyright Icy Veins and its respective owners and may not be copied or reprinted without our express written approval.</p>
+  <p>All original work on this site is copyright LootJunkie and its respective owners and may not be copied or reprinted without our express written approval.</p>
   <p>World of Warcraft, Warcraft, Hearthstone, Overwatch, and Blizzard Entertainment are trademarks or registered trademarks of Blizzard Entertainment, Inc. in the U.S. and/or other countries.</p><br>
 </div>
