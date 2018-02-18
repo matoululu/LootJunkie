@@ -2,14 +2,15 @@
   Variables
 ==============================================================================*/
 
-$font-stack: 'Montserrat', sans-serif;
+$font-stack: 'Raleway', sans-serif;
 $ow: #f99e1a;
 $hs: #2797e8;
 
 /*============================================================================
   Includes
 ==============================================================================*/
-@import 'itty';
+@import 'grids';
+@import 'emoji';
 @import 'normalize';
 @import 'overwatch';
 @import 'hearthstone';
@@ -30,27 +31,15 @@ a {
 body {
   font-family: $font-stack;
   font-size: 16px;
-  background-color: #ddd;
+  background-color: #242a2f;
   -webkit-font-smoothing: antialiased;
-  &.overwatch, &.changelog, &.about {
-    color: $ow;
-    a, a:visited {
-      color: $ow;
-      text-decoration: none;
-      &:hover {
-        color: lighten($ow, 10%);
-      }
-    }
-  }
-  &.hearthstone,  &.about {
-    color: $hs;
-    a, a:visited {
-      color: $hs;
-      text-decoration: none;
-      &:hover {
-        color: lighten($hs, 10%);
-      }
-    }
+  color: #131313;
+}
+
+a, a:visited {
+  color: $hs;
+  &:hover {
+    color: lighten($hs, 10%);
   }
 }
 
@@ -59,7 +48,23 @@ body {
   max-width: 1000px;
   margin: 0px auto;
   &.main {
-    margin-top: $gutter * 2;
+    margin-top: $gutter;
+  }
+}
+
+.btn {
+
+  border-radius: 7px;
+  padding: 10px 20px;
+  color: white;
+  border: 0;
+  margin: 0px auto;
+  display: block;
+  &.generate {
+    background-color: $hs;
+    &:hover {
+      background-color: darken($hs, 10%);
+    }
   }
 }
 
@@ -81,7 +86,7 @@ header {
       background-image: url('../images/hearthstone.png');
     }
   }
-  &.overwatch, &.changelog {
+  &.overwatch {
     @include at-query($min, $large) {
       background-image: url('../images/overwatch.jpg');
     }
@@ -102,7 +107,7 @@ header {
     padding: 5px 0 0 0;
     margin: 0;
     display: inline-block;
-    line-height: 35px;
+    line-height: 45px;
     float: right;
     @include at-query($max, $medium) {
       width: 100%;
@@ -114,6 +119,9 @@ header {
       font-weight: 700;
       padding: 0 0 0 20px;
       line-height: 25px;
+      a {
+        text-decoration: none;
+      }
       @include at-query($max, $medium) {
         padding: 0 10px 0 10px;
       }
@@ -121,6 +129,7 @@ header {
         margin-top: -3px;
         vertical-align: middle;
         cursor: pointer;
+        color: $hs;
       }
     }
   }
@@ -131,6 +140,7 @@ header {
   padding: 7px 0;
   font-size: 14px;
   display: none;
+  background-color: $hs;
   @include at-query($min, $large) {
     display: block;
   }
@@ -139,15 +149,11 @@ header {
     vertical-align: middle;
     font-size: 18px;
   }
-  &.overwatch, &.changelog { background-color: $ow; }
-  &.hearthstone, &.about { background-color: $hs; }
   #alert {
     display: inline-block;
   }
-  a.twitter {
-    color: white;
-    display: inline-block;
-    opacity: 0.8;
+  a{
+    text-decoration: none;
   }
   ul {
     list-style: none;
@@ -170,16 +176,6 @@ header {
 
 .legal {
   padding: 0 10px;
-  p,
-  li,
-  h1,
-  h2,
-  h3 {
-    color: #131313;
-  }
-  a {
-    text-decoration: underline !important;
-  }
 }
 
 /*============================================================================
@@ -227,15 +223,6 @@ header {
 /*============================================================================
   Footer
 ==============================================================================*/
-
-.courtesy {
-  display: block;
-  color: #222;
-  opacity: 0.2;
-  a {
-    color: #222 !important;
-  }
-}
 
 .footer {
   width: 100%;

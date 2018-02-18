@@ -9,7 +9,7 @@
     <link rel="icon" type="image/png" href="{{ "images/favicon.png" | relative_url }}">
     <title>{{ page.title }}</title>
     <link href="{{ "css/main.css" | relative_url }}" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
@@ -33,31 +33,24 @@
 
   </head>
   <body class="{{ page.handle }}">
-    <div class="switchto">
-      {% if page.handle == 'hearthstone' %}
-        <a href='{{ "/" | relative_url }}'><img src="{{ "images/switchto-ow.png" | relative_url }}"></a>
-      {% elsif page.handle == 'overwatch' %}
-        <a href='{{ "/hearthstone" | relative_url }}'><img src="{{ "images/switchto-hs.png" | relative_url }}"></a>
-      {% endif %}
-    </div>
     <header class="{{ page.handle }}">
-      <div class="container itty">
-          <div class="item--one-fifth medium__item--one-whole">
+      <div class="container grid grid--full">
+          <div class="grid__item large--one-quarter medium-down--one-whole">
               <a class="logo__link" href="{% if page.handle == 'hearthstone' %}{{ "/hearthstone" | relative_url }}{% else %}{{ "/" | relative_url }}{% endif %}">
-                {% if page.handle == 'hearthstone' or page.handle == 'about' %}
-                  <img src="{{ "images/logo-hearthstone.svg" | relative_url }}">
-                {% elsif page.handle == 'overwatch' %}
-                  <img src="{{ "images/logo-overwatch.svg" | relative_url }}">
-                {% endif %}
+                <img src="{{ "images/logo-hearthstone.svg" | relative_url }}">
               </a>
           </div>
-          <div class="item--four-fifths  medium__item--one-whole smallScreen--hide">
+          <div class="grid__item large--three-quarters  medium--one-whole small--hide">
               <ul>
                   {% if page.handle == 'overwatch' %}
                     <li><i class="js-volume material-icons is-on">volume_up</i></li>
                   {% endif %}
+                  {% if page.handle == 'hearthstone' %}
+                    <li><a href="/">Overwatch</a></li>
+                  {% else %}
+                    <li><a href="/hearthstone">Hearthstone</a></li>
+                  {% endif %}
                   <li><a href="https://twitter.com/lootjunkiexyz" target="_blank">Twitter</a></li>
-                  <li><a href="https://twitter.com/messages/compose?recipient_id=3592322542" target="_blank">Contact</a></li>
                   <li><a href="/about">About</a></li>
               </ul>
           </div>
@@ -81,10 +74,10 @@
     <div class="main container">
       {% if page.handle != 'about' %}
         <div class="aff-bar">
-          <a class="smallScreen--hide" href="http://www.anrdoezrs.net/k1102lnwtnvAJEIBBHBACEDDGEEI" target="_blank">
+          <a class="medium-down--hide" href="http://www.anrdoezrs.net/k1102lnwtnvAJEIBBHBACEDDGEEI" target="_blank">
             <img src="http://www.awltovhc.com/ta122snrflj4D8C55B546877A88C" alt="" border="0"/>
           </a>
-          <a class="smallScreen--show" href="http://www.kqzyfj.com/click-8370060-13233925" target="_top">
+          <a class="large--hide medium-down--show" href="http://www.kqzyfj.com/click-8370060-13233925" target="_top">
             <img src="http://www.ftjcfx.com/image-8370060-13233925" width="300" height="50" alt="" border="0"/>
           </a>
         </div>
@@ -94,7 +87,7 @@
       </main>
     </div>
 
-    <footer class="footer text-align--center">
+    <footer class="footer text-align--center medium-down--show">
       {% if page.handle == 'hearthstone' %}
         <a href="{{ "/" | relative_url }}" title="Overwatch">Switch to Overwatch</a>
       {% elsif page.handle == 'overwatch' %}

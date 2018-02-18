@@ -1,54 +1,48 @@
 /*============================================================================
   Overwatch
 ==============================================================================*/
-.overwatch, .changelog {
-  .btn {
-    background: $ow;
+.crateScore {
+  text-align: center;
+  padding-top: 30px;
+  p {
+    background: rgba(0,0,0,0.1);
+    border-radius: 30px;
     padding: 10px 20px;
-    margin: 0px auto;
-    font-size: 24px;
-    font-weight: 700;
-    display: block;
-    border: 0px;
-    box-shadow: 0 1px 1px rgba(27,31,35,0.1);
-    color: white;
-    transition: ease-in-out 0.5s all;
-    cursor: pointer;
-    &:hover, &:focus {
-      background: $ow;
-      -webkit-box-shadow: 0px 0px 33px 0px rgba(249, 158, 26, 0.75);
-      -moz-box-shadow: 0px 0px 33px 0px rgba(249, 158, 26, 0.75);
-      box-shadow: 0px 0px 33px 0px rgba(255, 158, 26, 0.75);
-      transition: ease-in-out all infinite 1.5s;
+    color: #fff;
+    display: inline-block;
+    margin: 10px 0;
+    #value {
+      color: #fff;
+      font-weight: bold;
+      &.value--rare {color: #0070ff;}
+      &.value--epic {color: #B048F8;}
+      &.value--legendary {color: #ff8000;}
     }
-    &:visited {
-      background: $ow;
-    }
+
   }
 }
-
 
 .card-section {
   min-height: 300px;
   overflow: hidden;
   padding: 20px 0 0;
   @include at-query($min, $large) {
-    min-height: 460px;
-    padding: 20px 0 40px;
+    min-height: 420px;
+    padding: 20px 0;
   }
   #crate{
     overflow: hidden;
     li {
-      max-height: 460px;
+      max-height: 420px;
       display: table;
       table-layout: fixed;
+      border-radius: 7px;
       span {
         font-weight: 400;
         font-size: 14px;
         display: table-cell;
         vertical-align: middle;
-        border-bottom: 1px solid #ccc;
-        border-top: 1px solid #eee;
+        border-radius: 7px;
       }
     }
   }
@@ -108,31 +102,6 @@
 
 }
 
-.shakebox {
-  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
-  transform: translate3d(0, 0, 0);
-  backface-visibility: hidden;
-  perspective: 1000px;
-}
-
-@keyframes shake {
-  10%, 90% {
-    transform: translate3d(-1px, 0, 0);
-  }
-
-  20%, 80% {
-    transform: translate3d(2px, 0, 0);
-  }
-
-  30%, 50%, 70% {
-    transform: translate3d(-4px, 0, 0);
-  }
-
-  40%, 60% {
-    transform: translate3d(4px, 0, 0);
-  }
-}
-
 /*--------------------- Item cards ---------------------*/
 
 #crate {
@@ -145,7 +114,6 @@
   }
 
   li {
-
     float: left;
     width: 100%;
     margin: 3px 0px;

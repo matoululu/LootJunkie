@@ -14,6 +14,8 @@ var rareWeights = [];
 var randomizedItem = [];
 var crate = [];
 
+var value;
+
 $.fn.extend({
   animateCss: function (animationName) {
     var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
@@ -64,9 +66,11 @@ function pullJSON(token) {
 
 $('.generate').click(function(){
   if(isRunning == false) {
+    $('#value').text('0').removeClass();
     pauseCrate();
     isRunning = true;
     crate = [];
+    value = 0;
     openSound.volume = volume;
     openSound.play();
     $('#box, .crate-0, .crate-1, .crate-2, .crate-3').animateCss('bounceOutUp');
@@ -101,15 +105,15 @@ function displayCrate() {
   var shuffledCrate = chance.shuffle(crate);
   $.each(shuffledCrate, function(i){
     if( shuffledCrate[i].quality == 'common') {
-      value = 10;
+      value += 20;
     } else if(shuffledCrate[i].quality == 'rare') {
-      value = 60;
+      value += 40;
     } else if(shuffledCrate[i].quality == 'epic') {
-      value = 120;
+      value += 80;
     } else if(shuffledCrate[i].quality == 'legendary') {
-      value = 240;
+      value += 160;
     } else {
-      value = 0;
+      value += 20;
     }
     var heroString= shuffledCrate[i].id;
     var heroName = heroString.substr(0, heroString.indexOf('-'));
@@ -117,6 +121,14 @@ function displayCrate() {
     $('<span/>').addClass(shuffledCrate[i].event).appendTo('.crate-'+i);
     $('<p/>').text(shuffledCrate[i].name + ' - ' + heroName + ' ' + shuffledCrate[i].type).appendTo('.crate-'+i+ ' span');
   });
+  if(value >= 280) {
+    $('#value').addClass('value--legendary');
+  } else if(value >= 200) {
+    $('#value').addClass('value--epic');
+  } else if(value >= 120) {
+    $('#value').addClass('value--rare');
+  }
+  $('#value').text(value);
   isRunning = false;
 }
 

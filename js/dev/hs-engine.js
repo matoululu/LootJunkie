@@ -76,7 +76,7 @@ $(document).ready(function(){
 
   $('.btn-wrap').slick({
     infinite: true,
-    slidesToShow: 6,
+    slidesToShow: 8,
     slidesToScroll: 1,
     dots: false,
     responsive: [

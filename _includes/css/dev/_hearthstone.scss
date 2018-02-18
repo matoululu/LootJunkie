@@ -10,14 +10,16 @@
 
 
 .hearthstone {
-  .main {
-    padding-top: 10px;
+
+  .slick-dots li button:before,
+  .slick-dots li.slick-active button:before {
+    color: $hs;
   }
 
   .btn {
     display: block;
-    padding: 5px 20px;
-    width: 100%;
+    padding: 5px 10px;
+    width: calc(100% - 20px);
     transition: ease-in-out 0.5s all;
     cursor: pointer;
     border: 0;
