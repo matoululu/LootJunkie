@@ -1,0 +1,248 @@
+/*============================================================================
+  Variables
+==============================================================================*/
+
+$font-stack: 'Raleway', sans-serif;
+$ow: #f99e1a;
+$hs: #2797e8;
+
+/*============================================================================
+  Includes
+==============================================================================*/
+@import 'grids';
+@import 'emoji';
+@import 'normalize';
+@import 'overwatch';
+@import 'hearthstone';
+
+/*============================================================================
+  Basics
+==============================================================================*/
+
+.text-align--left { text-align: left; }
+.text-align--center { text-align: center; }
+.text-align--right { text-align: right; }
+
+a {
+  -webkit-text-decoration-skip: ink;
+  text-decoration-skip: ink;
+}
+
+body {
+  font-family: $font-stack;
+  font-size: 16px;
+  background-color: #242a2f;
+  -webkit-font-smoothing: antialiased;
+  color: #fff;
+}
+
+a, a:visited {
+  color: $hs;
+  &:hover {
+    color: lighten($hs, 10%);
+  }
+}
+
+.container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0px auto;
+  &.main {
+    margin-top: $gutter;
+  }
+}
+
+.btn {
+
+  border-radius: 7px;
+  padding: 10px 20px;
+  color: white;
+  border: 0;
+  margin: 0px auto;
+  display: block;
+  &.generate {
+    background-color: $hs;
+    &:hover {
+      background-color: darken($hs, 10%);
+    }
+  }
+}
+
+/*============================================================================
+  Header
+==============================================================================*/
+
+header {
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-color: #131313;
+  line-height: 0;
+  &.hearthstone, &.about {
+    @include at-query($min, $large) {
+      background-image: url('../images/hearthstone.png');
+    }
+  }
+  &.overwatch {
+    @include at-query($min, $large) {
+      background-image: url('../images/overwatch.jpg');
+    }
+  }
+  a.logo__link {
+    display: block;
+    img {
+      width: 100%;
+      @include at-query($max, $medium) {
+        display: block;
+        margin: 5px auto;
+        width: 50%;
+      }
+    }
+  }
+  ul {
+    list-style: none;
+    padding: 5px 0 0 0;
+    margin: 0;
+    display: inline-block;
+    line-height: 45px;
+    float: right;
+    @include at-query($max, $medium) {
+      width: 100%;
+      display: block;
+      text-align: center;
+    }
+    li {
+      display: inline-block;
+      font-weight: 700;
+      padding: 0 0 0 20px;
+      line-height: 25px;
+      a {
+        text-decoration: none;
+      }
+      @include at-query($max, $medium) {
+        padding: 0 10px 0 10px;
+      }
+      i {
+        margin-top: -3px;
+        vertical-align: middle;
+        cursor: pointer;
+        color: $hs;
+      }
+    }
+  }
+}
+
+.news.shadow {
+  width: 100%;
+  padding: 7px 0;
+  font-size: 14px;
+  display: none;
+  background-color: $hs;
+  @include at-query($min, $large) {
+    display: block;
+  }
+  i {
+    color: white;
+    vertical-align: middle;
+    font-size: 18px;
+  }
+  #alert {
+    display: inline-block;
+  }
+  a{
+    text-decoration: none;
+  }
+  ul {
+    list-style: none;
+    padding-left: 0;
+    color: white;
+    padding: 0px;
+    margin: 0;
+    p {
+      margin: 0;
+      a {
+        color: white;
+      }
+    }
+  }
+}
+
+/*============================================================================
+  Legal
+==============================================================================*/
+
+.legal {
+  padding: 0 10px;
+}
+
+/*============================================================================
+  Switch buttons
+==============================================================================*/
+
+.switchto {
+  top: 66%;
+  position: absolute;
+  right: 0;
+  display: none;
+  @include at-query($min, $medium) {
+    display: block;
+  }
+}
+
+
+/*============================================================================
+  Slick
+==============================================================================*/
+
+.slick-slide:focus { outline: none; }
+
+.btn-wrap {
+  .slick-prev, .slick-next {
+    &:before {
+      color: #131313;
+    }
+  }
+}
+
+/*============================================================================
+  Affiliate stuff
+==============================================================================*/
+
+.aff-bar {
+  width: 100%;
+  margin: 20px 0;
+  img {
+    display: block;
+    margin: 0px auto;
+  }
+}
+
+/*============================================================================
+  Footer
+==============================================================================*/
+
+.footer {
+  width: 100%;
+  position: relative;
+  margin: 30px 0;
+  font-size: 80%;
+  display: block;
+  ul {
+    list-style: none;
+    padding-left: 0;
+    padding-top: 10px;
+    li {
+      display: inline;
+      padding: 0 5px;
+    }
+  }
+  @include at-query($min, $large) {
+    display: none;
+    position: absolute;
+    margin: 0;
+    bottom: 2%;
+  }
+}

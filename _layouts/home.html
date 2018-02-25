@@ -1,0 +1,23 @@
+---
+layout: default
+title: index
+---
+
+<div class="card-section">
+  <img id="box" src="images/loot-box.png" alt="Loot Box" onclick="ga('send', 'event', 'Generate box', 'Click', 'Open loot box');">
+  <ul id="crate"></ul>
+</div>
+<button class="generate btn shadow yellow" onclick="ga('send', 'event', 'Generate box', 'Click', 'Open loot box');">Open Loot Box</button>
+<div class="crateScore"><p>Score: <span id="value">0</span></p></div>
+<div class="box-type">
+  <ul class="horizontal-menu">
+    <li><a title="Standard" id="standard" href="javascript: void(0)" class="active"><img class="lootbtn" src="images/events/btn-ow.svg" alt="Standard"></a></li>
+    <li><a title="Summer Games" id="summer2016" href="javascript: void(0)"><img class="lootbtn" src="images/events/btn-summer.svg" alt="Summer Games 2016"></a></li>
+    <li><a title="Halloween Terror" id="halloween" href="javascript: void(0)"><img class="lootbtn" src="images/events/btn-halloween.svg" alt="Halloween Terror"></a></li>
+    <li><a title="Winter Wonderland" id="winter" href="javascript: void(0)"><img class="lootbtn" src="images/events/btn-winter.svg" alt="Winter Wonderland"></a></li>
+    <li><a title="Year of the Dog" id="rooster" href="javascript: void(0)"><img class="lootbtn" src="images/events/btn-rooster.svg" alt="Year of the Rooster"></a></li>
+    <li><a title="Anniversary" id="anniversary" href="javascript: void(0)"><img class="lootbtn" src="images/events/btn-anniversary.svg" alt="Anniversary"></a></li>
+    <li><a title="Uprising" id="uprising" href="javascript: void(0)"><img class="lootbtn" src="images/events/btn-uprising.svg" alt="Uprising"></a></li>
+  </ul>
+</div>
+
