@@ -149,7 +149,7 @@
   box-sizing: border-box;
   @include at-query($min, $large) {
     span {
-      background-color: rgba(255,255,255,0.25);
+      background-color: rgba(255,255,255,0.15);
       p {
         background-color: #fff;
       }
@@ -162,7 +162,7 @@
   box-sizing: border-box;
   @include at-query($min, $large) {
     span {
-      background-color: rgba(0,112,255,0.25);
+      background-color: rgba(0,112,255,0.15);
       p {
         background-color: #0070ff;
       }
@@ -174,7 +174,7 @@
   box-sizing: border-box;
   @include at-query($min, $large) {
     span {
-      background-color: rgba(176,72,248,0.25);
+      background-color: rgba(176,72,248,0.15);
       p {
         background-color: #B048F8;
       }
@@ -186,7 +186,7 @@
   box-sizing: border-box;
   @include at-query($min, $large) {
     span {
-      background-color: rgba(255,128,0,0.25);
+      background-color: rgba(255,128,0,0.15);
       p {
         background-color: #ff8000;
       }
