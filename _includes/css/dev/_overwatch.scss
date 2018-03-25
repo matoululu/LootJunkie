@@ -302,6 +302,17 @@
   }
 }
 
+#crate li.brigette {
+  background-image: url(../images/mobile/brigette.png);
+  background-repeat: no-repeat;
+  background-position: right;
+  @media only screen and (min-width: 769px) {
+    background-size: cover;
+    background-position: center;
+    background-image: url(../images/brigette-full.jpg);
+  }
+}
+
 #crate li.dva {
   background-image: url(../images/mobile/dva.png);
   background-repeat: no-repeat;
