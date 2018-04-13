@@ -51,7 +51,7 @@ function pullJSON(token) {
   rareItems = [];
   rareWeights = [];
   $.ajax({
-      url: "https://raw.githubusercontent.com/Js41637/Overwatch-Item-Tracker/master/data/master.json",
+      url: "js/ow-master.json",
       dataType: 'json',
       success: function(results){
         allHeroes = results.heroes;
@@ -181,9 +181,9 @@ function getItems(token) {
   } else if(token == 'rooster') {
     filterType = 'LUNAR_NEW_YEAR';
   } else if(token == 'anniversary') {
-    filterType = 'ANNIVERSARY_2017';
+    filterType = 'ANNIVERSARY';
   } else if(token == 'uprising') {
-    filterType = 'UPRISING_2017';
+    filterType = 'UPRISING';
   } else if(token == 'standard') {
     filterType = '';
   }
