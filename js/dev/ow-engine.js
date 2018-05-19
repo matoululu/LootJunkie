@@ -51,7 +51,7 @@ function pullJSON(token) {
   rareItems = [];
   rareWeights = [];
   $.ajax({
-      url: "js/ow-master.json",
+      url: "https://raw.githubusercontent.com/Js41637/Overwatch-Item-Tracker/development/data/master.json",
       dataType: 'json',
       success: function(results){
         allHeroes = results.heroes;
