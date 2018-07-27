@@ -103,6 +103,7 @@ function deleteCards() {
 
 function displayCrate() {
   var shuffledCrate = chance.shuffle(crate);
+
   $.each(shuffledCrate, function(i){
     if( shuffledCrate[i].quality == 'common') {
       value += 20;
@@ -116,7 +117,12 @@ function displayCrate() {
       value += 20;
     }
     var heroString= shuffledCrate[i].id;
-    var heroName = heroString.substr(0, heroString.indexOf('-'));
+    if(heroString.indexOf('wrecking-ball') !== -1) {
+      var heroName = 'wrecking ball';
+    } else {
+      var heroName = heroString.substr(0, heroString.indexOf('-'));
+    }
+
     $('<li/>').addClass(heroName + ' ' + shuffledCrate[i].quality + ' shadow animated bounceInDown crate-' + i ).appendTo('#crate');
     $('<span/>').addClass(shuffledCrate[i].event).appendTo('.crate-'+i);
     $('<p/>').text(shuffledCrate[i].name + ' - ' + heroName + ' ' + shuffledCrate[i].type).appendTo('.crate-'+i+ ' span');
