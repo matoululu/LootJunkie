@@ -65,7 +65,7 @@ function pullJSON(set) {
   rareFilteredCards = [];
   odds = [];
   rareOdds = [];
-  $.getJSON("https://api.hearthstonejson.com/v1/25770/enUS/cards.collectible.json", function(result){
+  $.getJSON("../js/hs-master.json", function(result){
     allCards = result;
     //Sort by set
     sortSet(set);
