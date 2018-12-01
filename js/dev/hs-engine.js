@@ -15,19 +15,20 @@ packValue = 0;
 ======================== */
 
 $('.btn').click(function(){
-  $('.score').hide();
-  $('.value--rare').removeClass('value--rare');
-  $('.value--epic').removeClass('value--epic');
-  $('.value--legendary').removeClass('value--legendary');
-  pack = [];
-  packValue = 0;
+  if(!$(this).hasClass('active')){
+    $(this).addClass('active');
+    $('.score').hide();
+    $('.value--rare').removeClass('value--rare');
+    $('.value--epic').removeClass('value--epic');
+    $('.value--legendary').removeClass('value--legendary');
+    pack = [];
+    packValue = 0;
 
-  $('.flip').remove();
-  token = $(this).data('pack');
-  pullJSON(token);
-
-  setTimeout(setPacks, 800);
-
+    $('.flip').remove();
+    token = $(this).data('pack');
+    pullJSON(token);
+    setTimeout(setPacks, 800);
+  }
 });
 
 
@@ -65,7 +66,7 @@ function pullJSON(set) {
   rareFilteredCards = [];
   odds = [];
   rareOdds = [];
-  $.getJSON("../js/hs-master.json", function(result){
+  $.getJSON("https://api.hearthstonejson.com/v1/27845/enUS/cards.collectible.json?", function(result){
     allCards = result;
     //Sort by set
     sortSet(set);
@@ -73,7 +74,6 @@ function pullJSON(set) {
 }
 
 $(document).ready(function(){
-
   $('.btn-wrap').slick({
     infinite: true,
     slidesToShow: 8,
@@ -104,6 +104,7 @@ function setPacks() {
   }
   randomRareCard();
   displayPack();
+  $('.btn').removeClass('active');
 }
 
 function displayPack() {
