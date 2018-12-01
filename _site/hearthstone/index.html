@@ -6,9 +6,9 @@
     <meta name="description" content="LootJunkie is a loot box simulator where you can open loot boxes for free!" />
     <meta name="keywords" content="overwatch,over watch,overwatch loot,overwatch loot box,simulator,overwatch simulator,overwatch loot simulator,overwatch loot box simulator,loot junkie,lootjunkie,loot junky, hearthstone,over watch,hearthstone loot,hearthstone loot box,simulator,hearthstone simulator,hearthstone loot simulator,hearthstone loot box simulator" />
     <meta name="robots" content="index,follows" />
-    <link rel="icon" type="image/png" href="{{ "images/favicon.png" | relative_url }}">
-    <title>{{ page.title }}</title>
-    <link href="{{ "css/main.css" | relative_url }}" rel="stylesheet">
+    <link rel="icon" type="image/png" href="/images/favicon.png">
+    <title>Hearthstone - LootJunkie</title>
+    <link href="/css/main.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
@@ -32,24 +32,20 @@
     </script>
 
   </head>
-  <body class="{{ page.handle }}">
-    <header class="{{ page.handle }}">
+  <body class="hearthstone">
+    <header class="hearthstone">
       <div class="container grid grid--full">
           <div class="grid__item large--one-quarter medium-down--one-whole">
-              <a class="logo__link" href="{% if page.handle == 'hearthstone' %}{{ "/hearthstone" | relative_url }}{% else %}{{ "/" | relative_url }}{% endif %}">
-                <img src="{{ "images/logo-hearthstone.svg" | relative_url }}">
+              <a class="logo__link" href="/hearthstone">
+                <img src="/images/logo-hearthstone.svg">
               </a>
           </div>
           <div class="grid__item large--three-quarters  medium--one-whole small--hide">
               <ul>
-                  {% if page.handle == 'overwatch' %}
-                    <li><i class="js-volume material-icons is-on">volume_up</i></li>
-                  {% endif %}
-                  {% if page.handle == 'hearthstone' %}
+                  
+                  
                     <li><a href="/">Overwatch</a></li>
-                  {% else %}
-                    <li><a href="/hearthstone">Hearthstone</a></li>
-                  {% endif %}
+                  
                   <li><a href="https://twitter.com/lootjunkiexyz" target="_blank">Twitter</a></li>
                   <li><a href="/about">About</a></li>
               </ul>
@@ -57,7 +53,7 @@
       </div>
     </header>
 
-    <section class="news shadow {{ page.handle }}">
+    <section class="news shadow hearthstone">
       <div class="container text-align--center">
         <i class="material-icons">favorite</i>
         <div id="alert">
@@ -73,16 +69,52 @@
 
     <div class="main container">
       <main role="main">
-        {{content}}
+        <div class="itty">
+  <div class="item--one-whole">
+    <div class="btn-wrap">
+      <div>
+          <img title="Classic pack" href="#" src="/images/pack.png" class="btn" data-pack="EXPERT1"  onclick="ga('send', 'event', 'Generate pack', 'Click', 'Open pack');">
+      </div>
+      <!--<div>
+        <img title="Rastakhan's Rumble pack" href="#" src="/images/packrasta.png" class="btn troll" data-pack="TROLL"  onclick="ga('send', 'event', 'Generate pack', 'Click', 'Open pack');">
+      </div>-->
+      <div>
+          <img title="Kobolds and catacombs pack" href="#" src="/images/packkac.png" class="btn kac" data-pack="LOOTAPALOOZA"  onclick="ga('send', 'event', 'Generate pack', 'Click', 'Open pack');">
+      </div>
+      <div>
+          <img title="Knight of the frozen throne pack" href="#" src="/images/packkotft.png" class="btn kotft" data-pack="ICECROWN"  onclick="ga('send', 'event', 'Generate pack', 'Click', 'Open pack');">
+      </div>
+      <div>
+          <img title="Un'goro crater pack" href="#" src="/images/packungoro.png" class="btn ungoro" data-pack="UNGORO"  onclick="ga('send', 'event', 'Generate pack', 'Click', 'Open pack');">
+      </div>
+      <div>
+          <img title="Mean streets of gadgetzan pack" href="#" src="/images/packmsog.png" class="btn msog" data-pack="GANGS"  onclick="ga('send', 'event', 'Generate pack', 'Click', 'Open pack');">
+      </div>
+      <div>
+          <img title="Wrath of the old gods pack" href="#" src="/images/packwotog.png" class="btn wotog" data-pack="OG"  onclick="ga('send', 'event', 'Generate pack', 'Click', 'Open pack');">
+      </div>
+      <div>
+          <img title="The grand tournament pack" href="#" src="/images/packtgt.png" class="btn tgt" data-pack="TGT"  onclick="ga('send', 'event', 'Generate pack', 'Click', 'Open pack');">
+      </div>
+      <div>
+          <img title="Goblins vs Gnomes pack" href="#" src="/images/packgvg.png" class="btn gvg" data-pack="GVG"  onclick="ga('send', 'event', 'Generate pack', 'Click', 'Open pack');">
+      </div>
+    </div>
+  </div>
+  <div class="item--one-whole">
+    <div class="list"></div>
+  </div>
+  <div class="item--one-whole text-align--center scoreText">
+    <span class="score">Pack score: <span class="value">0</span></span>
+  </div>
+</div>
       </main>
     </div>
 
     <footer class="footer text-align--center medium-down--show">
-      {% if page.handle == 'hearthstone' %}
-        <a href="{{ "/" | relative_url }}" title="Overwatch">Switch to Overwatch</a>
-      {% elsif page.handle == 'overwatch' %}
-        <a href="{{ "/hearthstone" | relative_url }}" title="Hearthstone">Switch to Hearthstone</a>
-      {% endif %}
+      
+        <a href="/" title="Overwatch">Switch to Overwatch</a>
+      
       <ul>
         <li><a href="https://twitter.com/lootjunkiexyz" target="_blank">Twitter</a></li>
         <li><a href="/about">About</a></li>
@@ -91,13 +123,11 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-    <script src="{{ "js/chance.min.js" | relative_url }}"></script>
-    {% if page.handle == 'overwatch' %}
-    <script src="{{ "js/ow-engine.min.js" | relative_url }}"></script>
-    {% endif %}
-    {% if page.handle == 'hearthstone' %}
-    <script src="{{ "js/dev/hs-engine.js" | relative_url }}"></script>
-    {% endif %}
+    <script src="/js/chance.min.js"></script>
+    
+    
+    <script src="/js/dev/hs-engine.js"></script>
+    
 
   </body>
 </html>
