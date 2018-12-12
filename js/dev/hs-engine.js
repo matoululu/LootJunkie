@@ -117,8 +117,8 @@ function displayPack() {
 function randomCard() {
   card = chance.weighted(filteredCards, odds);
   imgURL = [
-    'https://media.services.zam.com/v1/media/byName/hs/cards/enus/' + card.id +'.png',
-    'https://media.services.zam.com/v1/media/byName/hs/cards/enus/animated/' + card.id +'_premium.gif"' + 'data-is-gold="true'
+    'https://art.hearthstonejson.com/v1/render/latest/enUS/256x/' + card.id +'.png',
+    'https://art.hearthstonejson.com/v1/render/latest/enUS/256x/' + card.id +'.png"' + 'data-is-gold="true'
   ];
   goldChance = [98,2];
   isGold = chance.weighted(imgURL, goldChance);
@@ -143,8 +143,8 @@ function randomCard() {
 function randomRareCard() {
   card = chance.weighted(rareFilteredCards, rareOdds);
   imgURL = [
-    'https://media.services.zam.com/v1/media/byName/hs/cards/enus/' + card.id +'.png',
-    'https://media.services.zam.com/v1/media/byName/hs/cards/enus/animated/' + card.id +'_premium.gif"' + 'data-is-gold="true'
+    'https://art.hearthstonejson.com/v1/render/latest/enUS/256x/' + card.id +'.png',
+    'https://art.hearthstonejson.com/v1/render/latest/enUS/256x/' + card.id +'.png"' + 'data-is-gold="true'
   ];
   goldChance = [98,2];
   isGold = chance.weighted(imgURL, goldChance);
