@@ -9,7 +9,7 @@ handle: about
   <h1>LootJunkie</h1>
   <p>LootJunkie was created to mimic the experience of opening Loot boxes in Overwatch. As of lately the website has also been expanded to support card packs in Hearthstone.</p>
   <p>LootJunkie's goal is to maintain an up-to-date item database with as accurate odds as possible. Using community driven data LootJunkie succeeds in creating a fun and accurate loot box opening experience.</p>
-  <p>If you would like to get in contact with us please try our <a href="https://twitter.com/lootjunkiexyz" target="_blank">Twitter</a> otherwise you can reach out via <a href="mailto:hello@matou.io">email</a>.
+  <p>If you would like to get in contact with us please try our <a href="https://twitter.com/lootjunkiexyz" target="_blank">Twitter</a>.
   <h2>Third party services</h2>
   <ul>
     <li>Hearthstone card database provided by <a href="https://hearthstonejson.com/" target="_blank">HearthstoneJSON</a></li>
