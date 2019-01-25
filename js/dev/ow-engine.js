@@ -58,6 +58,7 @@ function pullJSON(token) {
         getItems(token);
         createWeights(refinedItems, weights);
         createWeights(rareItems, rareWeights);
+        console.log(results)
       }
   });
 }
@@ -177,7 +178,6 @@ function createWeights(list, weight) {
 
 function getItems(token) {
 
-
   if(token == 'summer2016') {
    filterType = 'SUMMER_GAMES';
   } else if(token == 'halloween') {
@@ -205,7 +205,7 @@ function getItems(token) {
 
   //Filter items
   for(var i = 0; i < allItems.length; i++) {
-    if (allItems[i].sprays) {
+    if (allItems[i].sprays && allItems[i].hero != 'all') {
       for(var c = 0; c < allItems[i].sprays.length; c++) {
         if( allItems[i].sprays[c].achievement || allItems[i].sprays[c].standardItem) {
         } else {
