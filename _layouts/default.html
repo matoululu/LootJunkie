@@ -9,10 +9,8 @@
     <link rel="icon" type="image/png" href="{{ "images/favicon.png" | relative_url }}">
     <title>{{ page.title }}</title>
     <link href="{{ "assets/style.css" | relative_url }}" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -36,20 +34,13 @@
     <header class="{{ page.handle }}">
       <div class="container grid grid--full">
           <div class="grid__item large--one-quarter medium-down--one-whole">
-              <a class="logo__link" href="{% if page.handle == 'hearthstone' %}{{ "/hearthstone" | relative_url }}{% else %}{{ "/" | relative_url }}{% endif %}">
-                <img src="{{ "images/logo-hearthstone.svg" | relative_url }}">
+              <a class="logo__link" href="{{ "/" | relative_url }}">
+                <img src="{{ "images/logo.svg" | relative_url }}">
               </a>
           </div>
           <div class="grid__item large--three-quarters  medium--one-whole small--hide">
               <ul>
-                  {% if page.handle == 'overwatch' %}
-                    <li><i class="js-volume material-icons is-on">volume_up</i></li>
-                  {% endif %}
-                  {% if page.handle == 'hearthstone' %}
-                    <li><a href="{{ '/' | relative_url }}">Overwatch</a></li>
-                  {% else %}
-                    <li><a href="{{ '/hearthstone' | relative_url }}">Hearthstone</a></li>
-                  {% endif %}
+                  <li><i class="js-volume material-icons is-on">volume_up</i></li>
                   <li><a href="https://twitter.com/lootjunkiexyz" target="_blank">Twitter</a></li>
                   <li><a href="{{ '/about' | relative_url }}">About</a></li>
               </ul>
@@ -89,13 +80,9 @@
     </footer>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script src="{{ "js/chance.min.js" | relative_url }}"></script>
     {% if page.handle == 'overwatch' %}
     <script src="{{ "js/ow-engine.min.js" | relative_url }}"></script>
-    {% endif %}
-    {% if page.handle == 'hearthstone' %}
-    <script src="{{ "js/hs-engine.min.js" | relative_url }}"></script>
     {% endif %}
 
   </body>

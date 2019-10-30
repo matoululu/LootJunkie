@@ -5,7 +5,7 @@
   Variables
 ==============================================================================*/
 
-$font-stack: 'Rubik', sans-serif;
+$font-stack: 'Roboto', sans-serif;
 $ow: #f99e1a;
 $hs: #2797e8;
 
@@ -17,7 +17,6 @@ $hs: #2797e8;
 @import 'emoji';
 @import 'normalize';
 @import 'overwatch';
-@import 'hearthstone';
 
 /*============================================================================
   Basics
@@ -35,6 +34,7 @@ a {
 body {
   font-family: $font-stack;
   font-size: 16px;
+  font-weight: 400;
   background-color: #242a2f;
   -webkit-font-smoothing: antialiased;
   color: #fff;
@@ -85,16 +85,10 @@ header {
   background-size: cover;
   background-color: #131313;
   line-height: 0;
-  &.hearthstone, &.about {
-    @include at-query($min, $large) {
-      background-image: url('../images/hearthstone.png');
-    }
+  @include at-query($min, $large) {
+    background-image: url('../images/overwatch.jpg');
   }
-  &.overwatch {
-    @include at-query($min, $large) {
-      background-image: url('../images/overwatch.jpg');
-    }
-  }
+
   a.logo__link {
     display: block;
     img {
@@ -120,10 +114,10 @@ header {
     }
     li {
       display: inline-block;
-      font-weight: 700;
       padding: 0 0 0 20px;
       line-height: 25px;
       a {
+        font-weight: 700;
         text-decoration: none;
       }
       @include at-query($max, $medium) {
