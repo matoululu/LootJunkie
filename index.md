@@ -1,6 +1,6 @@
 ---
 layout: home
-title: Overwatch - LootJunkie
+title: Home - LootJunkie
 permalink:  /
 handle: overwatch
 ---
