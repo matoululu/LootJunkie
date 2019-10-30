@@ -58,7 +58,7 @@ a, a:visited {
 
 .btn {
 
-  border-radius: 20px;
+  border-radius: 5px;
   padding: 10px 20px;
   color: white;
   border: 0;
@@ -202,19 +202,6 @@ header {
     &:before {
       color: #131313;
     }
-  }
-}
-
-/*============================================================================
-  Affiliate stuff
-==============================================================================*/
-
-.aff-bar {
-  width: 100%;
-  margin: 20px 0;
-  img {
-    display: block;
-    margin: 0px auto;
   }
 }
 

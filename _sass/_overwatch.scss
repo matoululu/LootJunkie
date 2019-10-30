@@ -5,8 +5,8 @@
   text-align: center;
   padding-top: 30px;
   p {
-    background: rgba(0,0,0,0.1);
-    border-radius: 30px;
+    background: rgba(0,0,0,0.2);
+    border-radius: 5px;
     padding: 10px 20px;
     color: #fff;
     display: inline-block;
@@ -42,7 +42,7 @@
         font-size: 14px;
         display: table-cell;
         vertical-align: middle;
-        border-radius: 7px;
+        border-radius: 5px;
       }
     }
   }
@@ -62,7 +62,7 @@
         }
       }
       img {
-        border-radius: 7px;
+        border-radius: 5px;
         max-height: 24px;
         cursor: pointer;
         &:hover {
