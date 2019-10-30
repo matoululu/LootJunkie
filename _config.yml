@@ -4,6 +4,8 @@ email: hello@matou.io
 twitter_username: omgmrm
 github_username:  matoululu
 
+plugins:
+  - jekyll-seo-tag
 
 # Build settings
 markdown: kramdown
@@ -11,3 +13,7 @@ markdown: kramdown
 sass:
   sass_dir: _sass
   style: compact
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge

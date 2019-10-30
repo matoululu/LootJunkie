@@ -226,7 +226,7 @@
 }
 
 #crate li {
-  background-image: url(../images/mobile/generic.png);;
+  background-image: url(../images/mobile/generic.png);
   background-repeat: no-repeat;
   background-position: right;
   @media only screen and (min-width: 769px) {
@@ -234,7 +234,18 @@
     background-position: center;
     background-image: url(../images/overwatch-full.jpg);
   }
- }
+}
+
+#crate li.sigma {
+  background-image: url(../images/mobile/sigma.png);
+  background-repeat: no-repeat;
+  background-position: right;
+  @media only screen and (min-width: 769px) {
+    background-size: cover;
+    background-position: center;
+    background-image: url(../images/sigma-full.jpg);
+  }
+}
 
 #crate li.ashe {
   background-image: url(../images/mobile/ashe.png);
