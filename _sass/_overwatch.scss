@@ -368,6 +368,17 @@
   }
 }
 
+#crate li.echo {
+  background-image: url(../images/mobile/echo.png);
+  background-repeat: no-repeat;
+  background-position: right;
+  @media only screen and (min-width: 769px) {
+    background-size: cover;
+    background-position: center;
+    background-image: url(../images/echo-full.jpg);
+  }
+}
+
 #crate li.genji {
   background-image: url(../images/mobile/genji.png);
   background-repeat: no-repeat;
